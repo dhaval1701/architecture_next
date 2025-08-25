@@ -55,7 +55,7 @@ export const Home = () => {
       <HeroSection />
 
       {/* Architects Section */}
-      <section className="bg-gray-100 md:py-20 px-4 md:px-16 mb-12 md:my-20 relative overflow-hidden">
+      <section className="bg-gray-100 px-4 md:px-16 mb-12 md:my-20 mx-0 md:mx-16 relative overflow-hidden">
         <div className="absolute inset-0 opacity-70">
           <Image
             src="/logos/logo_background.svg"
@@ -67,9 +67,9 @@ export const Home = () => {
 
         {/* Flexbox Layout */}
         <div className="relative z-10 flex flex-col lg:flex-row items-center gap-8 lg:gap-12">
-          {/* Image Section - Flexible sizing */}
-          <div className="flex-shrink-0 w-full max-w-md lg:max-w-lg xl:max-w-xl">
-            <div className="relative aspect-square md:aspect-[4/3] w-full">
+          {/* Image Section - 2/3 width on md+ screens */}
+          <div className="flex-shrink-0 w-full md:w-2/4">
+            <div className="relative aspect-square md:aspect-[3/3] w-full">
               <Image
                 src="/assets/owner_group.svg"
                 alt="Architects"
@@ -79,8 +79,8 @@ export const Home = () => {
             </div>
           </div>
 
-          {/* Content Section - Takes remaining space */}
-          <div className="flex-1 lg:min-w-0">
+          {/* Content Section - Takes remaining space (1/3 on md+) */}
+          <div className="flex-1 lg:min-w-0 w-full md:w-2/4">
             <div className="text-gray-500 text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-extralight mb-6 md:mb-8">
               Architects
             </div>
@@ -228,7 +228,7 @@ export const Home = () => {
                   <div className="text-white uppercase text-3xl md:text-6xl font-bold mb-2 md:mb-4">
                     {project.title}
                   </div>
-                  <div className="flex items-center text-white text-xs uppercase tracking-widest">
+                  <div className="flex items-center text-white text-xs uppercase tracking-widest ">
                     View More
                     <MoveRight strokeWidth={0.85} className="pl-2" />
                   </div>
@@ -240,7 +240,7 @@ export const Home = () => {
 
         <div className="flex justify-center md:justify-end mt-8 md:mt-16">
           <div className="bg-gray-800 w-full md:w-50 h-12 md:h-14 relative cursor-pointer group">
-            <div className="absolute inset-0 flex items-center justify-center md:justify-between px-4 md:px-8">
+            <div className="absolute inset-0 flex items-center justify-center md:justify-between px-4 md:px-8 bg-primary-bg">
               <span className="text-white text-xs uppercase tracking-widest">
                 All Projects
               </span>

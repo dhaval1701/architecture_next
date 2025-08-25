@@ -151,7 +151,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
           <button
             type="submit"
             disabled={isSubmitting}
-            className="bg-gray-800 w-full lg:w-56 lg:h-12 relative cursor-pointer group flex items-center justify-between px-6 text-white text-xs uppercase tracking-widest disabled:opacity-70 disabled:cursor-not-allowed"
+            className="bg-primary-bg w-full lg:w-56 lg:h-12 relative cursor-pointer group flex items-center justify-between px-6 text-white text-xs uppercase tracking-widest disabled:opacity-70 disabled:cursor-not-allowed"
           >
             {isSubmitting ? (
               <span>Sending...</span>

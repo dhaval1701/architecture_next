@@ -18,8 +18,8 @@ const Header: React.FC = () => {
     { name: "HOME", path: "/" },
     { name: "GALLERY", path: "/gallery" },
     { name: "PROJECTS", path: "/projects" },
-    { name: "ABOUT US", path: "/about" },
-    { name: "CONTACT US", path: "/contact" },
+    { name: "ABOUT US", path: "/about-us" },
+    { name: "CONTACT US", path: "/contact-us" },
   ];
 
   const isActive = (path: string): boolean => {
@@ -63,7 +63,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full h-16 sm:h-18 md:h-20 lg:h-22 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-4 md:px-8 lg:px-12 xl:px-16 z-50 bg-white">
+    <header className="w-full h-16 sm:h-18 md:h-20 lg:h-22 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-4 md:px-8 lg:px-20 xl:px-26 z-50 bg-white">
       {/* Logo */}
       <div className="flex items-center flex-shrink-0">
         <Link href="/" className="flex items-center" onClick={closeMenu}>
