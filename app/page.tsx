@@ -48,14 +48,22 @@ export const Home = () => {
       number: "3",
       text: "Deliver architecture that balances beauty, purpose, and sustainability creating spaces people truly belong in.",
     },
+    {
+      number: "4",
+      text: "Deliver architecture that balances beauty, purpose, and sustainability creating spaces people truly belong in.",
+    },
+    {
+      number: "5",
+      text: "Deliver architecture that balances beauty, purpose, and sustainability creating spaces people truly belong in.",
+    },
   ];
 
   return (
-    <div className="bg-white min-h-screen relative overflow-hidden">
+    <div className="bg-white relative">
       <HeroSection />
 
       {/* Architects Section */}
-      <section className="bg-gray-100 px-4 md:px-16 mb-12 md:my-20 mx-0 md:mx-16 relative overflow-hidden">
+      <section className="bg-gray-100 px-4 md:px-16 mb-12 md:my-20 relative overflow-hidden">
         <div className="absolute inset-0 opacity-70">
           <Image
             src="/logos/logo_background.svg"
@@ -99,13 +107,13 @@ export const Home = () => {
       </section>
 
       {/* Mission Statement Section */}
-      <section className=" md:py-20 px-4 md:px-16 overflow-hidden">
-        <div className="text-gray-500 text-3xl md:text-6xl font-light mb-8 md:mb-16">
+      <section className="md:py-20  ">
+        <div className="text-gray-500 text-3xl md:text-6xl font-light mb-8 md:mb-16 overflow-hidden">
           Mission Statement
         </div>
 
         <motion.div
-          className="flex"
+          className="breakout flex"
           animate={{
             x: ["0%", "-180%"],
           }}
@@ -161,7 +169,7 @@ export const Home = () => {
       </section>
 
       {/* CTA Section */}
-      <section className="w-full relative my-12 md:my-20 overflow-hidden">
+      <section className="breakout relative my-12 md:my-20">
         {/* Base gradient */}
         <div
           className="absolute inset-0"
@@ -183,8 +191,8 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="container mx-auto px-4 md:px-16 relative z-10">
-          <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left py-8 md:py-12">
+        <div className="mx-auto px-4 md:px-16 relative z-10 h-full">
+          <div className="flex flex-col md:flex-row items-center justify-between text-center md:text-left py-8 md:py-18">
             <div className="text-white text-xl md:text-3xl mb-4 md:mb-0">
               Ready to transform your space?
             </div>

@@ -403,7 +403,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
   return (
     <div className={`flex ${getLayoutClass()} gap-8 h-full`}>
       {/* Left Side */}
-      <div className="w-full lg:w-1/2 h-full flex flex-col">
+      <div className="w-full lg:w-1/3 h-full flex flex-col">
         <div className="flex-1 h-full">{renderLeftSide()}</div>
 
         {/* Status Message */}
@@ -425,7 +425,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
       </div>
 
       {/* Right Side */}
-      <div className="w-full lg:w-1/2 mt-8 lg:mt-0 h-full flex flex-col">
+      <div className="w-full lg:w-2/3 mt-8 lg:mt-0 h-full flex flex-col">
         <div className="flex-1 h-full">{renderRightSide()}</div>
 
         {/* Status Message for reversed layouts */}

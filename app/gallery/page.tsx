@@ -143,8 +143,8 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 sm:px-8 md:px-14 pt-16 md:pt-28 flex flex-col justify-between">
-      <div className="max-w-7xl mb-6 sm:mb-8 w-full">
+    <div className="md:pt-2 flex flex-col justify-between">
+      <div className="mb-6 sm:mb-8 w-full">
         <h1 className="text-2xl sm:text-4xl md:text-5xl font-light text-gray-400 mb-1 break-words">
           Photo
         </h1>
@@ -154,7 +154,7 @@ const Gallery: React.FC = () => {
       </div>
 
       {/* Gallery Grid */}
-      <div className="max-w-7xl mx-auto flex-1 w-full">
+      <div className="mx-auto flex-1 mb-10">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
@@ -191,7 +191,7 @@ const Gallery: React.FC = () => {
       </div>
 
       {/* Custom Pagination Design */}
-      <div className="max-w-7xl mx-auto w-full flex items-end lg:items-start lg:mt-auto my-6 sm:mb-14">
+      <div className="mx-auto w-full flex items-end lg:items-start lg:mt-auto my-6 sm:mt-14">
         <motion.div
           className="flex items-center"
           initial={{ opacity: 0, x: -50 }}

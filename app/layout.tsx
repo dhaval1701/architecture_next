@@ -6,8 +6,7 @@ import Footer from "@/components/Footer";
 
 const roboto = Roboto({
   subsets: ["latin"],
-  weight: ["400", "500", "700"], // adjust weights as needed
-  variable: "--font-roboto",
+  weight: ["400", "500", "700"],
 });
 
 export const metadata: Metadata = {
@@ -22,9 +21,12 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${roboto.variable} antialiased`}>
+      <body className={`${roboto.className} antialiased`}>
         <Header />
-        <main>{children}</main>
+        {/* px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32 */}
+        <main className="min-h-screen px-4 sm:px-8 md:px-34 py-12 pt-28">
+          {children}
+        </main>
         <Footer />
       </body>
     </html>

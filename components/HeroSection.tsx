@@ -33,7 +33,7 @@ const HeroSection = () => {
   const projects: Project[] = [
     {
       id: 1,
-      title: "Sarpanch House",
+      title: "The Vertic House",
       location: "Gandhinagar",
       area: "5000",
       timeline: "2025 - 2027",
@@ -61,16 +61,16 @@ const HeroSection = () => {
   const currentProject = projects[currentSlide];
 
   return (
-    <section className="pb-10 lg:pb-20 px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32  relative overflow-hidden">
+    <section className="pb-10 lg:pb-20 relative">
       {/* Auto-moving Background Text - Responsive */}
-      <div className="absolute top-10 lg:top-22 left-0 w-full z-0 select-none pointer-events-none overflow-hidden h-[120px] sm:h-[160px] md:h-[200px] lg:h-[240px] flex items-center">
+      <div className="breakout absolute top-10 lg:-top-30 left-0 z-0 select-none pointer-events-none overflow-hidden h-[120px] sm:h-[160px] md:h-[200px] lg:h-[240px] flex items-center">
         <motion.div
-          className="flex whitespace-nowrap opacity-10"
+          className="flex whitespace-nowrap opacity-40"
           animate={{
             x: ["0%", "-100%"],
           }}
           transition={{
-            duration: 40,
+            duration: 50,
             ease: "linear",
             repeat: Infinity,
           }}
@@ -78,26 +78,26 @@ const HeroSection = () => {
           {[1, 2, 3, 4].map((index) => (
             <div
               key={index}
-              className="flex items-center mr-16 sm:mr-24 md:mr-32 font-light"
-              style={{ letterSpacing: "0.1em" }}
+              className="flex items-center mr-16 sm:mr-24 md:mr-32 font-light sf-compact-fallback"
+              style={{ letterSpacing: "2.0em", wordSpacing: "2.7em" }}
             >
               {/* THE */}
-              <span className="text-gray-700 font-bold text-[60px] sm:text-[80px] md:text-[100px] lg:text-[180px] xl:text-[220px] 2xl:text-[280px]">
+              <span className="text-gray-300 font-semibold text-[60px] sm:text-[80px] md:text-[100px] lg:text-[180px] xl:text-[220px] 2xl:text-[280px]">
                 THE
               </span>
 
               {/* 23rd (wrapped together) */}
               <div className="relative flex items-start ml-4 sm:ml-6">
-                <span className="font-bold text-red-900 leading-none text-[60px] sm:text-[80px] md:text-[100px] lg:text-[180px] xl:text-[220px] 2xl:text-[280px]">
+                <span className="font-semibold text-red-900 leading-none text-[60px] sm:text-[80px] md:text-[100px] lg:text-[180px] xl:text-[220px] 2xl:text-[280px]">
                   23
                 </span>
-                <span className="absolute -top-3 -right-9 sm:-top-4 sm:-right-12 md:-top-5 md:-right-14 lg:-top-6 lg:-right-18 font-light text-red-900 text-[20px] sm:text-[30px] md:text-[40px] lg:text-[60px] xl:text-[80px] 2xl:text-[100px]">
+                <span className="absolute font-semibold  text-gray-300 -top-3 -right-9 sm:-top-4 sm:-right-12 md:-top-5 md:-right-14 lg:-top-6 lg:-right-38 text-[20px] sm:text-[30px] md:text-[40px] lg:text-[90px] xl:text-[80px] 2xl:text-[120px]">
                   rd
                 </span>
               </div>
 
               {/* STUDIO with space */}
-              <span className="font-bold text-gray-700 ml-10 sm:ml-14 md:ml-20 text-[60px] sm:text-[80px] md:text-[100px] lg:text-[180px] xl:text-[220px] 2xl:text-[280px]">
+              <span className="font-semibold text-gray-300 ml-10 sm:ml-14 md:ml-40 text-[60px] sm:text-[80px] md:text-[100px] lg:text-[200px] xl:text-[220px] 2xl:text-[280px]">
                 studio
               </span>
             </div>
@@ -106,7 +106,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Content - Mobile: column, Desktop: row */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-end mt-28 sm:mt-32 md:mt-40 lg:mt-48">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-end mt-28 sm:mt-22 md:mt-30 lg:mt-28">
         {/* For mobile: Image comes first */}
         {isMobile && (
           <div className="w-full mb-8">
@@ -143,12 +143,12 @@ const HeroSection = () => {
             {/* Project Title + Details */}
             <div className="lg:mb-0">
               {/* Project Title - Full Text */}
-              <div className="text-gray-400 text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-2">
+              <div className="text-gray-400 text-left text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl font-light mb-0">
                 The
               </div>
-              <div className="text-gray-900 text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold mb-4 sm:mb-6 leading-tight">
-                <span className="block">Sarpanch</span>
-                <span className="block">House</span>
+              <div className="text-gray-900 text-left text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl font-bold leading-tight">
+                <span className="block mb-0">Vertic</span>
+                <span className="block mb-0">House</span>
               </div>
 
               {/* Project Details */}

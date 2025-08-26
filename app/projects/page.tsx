@@ -1,84 +1,17 @@
 "use client";
 import Image from "next/image";
+import Link from "next/link";
 import React, { useState } from "react";
-import { motion, AnimatePresence, Variants } from "framer-motion";
-
-interface Project {
-  id: number;
-  title: string;
-  description: string;
-  imageUrl: string;
-  category?: string;
-  location?: string;
-  area?: string;
-  year?: string;
-}
+import { motion } from "framer-motion";
+import { projectsData, Project } from "../../data/projects";
 
 const Projects: React.FC = () => {
   const [currentPage, setCurrentPage] = useState(1);
   const projectsPerPage = 4;
 
-  const projects: Project[] = [
-    {
-      id: 1,
-      title: "The Sarpanch House",
-      description:
-        "Modern architectural design with contemporary elements and sustainable features.",
-      imageUrl: "/assets/sarpanch_house_300.svg",
-      category: "Residential",
-      location: "Gandhinagar",
-      area: "5000 ft²",
-      year: "2025 - 2027",
-    },
-    {
-      id: 2,
-      title: "SK Farm",
-      description:
-        "Luxury farmhouse design blending traditional and modern aesthetics.",
-      imageUrl: "/assets/sk_farm.svg",
-      category: "Farm House",
-      location: "Ahmedabad",
-      area: "8000 ft²",
-      year: "2024 - 2026",
-    },
-    {
-      id: 3,
-      title: "THE PATEL MANSION",
-      description:
-        "Elegant mansion with sophisticated design and premium finishes.",
-      imageUrl: "/assets/patel_mansion.svg",
-      category: "Mansion",
-      location: "Surat",
-      area: "12000 ft²",
-      year: "2023 - 2025",
-    },
-    {
-      id: 4,
-      title: "SARAN GROUP",
-      description:
-        "Commercial project with innovative design and functional spaces.",
-      imageUrl: "/assets/saran_group.svg",
-      category: "Commercial",
-      location: "Mumbai",
-      area: "25000 ft²",
-      year: "2024 - 2026",
-    },
-    {
-      id: 5,
-      title: "THE PATEL MANSION",
-      description:
-        "Contemporary residential design with modern amenities and style.",
-      imageUrl: "/assets/patel_mansion.svg",
-      category: "Residential",
-      location: "Pune",
-      area: "10000 ft²",
-      year: "2025 - 2027",
-    },
-  ];
-
-  const totalPages = Math.ceil(projects.length / projectsPerPage);
+  const totalPages = Math.ceil(projectsData.length / projectsPerPage);
   const startIndex = (currentPage - 1) * projectsPerPage;
-  const currentProjects = projects.slice(
+  const currentProjects = projectsData.slice(
     startIndex,
     startIndex + projectsPerPage
   );
@@ -88,7 +21,7 @@ const Projects: React.FC = () => {
   };
 
   return (
-    <div className="min-h-screen bg-gray-50 px-4 sm:px-8 md:px-14 pt-16 md:pt-28 flex flex-col justify-between">
+    <div className=" flex flex-col justify-between">
       <div className="max-w-7xl mb-8">
         <h1 className="text-5xl font-light text-gray-400 mb-1">Our</h1>
         <h2 className="text-5xl font-bold text-gray-800">Projects</h2>
@@ -97,60 +30,53 @@ const Projects: React.FC = () => {
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-8 mb-12">
         {currentProjects.map((project) => (
-          <div
-            key={project.id}
-            className="group relative w-full h-96 overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2"
-          >
-            {/* Image Container */}
-            <div className="relative w-full h-full">
-              <img
-                src={project.imageUrl}
-                alt={project.title}
-                className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
-              />
+          <Link href={`/projects/${project.slug}`} key={project.id}>
+            <div className="group relative w-full h-96 overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+              {/* Image Container */}
+              <div className="relative w-full h-full">
+                <img
+                  src={project.imageUrl}
+                  alt={project.title}
+                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                />
 
-              {/* Bottom Left Title Overlay (Default State) */}
-              <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-8 pb-6 transition-opacity duration-300 group-hover:opacity-0">
-                <h3 className="text-white text-xl font-medium uppercase tracking-wide m-0">
-                  {project.title}
-                </h3>
-              </div>
+                {/* Bottom Left Title Overlay (Default State) */}
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-8 pb-6 transition-opacity duration-300 group-hover:opacity-0">
+                  <h3 className="text-white text-xl font-medium uppercase tracking-wide m-0">
+                    {project.title}
+                  </h3>
+                </div>
 
-              {/* Hover Overlay - Full Background */}
-              <div className="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                {/* Bottom Section Container */}
-                <div className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-8">
-                  {/* Left Side - Project Details */}
-                  <div className="text-white max-w-2xl">
-                    <h3 className="text-2xl md:text-3xl font-bold mb-2 uppercase tracking-wide text-white">
-                      {project.title}
-                    </h3>
+                {/* Hover Overlay - Full Background */}
+                <div className="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
+                  {/* Bottom Section Container */}
+                  <div className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-8">
+                    {/* Left Side - Project Details */}
+                    <div className="text-white max-w-2xl">
+                      <h3 className="text-2xl md:text-3xl font-bold mb-2 uppercase tracking-wide text-white">
+                        {project.title}
+                      </h3>
 
-                    {/* Project Meta Information */}
-                    <div className="space-y-1 mb-3 text-sm opacity-90">
-                      {project.location && (
+                      {/* Project Meta Information */}
+                      <div className="space-y-1 mb-3 text-sm opacity-90">
                         <p className="text-gray-200">{project.location}</p>
-                      )}
-                      {project.area && (
-                        <p className="text-gray-200">{project.area}</p>
-                      )}
-                      {project.year && (
+                        <p className="text-gray-200">{project.builtUpArea}</p>
                         <p className="text-gray-200">{project.year}</p>
-                      )}
+                      </div>
                     </div>
-                  </div>
 
-                  {/* Right Side - View More Button */}
-                  <div className="flex items-end">
-                    <button className="bg-transparent  text-white px-6 py-2 text-sm uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2">
-                      View More
-                      <span className="text-lg">→</span>
-                    </button>
+                    {/* Right Side - View More Button */}
+                    <div className="flex items-end">
+                      <button className="bg-transparent text-white px-6 py-2 text-sm uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2">
+                        View More
+                        <span className="text-lg">→</span>
+                      </button>
+                    </div>
                   </div>
                 </div>
               </div>
             </div>
-          </div>
+          </Link>
         ))}
       </div>
 

@@ -63,7 +63,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full h-16 sm:h-18 md:h-20 lg:h-22 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-4 md:px-8 lg:px-20 xl:px-26 z-50 bg-white">
+    <header className="w-full h-16 sm:h-18 md:h-20 lg:h-22 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-8 md:px-34 z-50 bg-white">
       {/* Logo */}
       <div className="flex items-center flex-shrink-0">
         <Link href="/" className="flex items-center" onClick={closeMenu}>
@@ -86,7 +86,7 @@ const Header: React.FC = () => {
             href={item.path}
             className={`
               relative text-gray-800 font-roboto text-xs lg:text-sm uppercase tracking-widest 
-              cursor-pointer transition-all duration-300 py-2 px-2 lg:px-3 xl:px-4
+              cursor-pointer transition-all duration-300 py-1 px-2 lg:px-3 xl:px-4
               hover:text-gray-600 whitespace-nowrap
               before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 
               before:bg-black before:transform before:scale-x-0 before:transition-transform 
