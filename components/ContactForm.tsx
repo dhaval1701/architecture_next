@@ -43,6 +43,167 @@ interface ContactFormProps {
   layout?: LayoutType;
 }
 
+const ContactFormOverlay: React.FC<ContactFieldsProps> = ({
+  formData,
+  errors,
+  handleChange,
+  isSubmitting,
+  onSubmit,
+}) => {
+  return (
+    <div className="relative h-full w-full overflow-hidden">
+      {/* Background Image */}
+      {/* <div className="absolute inset-0 z-0">
+        <Image
+          src="/assets/contact_us_3.svg"
+          alt="Contact background"
+          fill
+          className="object-cover"
+          style={{ filter: "grayscale(1)" }}
+          sizes="100vw"
+          priority
+        />
+       
+        <div className="absolute inset-0 bg-white bg-opacity-80"></div>
+      </div> */}
+
+      <div
+        className="absolute inset-0 z-0"
+        style={{
+          backgroundImage: "url(/logos/logo_background.svg)",
+          backgroundSize: "cover",
+          backgroundPosition: "center",
+          filter: "grayscale(1)",
+        }}
+      >
+        {/* <div className="absolute inset-0 bg-white bg-opacity-80"></div> */}
+      </div>
+      {/* Content Overlay */}
+      <div className="relative z-10 h-full flex flex-col justify-center items-center p-4 lg:p-8">
+        <div className="w-full max-w-md">
+          {/* Title */}
+          <h2 className="text-gray-800 text-4xl lg:text-5xl font-light mb-8 text-start">
+            Get in Touch
+          </h2>
+
+          {/* Form */}
+          <form onSubmit={onSubmit} className="space-y-3">
+            {/* Name Field */}
+            <div>
+              <input
+                type="text"
+                id="name"
+                name="name"
+                placeholder="Your Name"
+                value={formData.name}
+                onChange={handleChange}
+                className={`bg-white border border-gray-200 w-full h-12 px-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-400 transition-all ${
+                  errors.name ? "border-red-500" : ""
+                }`}
+              />
+              {errors.name && (
+                <div className="text-red-500 text-xs mt-1 pl-4">
+                  {errors.name}
+                </div>
+              )}
+            </div>
+
+            {/* Phone Field */}
+            <div>
+              <input
+                type="tel"
+                id="phone"
+                name="phone"
+                placeholder="Phone Number*"
+                value={formData.phone}
+                onChange={handleChange}
+                className={`bg-white border border-gray-200 w-full h-12 px-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-400 transition-all ${
+                  errors.phone ? "border-red-500" : ""
+                }`}
+              />
+              {errors.phone && (
+                <div className="text-red-500 text-xs mt-1 pl-4">
+                  {errors.phone}
+                </div>
+              )}
+            </div>
+
+            {/* Email Field */}
+            <div>
+              <input
+                type="email"
+                id="email"
+                name="email"
+                placeholder="E-mail*"
+                value={formData.email}
+                onChange={handleChange}
+                className={`bg-white border border-gray-200 w-full h-12 px-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-400 transition-all ${
+                  errors.email ? "border-red-500" : ""
+                }`}
+              />
+              {errors.email && (
+                <div className="text-red-500 text-xs mt-1 pl-4">
+                  {errors.email}
+                </div>
+              )}
+            </div>
+
+            {/* Interest Field */}
+            <div>
+              <select
+                id="interest"
+                name="interest"
+                value={formData.interest}
+                onChange={handleChange}
+                className="bg-white border border-gray-200 w-full h-12 px-4 text-gray-800 focus:outline-none focus:border-gray-400 transition-all"
+              >
+                <option value="" className="text-gray-500">
+                  Interested In
+                </option>
+                <option value="residential">Residential Design</option>
+                <option value="commercial">Commercial Design</option>
+                <option value="renovation">Renovation</option>
+                <option value="consultation">Consultation</option>
+              </select>
+            </div>
+
+            {/* Message Field */}
+            <div>
+              <textarea
+                id="message"
+                name="message"
+                placeholder="Message*"
+                value={formData.message}
+                onChange={handleChange}
+                rows={4}
+                className={`bg-white border border-gray-200 w-full p-4 text-gray-800 placeholder-gray-500 focus:outline-none focus:border-gray-400 transition-all resize-none ${
+                  errors.message ? "border-red-500" : ""
+                }`}
+              />
+              {errors.message && (
+                <div className="text-red-500 text-xs mt-1 pl-4">
+                  {errors.message}
+                </div>
+              )}
+            </div>
+
+            {/* Submit Button */}
+            <div className="pt-4">
+              <button
+                type="submit"
+                disabled={isSubmitting}
+                className="bg-gray-800 hover:bg-gray-700 w-1/3 h-12 text-white text-sm font-medium tracking-wider uppercase transition-all disabled:opacity-70 disabled:cursor-not-allowed"
+              >
+                {isSubmitting ? "Sending..." : "Contact Us"}
+              </button>
+            </div>
+          </form>
+        </div>
+      </div>
+    </div>
+  );
+};
+
 const ContactFields: React.FC<ContactFieldsProps> = ({
   formData,
   errors,
@@ -171,30 +332,20 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
 
 const ContactImage: React.FC = () => {
   return (
-    <div className="relative h-full w-full overflow-hidden">
+    <div className=" relative h-full w-full">
       <Image
-        src="/image-140.png"
+        src="/assets/contact_us_3.svg"
         alt="Contact us"
-        fill
-        className="object-cover"
-        sizes="(max-width: 768px) 100vw, 50vw"
+        width={400}
+        height={700}
+        className="h-[600px] w-full"
+        style={{ filter: "grayscale(1)" }}
       />
-      <div className="absolute right-1/4 top-1/3">
-        <div className="relative">
-          <div className="w-12 h-14 bg-gray-300 bg-opacity-50 rounded-full absolute -left-3 -bottom-3"></div>
-          <Image
-            src="/vuesax-linear-drop0.svg"
-            alt="Water drop"
-            width={50}
-            height={56}
-          />
-        </div>
-      </div>
     </div>
   );
 };
 
-const ContactMap: React.FC = () => {
+export const ContactMap: React.FC = () => {
   return (
     <div
       className="relative h-110 w-full overflow-hidden"
@@ -346,7 +497,7 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
         return <ContactMap />;
       case "image-form":
         return (
-          <ContactFields
+          <ContactFormOverlay
             formData={formData}
             errors={errors}
             handleChange={handleChange}
@@ -400,13 +551,44 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
     }
   };
 
+  const getLayoutClasses = () => {
+    switch (layout) {
+      case "form-map":
+        return {
+          container: "flex-col lg:flex-row",
+          leftWidth: "w-full lg:w-1/3",
+          rightWidth: "w-full lg:w-2/3",
+        };
+      case "image-form":
+        return {
+          container: "flex-col lg:flex-row",
+          leftWidth: "w-full lg:w-2/4", // Image gets more space
+          rightWidth: "w-full lg:w-2/4", // Form gets less space
+        };
+      case "map-form":
+        return {
+          container: "flex-col lg:flex-row",
+          leftWidth: "w-full lg:w-2/3", // Map gets more space
+          rightWidth: "w-full lg:w-1/3",
+        };
+      default: // "form-image"
+        return {
+          container: "flex-col lg:flex-row",
+          leftWidth: "w-full lg:w-1/3",
+          rightWidth: "w-full lg:w-2/3",
+        };
+    }
+  };
+
+  const layoutClasses = getLayoutClasses();
+
   return (
-    <div className={`flex ${getLayoutClass()} gap-8 h-full`}>
-      {/* Left Side */}
-      <div className="w-full lg:w-1/3 h-full flex flex-col">
+    <div className={`flex ${layoutClasses.container} gap-8 h-full`}>
+      {/* Left Side - Now with dynamic width */}
+      <div className={`${layoutClasses.leftWidth} h-full flex flex-col`}>
         <div className="flex-1 h-full">{renderLeftSide()}</div>
 
-        {/* Status Message */}
+        {/* Status Message for form layouts */}
         {(layout === "form-image" || layout === "form-map") && (
           <>
             {submitStatus === "success" && (
@@ -424,8 +606,10 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
         )}
       </div>
 
-      {/* Right Side */}
-      <div className="w-full lg:w-2/3 mt-8 lg:mt-0 h-full flex flex-col">
+      {/* Right Side - Now with dynamic width */}
+      <div
+        className={`${layoutClasses.rightWidth} mt-8 lg:mt-0 h-full flex flex-col`}
+      >
         <div className="flex-1 h-full">{renderRightSide()}</div>
 
         {/* Status Message for reversed layouts */}
