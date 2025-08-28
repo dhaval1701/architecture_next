@@ -24,7 +24,7 @@ export default function RootLayout({
       <body className={`${roboto.className} antialiased`}>
         <Header />
         {/* px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32 */}
-        <main className="min-h-screen px-4 sm:px-8 md:px-34 py-12 pt-28">
+        <main className="min-h-screen px-3 sm:px-6 md:px-8 lg:px-24 xl:px-20 2xl:px-24 3xl:px-32 4xl:px-40 pt-28">
           {children}
         </main>
         <Footer />

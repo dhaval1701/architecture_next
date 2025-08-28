@@ -63,14 +63,15 @@ const defaultImages: ImageData[] = [
 
 const imagesPerPage = 6;
 
+// Keep the original grid classes - no changes to grid structure
 const getGridClasses = (size: ImageData["size"]): string => {
   switch (size) {
     case "wide":
-      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1";
+      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1 3xl:col-span-2 3xl:row-span-1";
     case "tall":
-      return "col-span-1 row-span-1 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2";
+      return "col-span-1 row-span-1 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 3xl:col-span-1 3xl:row-span-2";
     case "large":
-      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2";
+      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2 3xl:col-span-2 3xl:row-span-2";
     case "single":
     default:
       return "col-span-1 row-span-1";
@@ -143,18 +144,19 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className="md:pt-2 flex flex-col justify-between">
-      <div className="mb-6 sm:mb-8 w-full">
-        <h1 className="text-2xl sm:text-4xl md:text-5xl font-light text-gray-400 mb-1 break-words">
+    <div className="px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 md:pt-2 flex flex-col justify-between min-h-screen 3xl:max-w-7xl 3xl:mx-auto 3xl:px-8 4xl:max-w-none 4xl:mx-auto 4xl:px-16">
+      {/* Header - Only increase text size for 4xl */}
+      <div className="mb-6 sm:mb-8 w-full 3xl:mb-12 4xl:mb-16">
+        <h1 className="text-2xl sm:text-4xl md:text-5xl 3xl:text-6xl 4xl:text-8xl font-light text-gray-400 mb-1 break-words 4xl:mb-3">
           Photo
         </h1>
-        <h2 className="text-2xl sm:text-4xl md:text-5xl font-bold text-gray-800 break-words">
+        <h2 className="text-2xl sm:text-4xl md:text-5xl 3xl:text-6xl 4xl:text-8xl font-bold text-gray-800 break-words">
           Gallery
         </h2>
       </div>
 
-      {/* Gallery Grid */}
-      <div className="mx-auto flex-1 mb-10">
+      {/* Gallery Grid - Keep original grid, only increase row heights for 4xl */}
+      <div className="mx-auto flex-1 mb-10 w-full 4xl:mb-16">
         <AnimatePresence mode="wait">
           <motion.div
             key={currentPage}
@@ -162,7 +164,7 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 auto-rows-[200px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 3xl:grid-cols-4 gap-4 3xl:gap-6 4xl:gap-8 auto-rows-[200px] 3xl:auto-rows-[300px] 4xl:auto-rows-[400px]"
             style={{ gridAutoFlow: "row dense" }}
           >
             {currentImages.map((image) => (
@@ -179,10 +181,10 @@ const Gallery: React.FC = () => {
                 <Image
                   src={image.src}
                   alt={image.alt}
-                  width={100}
-                  height={100}
-                  className="w-full h-full object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                  fill
+                  className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
                   loading="lazy"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw, (min-width: 2560px) 25vw"
                 />
               </motion.div>
             ))}
@@ -190,22 +192,22 @@ const Gallery: React.FC = () => {
         </AnimatePresence>
       </div>
 
-      {/* Custom Pagination Design */}
-      <div className="mx-auto w-full flex items-end lg:items-start lg:mt-auto my-6 sm:mt-14">
+      {/* Custom Pagination Design - Increase sizes for 4xl */}
+      <div className="mx-auto w-full flex items-end lg:items-start lg:mt-auto my-6 sm:mt-14 3xl:mt-20 4xl:mt-24">
         <motion.div
           className="flex items-center"
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
         >
           {/* Slide Counter */}
-          <div className="flex items-center mr-4 sm:mr-6">
-            <span className="text-gray-500 text-xl sm:text-2xl md:text-3xl font-light min-w-[20px] sm:min-w-[24px] text-right">
+          <div className="flex items-center mr-4 sm:mr-6 4xl:mr-8">
+            <span className="text-gray-500 text-xl sm:text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl font-light min-w-[20px] sm:min-w-[24px] 3xl:min-w-[30px] 4xl:min-w-[40px] text-right">
               {currentPage}
             </span>
-            <div className="text-gray-200 text-xl sm:text-2xl md:text-3xl mx-2 sm:mx-4">
+            <div className="text-gray-200 text-xl sm:text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl mx-2 sm:mx-4 3xl:mx-5 4xl:mx-6">
               /
             </div>
-            <span className="text-gray-400 text-xl sm:text-2xl md:text-3xl font-light min-w-[20px] sm:min-w-[24px]">
+            <span className="text-gray-400 text-xl sm:text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl font-light min-w-[20px] sm:min-w-[24px] 3xl:min-w-[30px] 4xl:min-w-[40px]">
               {totalPages}
             </span>
           </div>
@@ -215,7 +217,7 @@ const Gallery: React.FC = () => {
             <motion.button
               onClick={() => handlePageChange(currentPage - 1)}
               disabled={currentPage === 1}
-              className={`w-10 h-10 sm:w-12 sm:h-12 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors mr-3 sm:mr-4 ${
+              className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-16 3xl:h-16 4xl:w-20 4xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors mr-3 sm:mr-4 4xl:mr-6 ${
                 currentPage === 1
                   ? "opacity-50 cursor-not-allowed bg-gray-100"
                   : "hover:bg-gray-50"
@@ -229,14 +231,13 @@ const Gallery: React.FC = () => {
                 alt="Previous"
                 width={16}
                 height={16}
-                className="w-4 h-4 sm:w-5 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5 3xl:w-6 3xl:h-6 4xl:w-8 4xl:h-8"
               />
             </motion.button>
-
             <motion.button
               onClick={() => handlePageChange(currentPage + 1)}
               disabled={currentPage === totalPages}
-              className={`w-10 h-10 sm:w-12 sm:h-12 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors ${
+              className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-16 3xl:h-16 4xl:w-20 4xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors ${
                 currentPage === totalPages
                   ? "opacity-50 cursor-not-allowed bg-gray-100"
                   : "bg-gray-50 hover:bg-gray-100"
@@ -250,14 +251,14 @@ const Gallery: React.FC = () => {
                 alt="Next"
                 width={16}
                 height={16}
-                className="w-4 h-4 sm:w-5 sm:h-5"
+                className="w-4 h-4 sm:w-5 sm:h-5 3xl:w-6 3xl:h-6 4xl:w-8 4xl:h-8"
               />
             </motion.button>
           </div>
         </motion.div>
       </div>
 
-      {/* Modal for Large Image */}
+      {/* Modal for Large Image - Increase modal size for 4xl */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -265,7 +266,7 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4 3xl:p-8 4xl:p-12"
             onClick={closeModal}
           >
             {/* Blurred Background */}
@@ -274,11 +275,11 @@ const Gallery: React.FC = () => {
             {/* Close Button - Outside image, top right */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 z-20 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
+              className="absolute top-4 right-4 3xl:top-8 3xl:right-8 4xl:top-12 4xl:right-12 z-20 p-3 3xl:p-4 4xl:p-6 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
               aria-label="Close modal"
             >
               <svg
-                className="w-6 h-6"
+                className="w-6 h-6 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -298,15 +299,15 @@ const Gallery: React.FC = () => {
               initial="hidden"
               animate="visible"
               exit="exit"
-              className="relative max-w-4xl max-h-[90vh] rounded-lg overflow-hidden"
+              className="relative max-w-4xl 3xl:max-w-6xl 4xl:max-w-[100rem] max-h-[90vh] rounded-lg overflow-hidden"
               onClick={(e) => e.stopPropagation()}
             >
               {/* Large Image */}
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                width={800}
-                height={600}
+                width={1920}
+                height={1440}
                 className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl"
                 priority
               />

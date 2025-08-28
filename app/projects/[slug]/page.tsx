@@ -41,19 +41,24 @@ export default function ProductDetail({
 
   if (loading) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center">
-        <div className="text-gray-500 text-lg">Loading project...</div>
+      <div className="min-h-screen bg-white flex items-center justify-center px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32">
+        <div className="text-gray-500 text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+          Loading project...
+        </div>
       </div>
     );
   }
 
   if (!project) {
     return (
-      <div className="min-h-screen bg-white flex items-center justify-center flex-col">
-        <h1 className="text-2xl font-bold text-gray-800 mb-4">
+      <div className="min-h-screen bg-white flex items-center justify-center flex-col px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32">
+        <h1 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 3xl:text-6xl 4xl:text-8xl font-bold text-gray-800 mb-4 sm:mb-6 lg:mb-8 xl:mb-10 3xl:mb-12 4xl:mb-16">
           Project Not Found
         </h1>
-        <Link href="/projects" className="text-blue-600 hover:text-blue-800">
+        <Link
+          href="/projects"
+          className="text-blue-600 hover:text-blue-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 3xl:text-3xl 4xl:text-4xl transition-colors"
+        >
           ← Back to Projects
         </Link>
       </div>
@@ -63,15 +68,15 @@ export default function ProductDetail({
   const currentImage = project.images[currentImageIndex];
 
   return (
-    <div>
+    <div className="px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32">
       {/* Header */}
-      <div className="bg-white mb-10">
+      <div className="bg-white mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 3xl:mb-24 4xl:mb-32">
         <div className="mx-auto">
-          <div className="mb-8">
-            <p className="text-gray-400 text-2xl md:text-5xl font-light mb-2">
+          <div className="mb-6 sm:mb-8 lg:mb-10 xl:mb-12 3xl:mb-16 4xl:mb-20">
+            <p className="text-gray-400 text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8">
               Project
             </p>
-            <h1 className="text-gray-800 text-3xl md:text-5xl font-bold">
+            <h1 className="text-gray-800 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
               {project.title}
             </h1>
           </div>
@@ -79,79 +84,93 @@ export default function ProductDetail({
       </div>
 
       {/* Main Content */}
-      <div className="mb-10">
-        <div className="mx-auto ">
+      <div className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 3xl:mb-24 4xl:mb-32">
+        <div className="mx-auto">
           {/* First Row: Left Content + Right Image */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-32 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 3xl:py-32 4xl:py-40">
             {/* Left Column - Project Details */}
-            <div className="space-y-8">
-              <div className="space-y-2">
-                <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-gray-800">Location:</h3>
-                  <p className="text-gray-600 font-light">{project.location}</p>
+            <div className="space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10 3xl:space-y-12 4xl:space-y-16">
+              <div className="space-y-2 sm:space-y-3 lg:space-y-4 xl:space-y-5 3xl:space-y-6 4xl:space-y-8">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
+                  <h3 className="font-medium text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    Location:
+                  </h3>
+                  <p className="text-gray-600 font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    {project.location}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-gray-800">Plot Area:</h3>
-                  <p className="text-gray-600 font-light">{project.plotArea}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
+                  <h3 className="font-medium text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    Plot Area:
+                  </h3>
+                  <p className="text-gray-600 font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    {project.plotArea}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-gray-800">Built up area:</h3>
-                  <p className="text-gray-600 font-light">
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
+                  <h3 className="font-medium text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    Built up area:
+                  </h3>
+                  <p className="text-gray-600 font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
                     {project.builtUpArea}
                   </p>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-gray-800">Client:</h3>
-                  <p className="text-gray-600 font-light">{project.client}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
+                  <h3 className="font-medium text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    Client:
+                  </h3>
+                  <p className="text-gray-600 font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    {project.client}
+                  </p>
                 </div>
 
-                <div className="flex items-center gap-2">
-                  <h3 className="font-medium text-gray-800">Year:</h3>
-                  <p className="text-gray-600 font-light">{project.year}</p>
+                <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
+                  <h3 className="font-medium text-gray-800 text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    Year:
+                  </h3>
+                  <p className="text-gray-600 font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
+                    {project.year}
+                  </p>
                 </div>
               </div>
             </div>
 
             {/* Right Column - First Image */}
-            <div className="lg:pl-8">
+            <div className="lg:pl-4 xl:pl-8 3xl:pl-12 4xl:pl-16">
               <div className="aspect-[4/3] rounded-lg overflow-hidden">
                 <Image
                   src={project.images[0]?.url || project.imageUrl}
                   alt={project.images[0]?.alt || project.title}
-                  height={500}
-                  width={500}
-                  className="w-full h-full object-cover"
+                  height={800}
+                  width={800}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
           </div>
 
           {/* Second Row: Left Image + Right Content */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-12 py-16">
+          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-32 py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 3xl:py-32 4xl:py-40">
             {/* Left Column - Second Image */}
-            <div className="lg:pr-8">
+            <div className="lg:pr-4 xl:pr-8 3xl:pr-12 4xl:pr-16 order-2 lg:order-1">
               <div className="aspect-[4/3] rounded-lg overflow-hidden">
                 <Image
                   src={project.images[1]?.url || project.imageUrl}
                   alt={project.images[1]?.alt || project.title}
-                  height={500}
-                  width={500}
-                  className="w-full h-full object-cover"
+                  height={800}
+                  width={800}
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
 
             {/* Right Column - Description */}
-            <div className="flex flex-col justify-start space-y-6">
+            <div className="flex flex-col justify-start space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10 3xl:space-y-12 4xl:space-y-16 order-1 lg:order-2">
               <div>
-                {/* <p className="text-sm text-gray-600 font-medium mb-4 cursor-pointer">
-                  {project.longDescription || project.description}
-                </p> */}
-
-                <div className="space-y-4 text-gray-600 leading-relaxed">
+                <div className="space-y-3 sm:space-y-4 lg:space-y-6 xl:space-y-8 3xl:space-y-10 4xl:space-y-12 text-gray-600 leading-relaxed md:leading-loose lg:leading-loose xl:leading-loose 3xl:leading-loose 4xl:leading-loose text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl">
                   <p>
                     Featuring a built façade with red oval fire and stark
                     concrete forms, the design offers a strong architectural
@@ -173,12 +192,12 @@ export default function ProductDetail({
       </div>
 
       {/* Large Image Slider Section */}
-      <div className="bg-white py-16">
+      <div className="bg-white py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 3xl:py-32 4xl:py-40">
         <div className="mx-auto">
-          <div className="space-y-8">
+          <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:space-y-12 3xl:space-y-16 4xl:space-y-20">
             {/* Main Large Image Display */}
             <div className="relative">
-              <div className="relative h-[500px] md:h-[700px] overflow-hidden rounded-lg ">
+              <div className="relative h-64 sm:h-80 md:h-96 lg:h-[500px] xl:h-[600px] 2xl:h-[700px] 3xl:h-[900px] 4xl:h-[1200px] overflow-hidden rounded-lg">
                 <AnimatePresence mode="wait">
                   <motion.img
                     key={currentImageIndex}
@@ -197,17 +216,17 @@ export default function ProductDetail({
                   <>
                     <button
                       onClick={handlePrevImage}
-                      className="absolute left-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg backdrop-blur-sm"
+                      className="absolute left-3 sm:left-4 md:left-6 lg:left-8 xl:left-10 3xl:left-12 4xl:left-16 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 3xl:w-20 3xl:h-20 4xl:w-24 4xl:h-24 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg backdrop-blur-sm"
                       aria-label="Previous image"
                     >
                       <svg
-                        width="20"
-                        height="20"
+                        width="16"
+                        height="16"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
-                        className="text-gray-700"
+                        className="text-gray-700 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
                       >
                         <path d="m15 18-6-6 6-6" />
                       </svg>
@@ -215,17 +234,17 @@ export default function ProductDetail({
 
                     <button
                       onClick={handleNextImage}
-                      className="absolute right-6 top-1/2 -translate-y-1/2 w-14 h-14 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg backdrop-blur-sm"
+                      className="absolute right-3 sm:right-4 md:right-6 lg:right-8 xl:right-10 3xl:right-12 4xl:right-16 top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 md:w-14 md:h-14 lg:w-16 lg:h-16 xl:w-18 xl:h-18 3xl:w-20 3xl:h-20 4xl:w-24 4xl:h-24 bg-white/90 hover:bg-white rounded-full flex items-center justify-center transition-all duration-200 shadow-lg backdrop-blur-sm"
                       aria-label="Next image"
                     >
                       <svg
-                        width="20"
-                        height="20"
+                        width="16"
+                        height="16"
                         viewBox="0 0 24 24"
                         fill="none"
                         stroke="currentColor"
                         strokeWidth="2"
-                        className="text-gray-700"
+                        className="text-gray-700 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
                       >
                         <path d="m9 18 6-6-6-6" />
                       </svg>
@@ -235,7 +254,7 @@ export default function ProductDetail({
 
                 {/* Image Counter */}
                 {project.images.length > 1 && (
-                  <div className="absolute bottom-6 right-6 bg-black/60 text-white px-4 py-2 rounded-full text-sm backdrop-blur-sm">
+                  <div className="absolute bottom-3 sm:bottom-4 md:bottom-6 lg:bottom-8 xl:bottom-10 3xl:bottom-12 4xl:bottom-16 right-3 sm:right-4 md:right-6 lg:right-8 xl:right-10 3xl:right-12 4xl:right-16 bg-black/60 text-white px-3 py-1 sm:px-4 sm:py-2 lg:px-5 lg:py-2 xl:px-6 xl:py-3 3xl:px-8 3xl:py-4 4xl:px-10 4xl:py-5 rounded-full text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 3xl:text-2xl 4xl:text-3xl backdrop-blur-sm">
                     {currentImageIndex + 1} / {project.images.length}
                   </div>
                 )}
@@ -244,13 +263,13 @@ export default function ProductDetail({
 
             {/* Thumbnail Gallery */}
             {project.images.length > 1 && (
-              <div className="flex gap-4 overflow-x-auto pb-4 scrollbar-hide">
-                <div className="flex gap-4 mx-auto">
+              <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 3xl:gap-8 4xl:gap-10 overflow-x-auto pb-4 scrollbar-hide">
+                <div className="flex gap-2 sm:gap-3 md:gap-4 lg:gap-5 xl:gap-6 3xl:gap-8 4xl:gap-10 mx-auto">
                   {project.images.map((image, index) => (
                     <button
                       key={image.id}
                       onClick={() => setCurrentImageIndex(index)}
-                      className={`flex-shrink-0 w-24 h-24 md:w-28 md:h-28 rounded-lg overflow-hidden border-3 transition-all duration-300 ${
+                      className={`flex-shrink-0 w-16 h-16 sm:w-20 sm:h-20 md:w-24 md:h-24 lg:w-28 lg:h-28 xl:w-32 xl:h-32 2xl:w-36 2xl:h-36 3xl:w-40 3xl:h-40 4xl:w-48 4xl:h-48 rounded-lg overflow-hidden border-2 sm:border-3 transition-all duration-300 ${
                         index === currentImageIndex
                           ? "border-gray-800 shadow-lg scale-105"
                           : "border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100"

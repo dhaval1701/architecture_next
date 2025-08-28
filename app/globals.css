@@ -13,6 +13,20 @@
 
   --color-primary-bg: #333333;
   --color-primary-bg-dark: #1d4ed8;
+
+  --breakpoint-3xl: 120rem; /* 1920px for large desktop/TV */
+  --breakpoint-4xl: 160rem; /* 2560px for 4K/55-inch TV */
+
+  /* Custom Spacing */
+  --spacing-18: 4.5rem;
+  --spacing-82: 20.5rem;
+  --spacing-96: 24rem;
+  --spacing-128: 32rem;
+
+  /* Custom Font Sizes */
+  --font-size-10xl: 10rem;
+  --font-size-11xl: 12rem;
+  --font-size-12xl: 14rem;
 }
 
 @media (prefers-color-scheme: dark) {

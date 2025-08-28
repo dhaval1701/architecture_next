@@ -63,7 +63,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full h-16 sm:h-18 md:h-20 lg:h-22 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-8 md:px-34 z-50 bg-white">
+    <header className="w-full h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-24 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-24 xl:px-20 2xl:px-24 3xl:px-32 4xl:px-40 z-50 bg-white">
       {/* Logo */}
       <div className="flex items-center flex-shrink-0">
         <Link href="/" className="flex items-center" onClick={closeMenu}>
@@ -72,21 +72,21 @@ const Header: React.FC = () => {
             alt="The 23rd Studio Logo"
             height={72}
             width={110}
-            className="h-6 w-auto sm:h-7 md:h-16 lg:h-20 p-1 sm:p-2 md:p-2 transition-all duration-200"
+            className="h-6 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-44 p-1 sm:p-1.5 md:p-2 lg:p-2.5 xl:p-3 2xl:p-4 3xl:p-5 4xl:p-4 transition-all duration-200"
             priority
           />
         </Link>
       </div>
 
       {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6">
+      <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-12">
         {menuItems.map((item: MenuItem) => (
           <Link
             key={item.name}
             href={item.path}
             className={`
-              relative text-gray-800 font-roboto text-xs lg:text-sm uppercase tracking-widest 
-              cursor-pointer transition-all duration-300 py-1 px-2 lg:px-3 xl:px-4
+              relative text-gray-800 font-roboto text-xs sm:text-sm md:text-base lg:text-[12px] xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest 
+              cursor-pointer transition-all duration-300 py-1 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-8 3xl:px-10 4xl:px-12
               hover:text-gray-600 whitespace-nowrap
               before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 
               before:bg-black before:transform before:scale-x-0 before:transition-transform 
@@ -108,17 +108,17 @@ const Header: React.FC = () => {
 
       {/* Mobile Menu Button */}
       <button
-        className="md:hidden z-50 relative p-2 flex items-center justify-center w-10 h-10 rounded-md hover:bg-gray-100 transition-colors duration-200"
+        className="md:hidden z-50 relative p-2 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md hover:bg-gray-100 transition-colors duration-200"
         onClick={toggleMenu}
         aria-label="Toggle menu"
         aria-expanded={isMenuOpen}
         type="button"
       >
-        <div className="relative w-5 h-5">
+        <div className="relative w-4 h-4 sm:w-5 sm:h-5">
           {isMenuOpen ? (
-            <X size={20} className="text-gray-800" />
+            <X size={20} className="text-gray-800 w-full h-full" />
           ) : (
-            <Menu size={20} className="text-gray-800" />
+            <Menu size={20} className="text-gray-800 w-full h-full" />
           )}
         </div>
       </button>
@@ -132,31 +132,31 @@ const Header: React.FC = () => {
         `}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between p-4 border-b border-gray-200 h-16 sm:h-18">
+        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 h-12 sm:h-14">
           <Image
             src="/logos/full_logo.svg"
             alt="The 23rd Studio Logo"
             height={32}
             width={100}
-            className="h-5 sm:h-6 w-auto"
+            className="h-4 sm:h-5 w-auto"
           />
           <button
             onClick={closeMenu}
-            className="p-2 hover:bg-gray-100 rounded-md transition-colors duration-200"
+            className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-md transition-colors duration-200"
             aria-label="Close menu"
           >
-            <X size={18} className="text-gray-600" />
+            <X size={16} className="text-gray-600 sm:w-4 sm:h-4" />
           </button>
         </div>
 
         {/* Drawer Menu Items */}
-        <div className="flex flex-col pt-4 px-2">
+        <div className="flex flex-col pt-3 sm:pt-4 px-2">
           {menuItems.map((item: MenuItem) => (
             <Link
               key={item.name}
               href={item.path}
               className={`
-                mx-2 mb-1 px-4 py-3 sm:py-4 text-gray-800 font-roboto text-sm sm:text-base 
+                mx-2 mb-1 px-3 sm:px-4 py-2.5 sm:py-3 text-gray-800 font-roboto text-sm sm:text-base 
                 uppercase tracking-widest cursor-pointer rounded-lg transition-all duration-200
                 hover:bg-gray-100 hover:text-black active:bg-gray-200
                 ${
@@ -173,7 +173,7 @@ const Header: React.FC = () => {
         </div>
 
         {/* Optional: Add some space at bottom for better UX */}
-        <div className="h-20" />
+        <div className="h-16 sm:h-20" />
       </div>
 
       {/* Mobile Overlay */}
