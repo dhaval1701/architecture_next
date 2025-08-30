@@ -3,6 +3,7 @@ import { useState, useEffect } from "react";
 import Image from "next/image";
 import { motion } from "framer-motion";
 import ButtonV1 from "./ButtonV1";
+import ScrollingText from "./ScrollingText";
 
 interface Project {
   id: number;
@@ -64,50 +65,12 @@ const HeroSection = () => {
   return (
     <section className="pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-32 3xl:pb-40 4xl:pb-48 relative ">
       {/* Auto-moving Background Text - Fully Responsive */}
-      <div className="breakout absolute -top-18 sm:-top-8 md:top-10 lg:-top-22 xl:-top-20 2xl:-top-28 3xl:-top-36 4xl:-top-34 left-0 z-0 select-none pointer-events-none overflow-hidden h-[60px] sm:h-[80px] md:h-[100px] lg:h-[160px] xl:h-[200px] 2xl:h-[260px] 3xl:h-[320px] 4xl:h-[380px] flex items-center">
-        <motion.div
-          className="flex whitespace-nowrap opacity-40"
-          animate={{
-            x: ["0%", "-100%"],
-          }}
-          transition={{
-            duration: 60,
-            ease: "linear",
-            repeat: Infinity,
-          }}
-        >
-          {[1, 2, 3, 4].map((index) => (
-            <div
-              key={index}
-              className="flex items-center mr-8 sm:mr-12 md:mr-16 lg:mr-20 xl:mr-28 2xl:mr-36 3xl:mr-44 4xl:mr-52 font-light sf-compact-fallback"
-              style={{ letterSpacing: "1.2em", wordSpacing: "1.8em" }}
-            >
-              {/* THE */}
-              <span className="text-gray-300 font-semibold text-[38px] xs:text-[32px] sm:text-[40px] md:text-[50px] lg:text-[104px] xl:text-[120px] 2xl:text-[160px] 3xl:text-[200px] 4xl:text-[400px]">
-                THE
-              </span>
-
-              {/* 23rd (wrapped together) */}
-              <div className="relative flex items-start ml-1.5 sm:ml-2 md:ml-3 lg:ml-5 xl:ml-6 2xl:ml-8 3xl:ml-10 4xl:ml-14">
-                <span className="font-semibold text-red-900 leading-none text-[38px] xs:text-[32px] sm:text-[40px] md:text-[50px] lg:text-[104px] xl:text-[120px] 2xl:text-[160px] 3xl:text-[200px] 4xl:text-[400px]">
-                  23
-                </span>
-                <span className="absolute font-semibold text-gray-300 -top-1.5 -right-4 sm:-top-2 sm:-right-5 md:-top-2.5 md:-right-6 lg:-top-3 lg:-right-12 xl:-top-4 xl:-right-16 2xl:-top-5 2xl:-right-20 3xl:-top-6 3xl:-right-26 4xl:-top-8 4xl:-right-32 text-[10px] xs:text-[12px] sm:text-[14px] md:text-[16px] lg:text-[40px] xl:text-[50px] 2xl:text-[70px] 3xl:text-[90px] 4xl:text-[110px]">
-                  rd
-                </span>
-              </div>
-
-              {/* STUDIO with space */}
-              <span className="font-semibold text-gray-300 ml-4 sm:ml-6 md:ml-8 lg:ml-16 xl:ml-20 2xl:ml-28 3xl:ml-36 4xl:ml-44 text-[38px] xs:text-[32px] sm:text-[40px] md:text-[50px] lg:text-[110px] xl:text-[130px] 2xl:text-[170px] 3xl:text-[210px] 4xl:text-[400px]">
-                studio
-              </span>
-            </div>
-          ))}
-        </motion.div>
+      <div className="breakout absolute -top-18 sm:-top-8 md:top-10 lg:-top-22 xl:-top-20 2xl:-top-34 3xl:-top-36 4xl:-top-46 left-0 z-0 select-none pointer-events-none overflow-hidden h-[60px] sm:h-[80px] md:h-[100px] lg:h-[160px] xl:h-[200px] 2xl:h-[260px] 3xl:h-[320px] 4xl:h-[380px] flex items-center">
+        <ScrollingText />
       </div>
 
       {/* Main Content - Mobile: column, Desktop: row */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-2 sm:mt-20 md:mt-24 lg:mt-14 xl:mt-32 2xl:mt-36 3xl:mt-44 4xl:mt-65">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-2 sm:mt-20 md:mt-24 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-44 4xl:mt-84">
         {/* For mobile: Image comes first */}
         {isMobile && (
           <div className="w-full mb-4 sm:mb-6 md:mb-8">
@@ -154,17 +117,17 @@ const HeroSection = () => {
               </div>
 
               {/* Project Details */}
-              <div className="space-y-0.5 sm:space-y-1 md:space-y-1.5 lg:space-y-2 xl:space-y-2.5 2xl:space-y-3 3xl:space-y-4 4xl:space-y-5 mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12 3xl:mb-16 4xl:mb-20 mt-1 sm:mt-2 md:mt-3 lg:mt-4 xl:mt-5 2xl:mt-6 3xl:mt-8 4xl:mt-10">
-                <div className="text-gray-300 text-left text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-7xl font-extralight">
+              <div className="space-y-0.5 sm:space-y-1 md:space-y-1.5 lg:space-y-2 xl:space-y-2 2xl:space-y-2 3xl:space-y-4 4xl:space-y-5 mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12 3xl:mb-16 4xl:mb-20 mt-1 sm:mt-2 md:mt-3 lg:mt-4 xl:mt-5 2xl:mt-6 3xl:mt-8 4xl:mt-10">
+                <div className="text-[#BDBDBD] text-left text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-7xl font-extralight">
                   {currentProject.location}
                 </div>
-                <div className="text-gray-300 text-left text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-7xl font-extralight">
+                <div className="text-[#BDBDBD] text-left text-xs xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-7xl font-extralight">
                   <span>{currentProject.area} ft</span>
                   <sup className="text-[8px] xs:text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 2xl:text-xl 3xl:text-2xl 4xl:text-3xl">
                     2
                   </sup>
                 </div>
-                <div className="text-gray-300 text-left text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl font-extralight">
+                <div className="text-[#BDBDBD] text-left text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl font-extralight">
                   {currentProject.timeline}
                 </div>
               </div>
@@ -222,7 +185,7 @@ const HeroSection = () => {
 
         {/* Right Content - Full Width/Height Image (Desktop only) */}
         {!isMobile && (
-          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-3/5 3xl:w-2/3 4xl:w-3/5 h-[80px] md:h-[350px] lg:h-[600px] xl:h-[500px] 2xl:h-[600px] 3xl:h-[700px] 4xl:h-[1720px]">
+          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-3/5 3xl:w-2/3 4xl:w-3/5 h-[80px] md:h-[350px] lg:h-[600px] xl:h-[500px] 2xl:h-[800px] 3xl:h-[700px] 4xl:h-[1720px]">
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src={currentProject.image}
@@ -242,8 +205,8 @@ const HeroSection = () => {
 
               {/* Bottom Left Overlay - View Project Button */}
               <div className="absolute bottom-0 left-0 z-10">
-                <button className="group flex items-center bg-white backdrop-blur-sm px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-12 3xl:px-14 4xl:px-16 py-1.5 sm:py-2 md:py-3 lg:py-4 xl:py-5 2xl:py-6 3xl:py-7 4xl:py-8 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl">
-                  <span className="text-[10px] xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest text-gray-800 mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8 font-medium">
+                <button className="group flex items-center bg-white backdrop-blur-sm px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-10 3xl:px-14 4xl:px-16 py-1.5 sm:py-2 md:py-3 lg:py-4 xl:py-5 2xl:py-5 3xl:py-7 4xl:py-8 hover:bg-white transition-all duration-300 shadow-lg hover:shadow-xl">
+                  <span className="text-[6px] xs:text-[6px] sm:text-[6px] md:[8px] lg:text-[8px] xl:text-[10px] 2xl:text-[12px] 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest text-gray-800 mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8 font-medium">
                     VIEW PROJECT
                   </span>
                   <Image

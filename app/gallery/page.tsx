@@ -63,15 +63,15 @@ const defaultImages: ImageData[] = [
 
 const imagesPerPage = 6;
 
-// Keep the original grid classes - no changes to grid structure
+// Updated grid classes with 2xl breakpoint
 const getGridClasses = (size: ImageData["size"]): string => {
   switch (size) {
     case "wide":
-      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1 3xl:col-span-2 3xl:row-span-1";
+      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1 2xl:col-span-2 2xl:row-span-1 3xl:col-span-2 3xl:row-span-1";
     case "tall":
-      return "col-span-1 row-span-1 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 3xl:col-span-1 3xl:row-span-2";
+      return "col-span-1 row-span-1 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 2xl:col-span-1 2xl:row-span-2 3xl:col-span-1 3xl:row-span-2";
     case "large":
-      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2 3xl:col-span-2 3xl:row-span-2";
+      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2 2xl:col-span-2 2xl:row-span-2 3xl:col-span-2 3xl:row-span-2";
     case "single":
     default:
       return "col-span-1 row-span-1";
@@ -144,7 +144,7 @@ const Gallery: React.FC = () => {
   };
 
   return (
-    <div className="px-4 sm:px-6 lg:px-8 xl:px-12 2xl:px-16 3xl:px-24 4xl:px-32 md:pt-2 flex flex-col justify-between min-h-screen 3xl:max-w-7xl 3xl:mx-auto 3xl:px-8 4xl:max-w-none 4xl:mx-auto 4xl:px-16">
+    <div className="flex flex-col justify-between">
       {/* Header - Only increase text size for 4xl */}
       <div className="mb-6 sm:mb-8 w-full 3xl:mb-12 4xl:mb-16">
         <h1 className="text-2xl sm:text-4xl md:text-5xl 3xl:text-6xl 4xl:text-8xl font-light text-gray-400 mb-1 break-words 4xl:mb-3">
@@ -155,7 +155,7 @@ const Gallery: React.FC = () => {
         </h2>
       </div>
 
-      {/* Gallery Grid - Keep original grid, only increase row heights for 4xl */}
+      {/* Gallery Grid - Updated with 2xl row heights */}
       <div className="mx-auto flex-1 mb-10 w-full 4xl:mb-16">
         <AnimatePresence mode="wait">
           <motion.div
@@ -164,14 +164,14 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 3xl:grid-cols-4 gap-4 3xl:gap-6 4xl:gap-8 auto-rows-[200px] 3xl:auto-rows-[300px] 4xl:auto-rows-[400px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 3xl:grid-cols-4 gap-4 2xl:gap-8 3xl:gap-6 4xl:gap-8 auto-rows-[200px] 2xl:auto-rows-[250px] 3xl:auto-rows-[300px] 4xl:auto-rows-[400px]"
             style={{ gridAutoFlow: "row dense" }}
           >
             {currentImages.map((image) => (
               <motion.div
                 key={`${currentPage}-${image.id}`}
                 variants={imageVariants}
-                className={`relative overflow-hidden rounded-lg shadow-lg group cursor-pointer bg-gray-200 ${getGridClasses(
+                className={`relative overflow-hidden group cursor-pointer bg-gray-200 ${getGridClasses(
                   image.size
                 )}`}
                 whileHover={{ scale: 1.03, zIndex: 10 }}
@@ -186,6 +186,26 @@ const Gallery: React.FC = () => {
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw, (min-width: 2560px) 25vw"
                 />
+
+                {/* Expand Icon - Shows on hover */}
+                <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
+                  <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 border border-white/20">
+                    <svg
+                      className="w-5 h-5 text-white"
+                      fill="none"
+                      stroke="currentColor"
+                      viewBox="0 0 24 24"
+                      xmlns="http://www.w3.org/2000/svg"
+                    >
+                      <path
+                        strokeLinecap="round"
+                        strokeLinejoin="round"
+                        strokeWidth={2}
+                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
+                      />
+                    </svg>
+                  </div>
+                </div>
               </motion.div>
             ))}
           </motion.div>

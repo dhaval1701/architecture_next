@@ -9,9 +9,9 @@ export interface Project {
   id: number;
   title: string;
   slug: string; // URL-friendly version for routing
-  description: string;
+  description: string[];
   longDescription?: string;
-  imageUrl: string; // Main thumbnail for list view
+  heroImage: string; // Main thumbnail for list view
   images: ProjectImage[]; // All project images
   category: string;
   location: string;
@@ -29,40 +29,23 @@ export const projectsData: Project[] = [
     id: 1,
     title: "The Vertic House",
     slug: "the-vertic-house",
-    description:
+    description: [
       "The Sarpanch House in Limbodara village, Gandhinagar, is a modern luxury residential that combines contemporary architecture with cultural identity.",
-    longDescription:
-      "Featuring a built façade with red oval fire and stark concrete forms, the design offers a strong architectural presence and clear character. The landscaped entrance enhances the home's appeal, offering a sustainable and welcoming design. More than a private home, it stands as a landmark of leadership, transparency, and progressive village development in Gandhinagar.",
-    imageUrl: "/assets/sarpanch_house_300.svg",
+      "Constructed with a built facade, the design offers a strong architectural presence and clear character.",
+      "Featuring a built facade with red oval fire and stark concrete forms, the design offers a strong architectural presence and clear character.",
+    ],
+    heroImage: "/projects/vertic_house/image_1.svg",
     images: [
       {
         id: "vertic-hero-1",
-        url: "/assets/sarpanch_house_300.svg",
+        url: "/projects/vertic_house/image_2.svg",
         alt: "The Vertic House exterior view",
         type: "hero",
       },
       {
         id: "vertic-gallery-1",
-        url: "/assets/sarpanch_house_300.svg",
+        url: "/projects/vertic_house/image_3.svg",
         alt: "The Vertic House side angle",
-        type: "gallery",
-      },
-      {
-        id: "vertic-gallery-2",
-        url: "/assets/sarpanch_house_300.svg",
-        alt: "The Vertic House interior living space",
-        type: "gallery",
-      },
-      {
-        id: "vertic-gallery-3",
-        url: "/assets/sarpanch_house_300.svg",
-        alt: "The Vertic House courtyard",
-        type: "gallery",
-      },
-      {
-        id: "vertic-gallery-4",
-        url: "/assets/sarpanch_house_300.svg",
-        alt: "The Vertic House night illumination",
         type: "gallery",
       },
     ],
@@ -73,124 +56,134 @@ export const projectsData: Project[] = [
     client: "Harendra Patel",
     year: "2025 - 2027",
     status: "ongoing",
-    features: [
-      "Contemporary Architecture",
-      "Cultural Integration",
-      "Sustainable Design",
-      "Landscaped Gardens",
-      "Modern Amenities",
-    ],
   },
   {
     id: 2,
-    title: "SK Farm",
-    slug: "sk-farm",
-    description:
-      "Luxury farmhouse design blending traditional and modern aesthetics with sustainable farming practices.",
-    longDescription:
-      "SK Farm represents the perfect harmony between modern luxury and traditional farming values. The design incorporates sustainable materials and energy-efficient systems while maintaining the rustic charm of countryside living.",
-    imageUrl: "/assets/sk_farm.svg",
+    title: "S. R. FARM",
+    slug: "s-r-farm",
+    description: [
+      "S.R. Farm House in Ranuj, Patan is designed as a statement of timeless luxury, combining classical European architecture with modern elegance.",
+      "The grand symmetrical facade, tall columns, elegant balconies, and detailed cornices reflect sophistication and strength, while expansive glass openings connect the interiors to nature. A majestic lion fountain in bronze forms the heart of the outdoor landscape, complemented by water features, well-maintained lush lined pathways, and ambient lighting enhance the serene yet royal environment.",
+      "More than just a residence, this farmhouse represents heritage exclusivity, and lifestyle, setting a new benchmark for luxury farmhouse design in Gujarat.",
+    ],
+    heroImage: "/projects/sr_farm/image_1.svg",
     images: [
       {
-        id: "sk-hero-1",
-        url: "/assets/projects/sk-farm/hero-1.jpg",
-        alt: "SK Farm main building",
+        id: "sr-hero-1",
+        url: "/projects/sr_farm/image_1.svg",
+        alt: "S.R. Farm main facade",
         type: "hero",
       },
       {
-        id: "sk-gallery-1",
-        url: "/assets/projects/sk-farm/farmhouse.jpg",
-        alt: "SK Farm traditional elements",
-        type: "gallery",
-      },
-      {
-        id: "sk-gallery-2",
-        url: "/assets/projects/sk-farm/landscape.jpg",
-        alt: "SK Farm landscaping",
+        id: "sr-gallery-1",
+        url: "/projects/sr_farm/image_2.svg",
+        alt: "S.R. Farm side view with landscaping",
         type: "gallery",
       },
     ],
     category: "Farm House",
-    location: "Ahmedabad, Gujarat",
-    plotArea: "2 Acres",
-    builtUpArea: "8000 sq ft",
-    client: "SK Group",
-    year: "2024 - 2026",
+    location: "Ranuj, Patan",
+    plotArea: "30,317 sq ft",
+    builtUpArea: "3500 sq ft",
+    client: "Tejani Patel",
+    year: "2025 - 2027",
     status: "ongoing",
-    features: [
-      "Sustainable Design",
-      "Traditional Architecture",
-      "Organic Farming Integration",
-      "Eco-friendly Materials",
-    ],
   },
   {
     id: 3,
-    title: "The Patel Mansion",
+    title: "THE PATEL MANSION",
     slug: "the-patel-mansion",
-    description:
-      "Elegant mansion with sophisticated design and premium finishes showcasing luxury living.",
-    longDescription:
-      "The Patel Mansion stands as a testament to luxury and sophistication. Every detail has been carefully crafted to create a harmonious blend of contemporary design and timeless elegance.",
-    imageUrl: "/assets/patel_mansion.svg",
+    description: [
+      "This businessman's residence in Gandhinagar blends modern architecture with timeless materials, combining exposed brick, stone cladding, and sleek concrete forms.",
+      "A cantilevered roof with a sculptural column defines the bold facade, while large openings connect the interiors to greenery. Palm-lined landscaping and integrated terraces soften the strong geometry, balancing elegance with comfort.",
+      "Designed for luxury and practicality, this house reflects success, lifestyle, and prestige, setting a benchmark for modern residential architecture in Gujarat.",
+    ],
+    heroImage: "/projects/patel_mansion/image_1.svg",
     images: [
       {
         id: "patel-hero-1",
-        url: "/assets/projects/patel-mansion/hero-1.jpg",
+        url: "/projects/patel_mansion/image_1.svg",
         alt: "The Patel Mansion facade",
         type: "hero",
       },
       {
         id: "patel-gallery-1",
-        url: "/assets/projects/patel-mansion/interior.jpg",
-        alt: "The Patel Mansion luxury interior",
+        url: "/projects/patel_mansion/image_2.svg",
+        alt: "The Patel Mansion side view",
         type: "gallery",
       },
     ],
     category: "Mansion",
-    location: "Surat, Gujarat",
-    plotArea: "15,000 sq ft",
-    builtUpArea: "12000 sq ft",
-    client: "Patel Family",
-    year: "2023 - 2025",
+    location: "Gandhinagar, Gujarat",
+    plotArea: "3314 sq ft",
+    builtUpArea: "5500 sq ft",
+    client: "Nilesh Patel",
+    year: "2024 - 2025",
     status: "completed",
-    features: [
-      "Luxury Finishes",
-      "Smart Home Technology",
-      "Premium Materials",
-      "Sophisticated Design",
-    ],
   },
   {
     id: 4,
-    title: "Saran Group",
+    title: "SARAN GROUP",
     slug: "saran-group",
-    description:
-      "Commercial project with innovative design and functional spaces for modern business needs.",
-    longDescription:
-      "The Saran Group commercial complex represents modern business architecture at its finest, combining functionality with aesthetic appeal to create an inspiring work environment.",
-    imageUrl: "/assets/saran_group.svg",
+    description: [
+      "Welcome to the Saran Group Office in Gandhinagar, a modern workspace that blends creativity, innovation, and elegance.",
+      "The highlight of this office is its iconic curve design wall, crafted to give the space a bold yet sophisticated character. Surrounded by lush greenery and premium landscaping, the office sets new standards in architectural design, sustainable practices and luxury commercial spaces.",
+      "Our design studio focuses on contemporary architecture and high-end design solutions that inspire productivity while showcasing timeless aesthetics.",
+    ],
+    heroImage: "/projects/saran_group/image_1.svg",
     images: [
       {
         id: "saran-hero-1",
-        url: "/assets/projects/saran-group/hero-1.jpg",
-        alt: "Saran Group commercial building",
+        url: "/projects/saran_group/image_1.svg",
+        alt: "Saran Group office exterior",
         type: "hero",
+      },
+      {
+        id: "saran-gallery-1",
+        url: "/projects/saran_group/image_2.svg",
+        alt: "Saran Group curved design wall",
+        type: "gallery",
       },
     ],
     category: "Commercial",
-    location: "Mumbai, Maharashtra",
-    plotArea: "50,000 sq ft",
-    builtUpArea: "25000 sq ft",
-    client: "Saran Group",
-    year: "2024 - 2026",
-    status: "ongoing",
-    features: [
-      "Modern Office Spaces",
-      "Flexible Layouts",
-      "Sustainable Systems",
-      "Premium Amenities",
+    location: "Gandhinagar, Gujarat",
+    plotArea: "3500 sq ft",
+    builtUpArea: "3100 sq ft",
+    client: "Surbhi Thakor",
+    year: "2024 - 2025",
+    status: "completed",
+  },
+  {
+    id: 5,
+    title: "THE GAGANGRIHA VILLA",
+    slug: "the-gagangriha-villa",
+    description: [
+      "The Gagangriha Villa in Gandhinagar is a masterpiece of luxury residential architecture, blending modern design with timeless classical elegance.",
+      "Featuring grand facade details, the highlighted colonial heritage aesthetics, and expansive glass balconies, the villa creates an atmosphere of refined sophistication. Landscaped gardens, premium outdoor lounges, and a stunning entrance chandelier complete the luxurious experience.",
+      "Every element has been thoughtfully designed to deliver comfort, prestige, and exclusivity making Gagangriha villa a true landmark in luxury home design in Gujarat.",
     ],
+    heroImage: "/projects/gagangriha_villa/image_1.svg",
+    images: [
+      {
+        id: "gagangriha-hero-1",
+        url: "/projects/gagangriha_villa/image_1.svg",
+        alt: "The Gagangriha Villa main facade",
+        type: "hero",
+      },
+      {
+        id: "gagangriha-gallery-1",
+        url: "/projects/gagangriha_villa/image_2.svg",
+        alt: "The Gagangriha Villa landscaped gardens",
+        type: "gallery",
+      },
+    ],
+    category: "Villa",
+    location: "Gandhinagar, Gujarat",
+    plotArea: "18,928 sq ft",
+    builtUpArea: "5100 sq ft",
+    client: "Manish Patel",
+    year: "2023 - 2025",
+    status: "completed",
   },
 ];
 

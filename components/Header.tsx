@@ -72,7 +72,7 @@ const Header: React.FC = () => {
             alt="The 23rd Studio Logo"
             height={72}
             width={110}
-            className="h-6 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-44 p-1 sm:p-1.5 md:p-2 lg:p-2.5 xl:p-3 2xl:p-4 3xl:p-5 4xl:p-4 transition-all duration-200"
+            className="h-6 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 p-1 sm:p-1.5 md:p-2 lg:p-2.5 xl:p-3 2xl:p-6 3xl:p-5 4xl:p-4 transition-all duration-200"
             priority
           />
         </Link>
@@ -85,23 +85,17 @@ const Header: React.FC = () => {
             key={item.name}
             href={item.path}
             className={`
-              relative text-gray-800 font-roboto text-xs sm:text-sm md:text-base lg:text-[12px] xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest 
-              cursor-pointer transition-all duration-300 py-1 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-8 3xl:px-10 4xl:px-12
-              hover:text-gray-600 whitespace-nowrap
-              before:absolute before:top-0 before:left-0 before:w-full before:h-0.5 
-              before:bg-black before:transform before:scale-x-0 before:transition-transform 
-              before:duration-300 hover:before:scale-x-100
-              after:absolute after:bottom-0 after:left-0 after:w-full after:h-0.5 
-              after:bg-black after:transform after:scale-x-0 after:transition-transform 
-              after:duration-300 hover:after:scale-x-100
-              ${
-                isActive(item.path)
-                  ? "before:scale-x-100 after:scale-x-100 text-black font-medium"
-                  : ""
-              }
-            `}
+    relative text-gray-800 font-roboto text-xs sm:text-sm md:text-base lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest 
+    cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-10 4xl:px-12
+    whitespace-nowrap
+    ${
+      isActive(item.path)
+        ? "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-black text-black font-medium"
+        : "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-transparent hover:border-black hover:text-gray-700"
+    }
+  `}
           >
-            <span className="relative z-10">{item.name}</span>
+            {item.name}
           </Link>
         ))}
       </nav>
