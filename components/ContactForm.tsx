@@ -330,7 +330,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         {/* Submit Button */}
         <div className="my-4 md:my-0 lg:mt-10">
           <ButtonV1
-            text={isSubmitting ? "Sending..." : "Send Email"}
+            text={isSubmitting ? "Sending..." : "Submit"}
             theme="dark"
           />
         </div>

@@ -32,8 +32,8 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
     <button
       className={`
         group flex items-center backdrop-blur-sm
-        px-3 sm:px-4 md:px-6 lg:px-8 xl:px-10 2xl:px-10 3xl:px-14 4xl:px-16
-        py-1.5 sm:py-2 md:py-3 lg:py-4 xl:py-5 2xl:py-5 3xl:py-7 4xl:py-8
+        px-3 sm:px-4 md:px-6 lg:px-8 xl:px-8 2xl:px-8 3xl:px-14 4xl:px-16
+        py-1.5 sm:py-2 md:py-3 lg:py-4 xl:py-4 2xl:py-4 3xl:py-7 4xl:py-8
         ${currentTheme.background}
         transition-all duration-300
         ${className}

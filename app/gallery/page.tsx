@@ -14,172 +14,172 @@ interface ImageData {
 const defaultImages: ImageData[] = [
   {
     id: 1,
-    src: "/gallery/image_1.svg",
+    src: "/gallery/image_1.webp",
     alt: "Modern Interior 1",
     size: "wide",
   },
   {
     id: 2,
-    src: "/gallery/image_2.svg",
+    src: "/gallery/image_2.webp",
     alt: "Modern Interior 2",
     size: "single",
   },
   {
     id: 3,
-    src: "/gallery/image_3.svg",
+    src: "/gallery/image_3.webp",
     alt: "Modern Interior 3",
     size: "single",
   },
   {
     id: 4,
-    src: "/gallery/image_4.svg",
+    src: "/gallery/image_4.webp",
     alt: "Modern Interior 4",
     size: "tall",
   },
   {
     id: 5,
-    src: "/gallery/image_5.svg",
+    src: "/gallery/image_5.webp",
     alt: "Modern Interior 5",
     size: "single",
   },
   {
     id: 6,
-    src: "/gallery/image_6.svg",
+    src: "/gallery/image_6.webp",
     alt: "Modern Interior 6",
     size: "single",
   },
   {
     id: 7,
-    src: "/gallery/image_7.svg",
+    src: "/gallery/image_7.webp",
     alt: "Modern Interior 7",
     size: "wide",
   },
 
   {
     id: 8,
-    src: "/gallery/image_8.svg",
+    src: "/gallery/image_8.webp",
     alt: "Modern Interior 8",
     size: "wide",
   },
   {
     id: 9,
-    src: "/gallery/image_9.svg",
+    src: "/gallery/image_9.webp",
     alt: "Modern Interior 9",
     size: "single",
   },
   {
     id: 10,
-    src: "/gallery/image_10.svg",
+    src: "/gallery/image_10.webp",
     alt: "Modern Interior 10",
     size: "single",
   },
   {
     id: 11,
-    src: "/gallery/image_11.svg",
+    src: "/gallery/image_11.webp",
     alt: "Modern Interior 11",
     size: "tall",
   },
   {
     id: 12,
-    src: "/gallery/image_12.svg",
+    src: "/gallery/image_12.webp",
     alt: "Modern Interior 12",
     size: "single",
   },
   {
     id: 13,
-    src: "/gallery/image_13.svg",
+    src: "/gallery/image_13.webp",
     alt: "Modern Interior 13",
     size: "single",
   },
   {
     id: 14,
-    src: "/gallery/image_14.svg",
+    src: "/gallery/image_14.webp",
     alt: "Modern Interior 14",
     size: "wide",
   },
 
   {
     id: 15,
-    src: "/gallery/image_15.svg",
+    src: "/gallery/image_15.webp",
     alt: "Modern Interior 15",
     size: "wide",
   },
   {
     id: 16,
-    src: "/gallery/image_16.svg",
+    src: "/gallery/image_16.webp",
     alt: "Modern Interior 16",
     size: "single",
   },
   {
     id: 17,
-    src: "/gallery/image_17.svg",
+    src: "/gallery/image_17.webp",
     alt: "Modern Interior 17",
     size: "single",
   },
   {
     id: 18,
-    src: "/gallery/image_18.svg",
+    src: "/gallery/image_18.webp",
     alt: "Modern Interior 18",
     size: "tall",
   },
   {
     id: 19,
-    src: "/gallery/image_19.svg",
+    src: "/gallery/image_19.webp",
     alt: "Modern Interior 19",
     size: "single",
   },
   {
     id: 20,
-    src: "/gallery/image_20.svg",
+    src: "/gallery/image_20.webp",
     alt: "Modern Interior 20",
     size: "single",
   },
   {
     id: 21,
-    src: "/gallery/image_21.svg",
+    src: "/gallery/image_21.webp",
     alt: "Modern Interior 21",
     size: "wide",
   },
 
   {
     id: 22,
-    src: "/gallery/image_22.svg",
+    src: "/gallery/image_22.webp",
     alt: "Modern Interior 22",
     size: "wide",
   },
   {
     id: 23,
-    src: "/gallery/image_23.svg",
+    src: "/gallery/image_23.webp",
     alt: "Modern Interior 23",
     size: "single",
   },
   {
     id: 24,
-    src: "/gallery/image_24.svg",
+    src: "/gallery/image_24.webp",
     alt: "Modern Interior 24",
     size: "single",
   },
   {
     id: 25,
-    src: "/gallery/image_25.svg",
+    src: "/gallery/image_25.webp",
     alt: "Modern Interior 25",
     size: "tall",
   },
   {
     id: 26,
-    src: "/gallery/image_26.svg",
+    src: "/gallery/image_26.webp",
     alt: "Modern Interior 26",
     size: "single",
   },
   {
     id: 27,
-    src: "/gallery/image_27.svg",
+    src: "/gallery/image_27.webp",
     alt: "Modern Interior 27",
     size: "single",
   },
   {
     id: 28,
-    src: "/gallery/image_28.svg",
+    src: "/gallery/image_28.webp",
     alt: "Modern Interior 28",
     size: "wide",
   },
@@ -297,7 +297,7 @@ const Gallery: React.FC = () => {
                 className={`relative overflow-hidden group cursor-pointer bg-gray-200 ${getGridClasses(
                   image.size
                 )}`}
-                whileHover={{ scale: 1.03, zIndex: 10 }}
+                // whileHover={{ scale: 1.03, zIndex: 10 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleImageClick(image)}
               >
@@ -305,7 +305,7 @@ const Gallery: React.FC = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-100"
+                  className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0"
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw"
                 />
@@ -395,24 +395,29 @@ const Gallery: React.FC = () => {
       <AnimatePresence>
         {selectedImage && (
           <motion.div
-            variants={backdropVariants}
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 z-50 flex items-center justify-center p-4 3xl:p-8 4xl:p-12"
+            className="fixed inset-0 z-50 flex items-center justify-center p-4"
             onClick={closeModal}
           >
             {/* Blurred Background */}
-            <div className="absolute inset-0 bg-black/50 backdrop-blur-md" />
+            <motion.div
+              initial={{ opacity: 0 }}
+              animate={{ opacity: 1 }}
+              exit={{ opacity: 0 }}
+              transition={{ duration: 0.3 }}
+              className="absolute inset-0 bg-black/50 backdrop-blur-md"
+            />
 
-            {/* Close Button - Outside image, top right */}
+            {/* Close Button */}
             <button
               onClick={closeModal}
-              className="absolute top-4 right-4 3xl:top-8 3xl:right-8 4xl:top-12 4xl:right-12 z-20 p-3 3xl:p-4 4xl:p-6 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
+              className="absolute top-4 right-4 z-20 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
               aria-label="Close modal"
             >
               <svg
-                className="w-6 h-6 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10"
+                className="w-6 h-6"
                 fill="none"
                 stroke="currentColor"
                 viewBox="0 0 24 24"
@@ -428,20 +433,18 @@ const Gallery: React.FC = () => {
 
             {/* Modal Content */}
             <motion.div
-              variants={modalVariants}
-              initial="hidden"
-              animate="visible"
-              exit="exit"
-              className="relative max-w-4xl 3xl:max-w-6xl 4xl:max-w-[100rem] max-h-[90vh] rounded-lg overflow-hidden"
+              initial={{ opacity: 0, scale: 0.95 }}
+              animate={{ opacity: 1, scale: 1 }}
+              exit={{ opacity: 0, scale: 0.95 }}
+              transition={{ delay: 0.2, duration: 0.3 }} // wait for backdrop first
+              className="relative flex items-center justify-center w-full h-full max-w-full max-h-full"
               onClick={(e) => e.stopPropagation()}
             >
-              {/* Large Image */}
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                width={1920}
-                height={1440}
-                className="w-full h-auto max-h-[90vh] object-contain rounded-lg shadow-2xl"
+                fill
+                className="object-contain rounded-lg shadow-2xl"
                 priority
               />
             </motion.div>

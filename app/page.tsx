@@ -274,7 +274,7 @@ export const Home = () => {
 
         {/* Button */}
         <div className="flex justify-start lg:justify-end mt-6 sm:mt-8 md:mt-12">
-          <ButtonV1 text="All Projects" theme="dark" />
+          <ButtonV1 text="View All" theme="dark" />
         </div>
       </section>
 

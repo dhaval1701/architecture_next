@@ -87,7 +87,7 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* Paragraphs */}
-          <div className="mt-6 sm:mt-8 lg:mt-10 xl:mt-12 3xl:mt-16 4xl:mt-20 space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10 3xl:space-y-12 4xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] 3xl:text-4xl 4xl:text-5xl text-black font-extralight leading-[25px] md:leading-loose">
+          <div className="mt-6 sm:mt-8 lg:mt-10 xl:mt-12 3xl:mt-16 4xl:mt-20 space-y-4 sm:space-y-6 lg:space-y-8 xl:space-y-10 3xl:space-y-12 4xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] 3xl:text-4xl 4xl:text-5xl text-black font-extralight leading-[20px] md:leading-[26px] 3xl:leading-loose">
             <p>
               At 23rd Design Studio, we are a contemporary architectural design
               practice founded by two principal architects with a shared vision
@@ -156,20 +156,20 @@ const AboutUs: React.FC = () => {
               </div>
 
               {/* Founder Content (50%) */}
-              <div className="lg:basis-1/2 flex flex-col justify-start h-full space-y-2  xl:space-y-8 3xl:space-y-10 4xl:space-y-12 px-4 sm:px-2 md:px-4 2xl:px-8">
+              <div className="lg:basis-1/2 flex flex-col justify-start h-full space-y-2  xl:space-y-8 3xl:space-y-10 4xl:space-y-12">
                 {/* Quote */}
                 <p className="text-base sm:text-lg md:text-[16px]  xl:text-3xl 2xl:text-[20px] 3xl:text-5xl 4xl:text-6xl font-medium text-gray-800">
                   &quot;{founder.quote}&quot;
                 </p>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-[14px] xl:text-2xl 2xl:text-[18px] 3xl:text-4xl 4xl:text-5xl text-black font-extralight leading-relaxed md:leading-[26px]">
+                <p className="text-sm sm:text-base md:text-[14px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl text-black font-extralight leading-relaxed md:leading-[26px]">
                   {founder.description}
                 </p>
 
                 {/* Name + Instagram */}
                 <div className="flex justify-between items-center gap-3 lg:gap-4 xl:gap-6 3xl:gap-8 4xl:gap-10 pt-2  xl:pt-4">
-                  <h4 className="text-lg sm:text-xl md:text-[14px]  2xl:text-[22px] 3xl:text-6xl 4xl:text-7xl font-bold text-[#7F3434]">
+                  <h4 className="text-lg sm:text-xl md:text-[14px] lg:text-[18px] xl:text-[20px]  2xl:text-[22px] 3xl:text-6xl 4xl:text-7xl font-bold text-[#7F3434]">
                     {founder.name}
                   </h4>
                   {founder.instagramUrl && (
