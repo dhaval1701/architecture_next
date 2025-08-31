@@ -65,12 +65,12 @@ const HeroSection = () => {
   return (
     <section className="pb-8 sm:pb-12 md:pb-16 lg:pb-20 xl:pb-24 2xl:pb-32 3xl:pb-40 4xl:pb-48 relative ">
       {/* Auto-moving Background Text - Fully Responsive */}
-      <div className="breakout absolute -top-18 sm:-top-8 md:top-10 lg:-top-22 xl:-top-20 2xl:-top-34 3xl:-top-36 4xl:-top-46 left-0 z-0 select-none pointer-events-none overflow-hidden h-[60px] sm:h-[80px] md:h-[100px] lg:h-[160px] xl:h-[200px] 2xl:h-[260px] 3xl:h-[320px] 4xl:h-[380px] flex items-center">
+      <div className="breakout absolute -top-14 sm:-top-8 md:top-10 lg:-top-22 xl:-top-20 2xl:-top-34 3xl:-top-36 4xl:-top-46 left-0 z-0 select-none pointer-events-none overflow-hidden h-[60px] sm:h-[80px] md:h-[100px] lg:h-[160px] xl:h-[200px] 2xl:h-[260px] 3xl:h-[320px] 4xl:h-[380px] flex items-center">
         <ScrollingText />
       </div>
 
       {/* Main Content - Mobile: column, Desktop: row */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-2 sm:mt-20 md:mt-24 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-44 4xl:mt-84">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-10 sm:mt-20 md:mt-24 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-44 4xl:mt-84">
         {/* For mobile: Image comes first */}
         {isMobile && (
           <div className="w-full mb-4 sm:mb-6 md:mb-8">

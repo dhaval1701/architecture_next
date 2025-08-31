@@ -46,7 +46,8 @@ const AboutUs: React.FC = () => {
   return (
     <div className="">
       {/* Header Section */}
-      <div className="mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-18 3xl:mb-28 4xl:mb-36">
+
+      <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
         <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-extralight mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           About
         </p>
@@ -57,7 +58,7 @@ const AboutUs: React.FC = () => {
 
       <div className="grid breakout lg:grid-cols-2 gap-6  lg:gap-2 3xl:gap-4 items-stretch mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 3xl:mb-36 4xl:mb-44">
         {/* Left side - Image */}
-        <div className="order-2 lg:order-1 h-full">
+        <div className="order-1 lg:order-1 h-full">
           <div className="relative h-full aspect-square w-full overflow-hidden">
             <Image
               src="/assets/about_us.svg"
@@ -70,7 +71,7 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Right side - Content */}
-        <div className="p-5 md:pd-0 order-1 lg:order-2 flex flex-col h-full justify-start 2xl:pr-16 3xl:pr-24 4xl:pr-32">
+        <div className="p-5 md:pd-0 order-2 lg:order-2 flex flex-col h-full justify-start 2xl:pr-34 3xl:pr-24 4xl:pr-32">
           {/* Heading */}
           <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 lg:gap-6">
             <p className="text-4xl sm:text-5xl md:text-6xl 2xl:text-7xl 3xl:text-[8rem] 4xl:text-[10rem] font-extralight text-[#BDBDBD] tracking-wider">
@@ -122,7 +123,6 @@ const AboutUs: React.FC = () => {
         </div>
       </div>
 
-      {/* Founder's Vision Section */}
       <div className="">
         {/* Section Heading */}
         <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-14 3xl:mb-22 4xl:mb-32">
@@ -135,40 +135,41 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Founders Grid */}
-        <div className="grid md:grid-cols-2 gap-8 sm:gap-10 lg:gap-12 xl:gap-12 3xl:gap-24 4xl:gap-32">
-          {foundersData.map((founder) => (
+        <div className="grid md:grid-cols-2 gap-2 sm:gap-4 lg:gap-6 xl:gap-12 3xl:gap-24 4xl:gap-32">
+          {foundersData.map((founder, index) => (
             <div
               key={founder.id}
-              className="flex flex-col lg:flex-row items-start gap-2 lg:gap-3 3xl:gap-5 4xl:gap-7 h-full"
+              className="flex flex-col lg:flex-row items-stretch gap-2 xl:gap-6 3xl:gap-8 4xl:gap-12 h-full"
             >
-              {/* Founder Image */}
-              <div className="flex-shrink-0">
-                <div className="w-full  overflow-hidden aspect-auto">
+              {/* Founder Image (50%) */}
+              <div className="lg:basis-1/2 flex-shrink-0">
+                <div className="w-full aspect-auto overflow-hidden">
+                  {/* 🔑 keeps a rectangular shape */}
                   <Image
                     src={founder.imageSrc}
                     alt={founder.name}
-                    width={512}
-                    height={512}
+                    width={800}
+                    height={600}
                     className="w-full h-full object-cover"
                   />
                 </div>
               </div>
 
-              {/* Founder Content */}
-              <div className="flex flex-col justify-start h-full space-y-4 sm:space-y-5 lg:space-y-6 xl:space-y-4 3xl:space-y-10 4xl:space-y-12 flex-1 px-10">
+              {/* Founder Content (50%) */}
+              <div className="lg:basis-1/2 flex flex-col justify-start h-full space-y-2  xl:space-y-8 3xl:space-y-10 4xl:space-y-12 px-4 sm:px-2 md:px-4 2xl:px-8">
                 {/* Quote */}
-                <p className="text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-[18px] 3xl:text-5xl 4xl:text-6xl font-medium text-gray-800">
+                <p className="text-base sm:text-lg md:text-[16px]  xl:text-3xl 2xl:text-[20px] 3xl:text-5xl 4xl:text-6xl font-medium text-gray-800">
                   &quot;{founder.quote}&quot;
                 </p>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-[16px] 3xl:text-4xl 4xl:text-5xl text-black font-extralight leading-relaxed md:leading-[25px]">
+                <p className="text-sm sm:text-base md:text-[14px] xl:text-2xl 2xl:text-[18px] 3xl:text-4xl 4xl:text-5xl text-black font-extralight leading-relaxed md:leading-[26px]">
                   {founder.description}
                 </p>
 
                 {/* Name + Instagram */}
-                <div className="flex justify-between items-center gap-3 lg:gap-4 xl:gap-6 3xl:gap-8 4xl:gap-10 pt-2 sm:pt-3 lg:pt-4">
-                  <h4 className="text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[20px] 3xl:text-6xl 4xl:text-7xl font-bold text-[#7F3434]">
+                <div className="flex justify-between items-center gap-3 lg:gap-4 xl:gap-6 3xl:gap-8 4xl:gap-10 pt-2  xl:pt-4">
+                  <h4 className="text-lg sm:text-xl md:text-[14px]  2xl:text-[22px] 3xl:text-6xl 4xl:text-7xl font-bold text-[#7F3434]">
                     {founder.name}
                   </h4>
                   {founder.instagramUrl && (
@@ -179,7 +180,7 @@ const AboutUs: React.FC = () => {
                       className="text-[#7F3434] hover:text-[#7F3434] transition-colors"
                       aria-label={`${founder.name} Instagram profile`}
                     >
-                      <Instagram className="w-5 h-5 sm:w-6 sm:h-6 md:w-7 md:h-7 lg:w-8 lg:h-8 xl:w-9 xl:h-9 2xl:w-10 2xl:h-6 3xl:w-12 3xl:h-12 4xl:w-16 4xl:h-16" />
+                      <Instagram className="w-5 h-5 sm:w-6 sm:h-6 md:w-5 md:h-5  xl:w-9 xl:h-9 2xl:w-10 3xl:w-12 3xl:h-12 4xl:w-16 4xl:h-16" />
                     </a>
                   )}
                 </div>

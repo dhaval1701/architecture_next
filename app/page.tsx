@@ -43,7 +43,7 @@ export const Home = () => {
         className="relative z-10 bg-cover bg-center mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48"
         style={{ backgroundImage: "url('/assets/home_background_1.svg')" }} // 👈 your background here
       >
-        <div className="px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-16 3xl:px-26 4xl:px-32">
+        <div className="px-6 sm:px-8 lg:px-10 xl:px-13 2xl:px-16 3xl:px-26 4xl:px-32">
           <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 xl:gap-16 2xl:gap-10 3xl:gap-24">
             {/* Image Section - Left (55%) */}
             <div className="w-full lg:w-[57%] flex justify-center lg:justify-start">
@@ -59,14 +59,14 @@ export const Home = () => {
             </div>
 
             {/* Content Section - Right (45%) */}
-            <div className="w-full lg:w-[43%] flex flex-col justify-start text-left p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+            <div className="w-full lg:w-[43%] flex flex-col justify-start text-left p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12">
               {/* Title */}
               <h1 className="text-[#909090] font-extralight leading-tight mb-4 sm:mb-6 lg:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[74px] 3xl:text-[80px] 4xl:text-[100px]">
                 Architects
               </h1>
 
               {/* Description */}
-              <p className="text-[#333333] font-extralight leading-[28px] text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
+              <p className="text-[#333333] font-extralight leading-[28px] text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
                 Two architects walked into a studio… and never looked back.
                 That&apos;s how{" "}
                 <span className="font-bold">23rd Design Studio</span> began as a
@@ -81,11 +81,11 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="breakout mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <div className="breakout mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Mission Statement Section */}
         <section className="overflow-hidden">
           {/* Section Heading */}
-          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-center lg:text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
+          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
             Mission Statement
           </div>
 
@@ -100,14 +100,14 @@ export const Home = () => {
               {missionItems.map((item, index) => (
                 <div
                   key={index}
-                  className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 lg:pr-20 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48"
+                  className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48"
                   style={{ width: "clamp(300px, 40vw, 700px)" }} // adaptive card width
                 >
                   {/* Number */}
                   <div
-                    className="text-gray-300 font-black mr-4 sm:mr-6 md:mr-8 lg:mr-10 xl:mr-12 2xl:mr-14 3xl:mr-16 4xl:mr-20"
+                    className="text-gray-300 font-black mr-4 sm:mr-6 md:mr-8 xl:mr-12 2xl:mr-14 3xl:mr-16 4xl:mr-20"
                     style={{
-                      fontSize: "clamp(6rem, 12vw, 20rem)",
+                      fontSize: "clamp(6rem, 13vw, 20rem)",
                       lineHeight: "0.75",
                       fontWeight: "500",
                     }}
@@ -116,8 +116,8 @@ export const Home = () => {
                   </div>
                   {/* Text */}
                   <div
-                    className="text-[#333333] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
-                leading-5 sm:leading-6 md:leading-7 lg:leading-8 xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
+                    className="text-[#333333] text-xs sm:text-sm md:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
+                leading-5 sm:leading-6 md:leading-6  xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
                 flex-1 whitespace-normal break-words"
                   >
                     {item.text}
@@ -153,7 +153,7 @@ export const Home = () => {
       </div>
 
       {/* CTA Section */}
-      <section className="breakout relative mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <section className="breakout relative mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Base gradient */}
         <div
           className="absolute inset-0"
@@ -176,8 +176,8 @@ export const Home = () => {
         </div>
 
         <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 relative z-10 h-full">
-          <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-18 3xl:py-32 4xl:py-40">
-            <div className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[32px] 3xl:text-6xl 4xl:text-7xl mb-4 lg:mb-0">
+          <div className="flex flex-col lg:flex-row items-center justify-between text-left py-6 sm:py-8 md:py-12 xl:py-20 2xl:py-18 3xl:py-32 4xl:py-40">
+            <div className="text-white text-lg sm:text-xl md:text-[26px] xl:text-[28px] 2xl:text-[32px] 3xl:text-6xl 4xl:text-7xl mb-4 lg:mb-0">
               Ready to transform your space?
             </div>
 
@@ -193,9 +193,9 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <section className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Section Title */}
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-center lg:text-left">
+        <div className="text-[#BDBDBD] text-2xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left">
           Our Projects
         </div>
 
@@ -232,7 +232,7 @@ export const Home = () => {
                   return (
                     <div
                       key={project.id}
-                      className={`relative w-full ${basisClass} h-48 sm:h-56 md:h-64 3xl:h-[22rem] 4xl:h-[28rem] overflow-hidden group`}
+                      className={`relative w-full ${basisClass} h-48 sm:h-56 md:h-44 xl:h-64 3xl:h-[22rem] 4xl:h-[28rem] overflow-hidden group`}
                     >
                       <Image
                         src={project.heroImage}
@@ -242,7 +242,7 @@ export const Home = () => {
                       />
 
                       {/* Overlay */}
-                      <div className="absolute inset-0 bg-black/60 flex items-center justify-start">
+                      <div className="absolute inset-0 bg-transparent group-hover:bg-black/60 transition-colors flex items-center justify-start">
                         <div
                           className="
                     opacity-0 translate-y-10 
@@ -273,14 +273,14 @@ export const Home = () => {
         </div>
 
         {/* Button */}
-        <div className="flex justify-center lg:justify-end mt-6 sm:mt-8 md:mt-12">
+        <div className="flex justify-start lg:justify-end mt-6 sm:mt-8 md:mt-12">
           <ButtonV1 text="All Projects" theme="dark" />
         </div>
       </section>
 
       {/* Contact Section */}
       <section className="">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2  md:mb-3 3xl:mb-24 4xl:mb-32 text-center lg:text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2  md:mb-3 3xl:mb-24 4xl:mb-32 text-left">
           Contact Us
         </div>
 

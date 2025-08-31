@@ -22,23 +22,27 @@ const Projects: React.FC = () => {
 
   return (
     <div className=" flex flex-col justify-between">
-      <div className="max-w-7xl mb-8">
-        <h1 className="text-5xl font-light text-gray-400 mb-1">Our</h1>
-        <h2 className="text-5xl font-bold text-gray-800">Projects</h2>
+      <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
+        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-extralight mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+          Our
+        </p>
+        <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+          Projects
+        </p>
       </div>
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-8 mb-12">
         {currentProjects.map((project) => (
           <Link href={`/projects/${project.slug}`} key={project.id}>
-            <div className="group relative w-full aspect-video overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-2 bg-black">
+            <div className="group relative w-full h:[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-2 bg-black">
               {/* Image Container */}
               <div className="relative w-full h-full">
                 <Image
                   src={project.heroImage}
                   alt={project.title}
                   fill
-                  className="object-contain transition-transform duration-300 group-hover:scale-105"
+                  className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1170px"
                   priority={false}
                 />

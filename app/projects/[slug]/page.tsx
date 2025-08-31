@@ -90,49 +90,49 @@ export default function ProductDetail({
           {/* First Row: Left Content (30%) + Right Image (70%) */}
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-32 py-4 lg:py-6 3xl:py-32 4xl:py-40 items-stretch">
             {/* Left Column */}
-            <div className="lg:col-span-4 h-[435px] flex items-center">
+            <div className=" order-2 lg:order-1 lg:col-span-4 h-[250px] lg:h-[435px] flex items-center">
               <div className="space-y-2 sm:space-y-3 lg:space-y-4 xl:space-y-3 3xl:space-y-6 4xl:space-y-8">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     Location:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     {project.location}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     Plot Area:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     {project.plotArea}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     Built up area:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     {project.builtUpArea}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     Client:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     {project.client}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     Year:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     {project.year}
                   </p>
                 </div>
@@ -140,7 +140,7 @@ export default function ProductDetail({
             </div>
 
             {/* Right Column - Image */}
-            <div className="lg:col-span-8">
+            <div className="order-1 lg:order-2 lg:col-span-8">
               <Image
                 src={project.images[0]?.url || project.heroImage}
                 alt={project.images[0]?.alt || project.title}
@@ -154,7 +154,7 @@ export default function ProductDetail({
           {/* Second Row: Left Image (50%) + Right Content (50%) */}
           <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-32 py-4 lg:py-6 3xl:py-32 4xl:py-40 items-stretch">
             {/* Left Column - Image */}
-            <div className="order-2 lg:order-1 h-[480px]">
+            <div className="order-1 lg:order-1 h-[480px]">
               <div className="w-full h-full overflow-hidden">
                 <Image
                   src={project.images[1]?.url || project.heroImage}
@@ -167,8 +167,8 @@ export default function ProductDetail({
             </div>
 
             {/* Right Column - Description */}
-            <div className="order-1 lg:order-2 h-[480px] flex items-start">
-              <div className="text-black font-[300px] space-y-2 lg:space-y-4 leading-[24px] md:leading-loose  tracking-normal text-sm sm:text-base md:text-lg lg:text-xl xl:text-[18px] 3xl:text-4xl 4xl:text-5xl">
+            <div className="order-2 lg:order-2 h-[480px] flex items-start">
+              <div className="text-black font-[300px] space-y-2 lg:space-y-4 leading-[24px] md:leading-loose tracking-normal text-sm sm:text-base md:text-[16px] xl:text-[18px] 3xl:text-4xl 4xl:text-5xl">
                 {project.description.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}
@@ -183,7 +183,7 @@ export default function ProductDetail({
         <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:space-y-12 3xl:space-y-16 4xl:space-y-20">
           {/* Main Large Image Display - Full Width */}
           <div className="relative w-full">
-            <div className="relative aspect-video w-full">
+            <div className="relative aspect-[4/2] w-full">
               <AnimatePresence mode="wait">
                 <motion.img
                   key={currentImageIndex}
@@ -236,7 +236,7 @@ export default function ProductDetail({
           {/* Thumbnail Gallery */}
           {project.images.length > 1 && (
             <div className="">
-              <div className="flex gap-3 overflow-x-auto scrollbar-hide justify-start">
+              <div className="flex gap-3 overflow-hidden justify-start">
                 {project.images.map((image, index) => (
                   <button
                     key={image.id}

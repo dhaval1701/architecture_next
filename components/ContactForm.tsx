@@ -328,7 +328,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         </div>
 
         {/* Submit Button */}
-        <div className="mt-10">
+        <div className="my-4 md:my-0 lg:mt-10">
           <ButtonV1
             text={isSubmitting ? "Sending..." : "Send Email"}
             theme="dark"
@@ -356,7 +356,7 @@ const ContactImage: React.FC = () => {
 export const ContactMap: React.FC = () => {
   return (
     <div
-      className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[430px] 3xl:h-[700px] 4xl:h-[960px] w-full overflow-hidden"
+      className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[450px] 2xl:h-[430px] 3xl:h-[700px] 4xl:h-[960px] w-full overflow-hidden"
       style={{ filter: "grayscale(1)" }}
     >
       <iframe

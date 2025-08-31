@@ -14,51 +14,174 @@ interface ImageData {
 const defaultImages: ImageData[] = [
   {
     id: 1,
-    src: "/assets/sarpanch_house_300.svg",
+    src: "/gallery/image_1.svg",
     alt: "Modern Interior 1",
     size: "wide",
   },
   {
     id: 2,
-    src: "/assets/sk_farm.svg",
+    src: "/gallery/image_2.svg",
     alt: "Modern Interior 2",
     size: "single",
   },
   {
     id: 3,
-    src: "/assets/saran_group.svg",
+    src: "/gallery/image_3.svg",
     alt: "Modern Interior 3",
     size: "single",
   },
   {
     id: 4,
-    src: "/assets/patel_mansion.svg",
+    src: "/gallery/image_4.svg",
     alt: "Modern Interior 4",
     size: "tall",
   },
   {
     id: 5,
-    src: "/assets/sarpanch_house_300.svg",
+    src: "/gallery/image_5.svg",
     alt: "Modern Interior 5",
     size: "single",
   },
   {
     id: 6,
-    src: "/assets/sk_farm.svg",
+    src: "/gallery/image_6.svg",
     alt: "Modern Interior 6",
     size: "single",
   },
   {
     id: 7,
-    src: "/assets/saran_group.svg",
+    src: "/gallery/image_7.svg",
     alt: "Modern Interior 7",
     size: "wide",
   },
+
   {
     id: 8,
-    src: "/assets/patel_mansion.svg",
+    src: "/gallery/image_8.svg",
     alt: "Modern Interior 8",
+    size: "wide",
+  },
+  {
+    id: 9,
+    src: "/gallery/image_9.svg",
+    alt: "Modern Interior 9",
+    size: "single",
+  },
+  {
+    id: 10,
+    src: "/gallery/image_10.svg",
+    alt: "Modern Interior 10",
+    size: "single",
+  },
+  {
+    id: 11,
+    src: "/gallery/image_11.svg",
+    alt: "Modern Interior 11",
     size: "tall",
+  },
+  {
+    id: 12,
+    src: "/gallery/image_12.svg",
+    alt: "Modern Interior 12",
+    size: "single",
+  },
+  {
+    id: 13,
+    src: "/gallery/image_13.svg",
+    alt: "Modern Interior 13",
+    size: "single",
+  },
+  {
+    id: 14,
+    src: "/gallery/image_14.svg",
+    alt: "Modern Interior 14",
+    size: "wide",
+  },
+
+  {
+    id: 15,
+    src: "/gallery/image_15.svg",
+    alt: "Modern Interior 15",
+    size: "wide",
+  },
+  {
+    id: 16,
+    src: "/gallery/image_16.svg",
+    alt: "Modern Interior 16",
+    size: "single",
+  },
+  {
+    id: 17,
+    src: "/gallery/image_17.svg",
+    alt: "Modern Interior 17",
+    size: "single",
+  },
+  {
+    id: 18,
+    src: "/gallery/image_18.svg",
+    alt: "Modern Interior 18",
+    size: "tall",
+  },
+  {
+    id: 19,
+    src: "/gallery/image_19.svg",
+    alt: "Modern Interior 19",
+    size: "single",
+  },
+  {
+    id: 20,
+    src: "/gallery/image_20.svg",
+    alt: "Modern Interior 20",
+    size: "single",
+  },
+  {
+    id: 21,
+    src: "/gallery/image_21.svg",
+    alt: "Modern Interior 21",
+    size: "wide",
+  },
+
+  {
+    id: 22,
+    src: "/gallery/image_22.svg",
+    alt: "Modern Interior 22",
+    size: "wide",
+  },
+  {
+    id: 23,
+    src: "/gallery/image_23.svg",
+    alt: "Modern Interior 23",
+    size: "single",
+  },
+  {
+    id: 24,
+    src: "/gallery/image_24.svg",
+    alt: "Modern Interior 24",
+    size: "single",
+  },
+  {
+    id: 25,
+    src: "/gallery/image_25.svg",
+    alt: "Modern Interior 25",
+    size: "tall",
+  },
+  {
+    id: 26,
+    src: "/gallery/image_26.svg",
+    alt: "Modern Interior 26",
+    size: "single",
+  },
+  {
+    id: 27,
+    src: "/gallery/image_27.svg",
+    alt: "Modern Interior 27",
+    size: "single",
+  },
+  {
+    id: 28,
+    src: "/gallery/image_28.svg",
+    alt: "Modern Interior 28",
+    size: "wide",
   },
 ];
 
@@ -146,14 +269,13 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-between">
-      {/* Header - Only increase text size for 4xl */}
-      <div className="mb-6 sm:mb-8 w-full 3xl:mb-12 4xl:mb-16">
-        <h1 className="text-2xl sm:text-4xl md:text-5xl 3xl:text-6xl 4xl:text-8xl font-light text-gray-400 mb-1 break-words 4xl:mb-3">
+      <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
+        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-extralight mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Photo
-        </h1>
-        <h2 className="text-2xl sm:text-4xl md:text-5xl 3xl:text-6xl 4xl:text-8xl font-bold text-gray-800 break-words">
+        </p>
+        <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
           Gallery
-        </h2>
+        </p>
       </div>
 
       {/* Gallery Grid - Updated with 2xl row heights */}
@@ -165,7 +287,7 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[250px] 2xl:auto-rows-[280px] 3xl:auto-rows-[320px] 4xl:auto-rows-[380px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[350px] 2xl:auto-rows-[280px] 3xl:auto-rows-[320px] 4xl:auto-rows-[380px]"
             style={{ gridAutoFlow: "row dense" }}
           >
             {currentImages.map((image) => (
