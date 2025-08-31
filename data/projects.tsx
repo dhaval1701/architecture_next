@@ -30,9 +30,9 @@ export const projectsData: Project[] = [
     title: "The Vertic House",
     slug: "the-vertic-house",
     description: [
-      "The Sarpanch House in Limbodara village, Gandhinagar, is a modern luxury residential that combines contemporary architecture with cultural identity.",
-      "Constructed with a built facade, the design offers a strong architectural presence and clear character.",
-      "Featuring a built facade with red oval fire and stark concrete forms, the design offers a strong architectural presence and clear character.",
+      "The Sarpanch House in Limbadiya village, Gandhinagar, is a modern luxury residence that combines contemporary architecture with cultural identity.",
+      "Featuring a bold façade with vertical stone fins and sleek concrete forms, the design gives a strong architectural presence and civic character. The landscaped entrance enhances the home’s appeal, offering a sustainable and welcoming design.",
+      "More than a private home, it stands as a landmark of leadership, transparency, and progressive village development in Gandhinagar.",
     ],
     heroImage: "/projects/vertic_house/image_1.svg",
     images: [

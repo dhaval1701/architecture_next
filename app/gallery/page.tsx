@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
+import { Expand } from "lucide-react";
 
 interface ImageData {
   id: number;
@@ -15,7 +16,7 @@ const defaultImages: ImageData[] = [
     id: 1,
     src: "/assets/sarpanch_house_300.svg",
     alt: "Modern Interior 1",
-    size: "tall",
+    size: "wide",
   },
   {
     id: 2,
@@ -33,7 +34,7 @@ const defaultImages: ImageData[] = [
     id: 4,
     src: "/assets/patel_mansion.svg",
     alt: "Modern Interior 4",
-    size: "wide",
+    size: "tall",
   },
   {
     id: 5,
@@ -51,7 +52,7 @@ const defaultImages: ImageData[] = [
     id: 7,
     src: "/assets/saran_group.svg",
     alt: "Modern Interior 7",
-    size: "large",
+    size: "wide",
   },
   {
     id: 8,
@@ -61,17 +62,17 @@ const defaultImages: ImageData[] = [
   },
 ];
 
-const imagesPerPage = 6;
+const imagesPerPage = 7;
 
-// Updated grid classes with 2xl breakpoint
+// Grid mapping for 5-column layout
 const getGridClasses = (size: ImageData["size"]): string => {
   switch (size) {
-    case "wide":
-      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-1 md:col-span-2 md:row-span-1 lg:col-span-2 lg:row-span-1 2xl:col-span-2 2xl:row-span-1 3xl:col-span-2 3xl:row-span-1";
-    case "tall":
-      return "col-span-1 row-span-1 sm:col-span-1 sm:row-span-2 md:col-span-1 md:row-span-2 lg:col-span-1 lg:row-span-2 2xl:col-span-1 2xl:row-span-2 3xl:col-span-1 3xl:row-span-2";
-    case "large":
-      return "col-span-1 row-span-1 sm:col-span-2 sm:row-span-2 md:col-span-2 md:row-span-2 lg:col-span-2 lg:row-span-2 2xl:col-span-2 2xl:row-span-2 3xl:col-span-2 3xl:row-span-2";
+    case "wide": // spans 2 columns
+      return "col-span-1 row-span-1 md:col-span-2 md:row-span-1";
+    case "tall": // spans 2 rows
+      return "col-span-1 row-span-1 md:col-span-1 md:row-span-2";
+    case "large": // spans 2x2
+      return "col-span-1 row-span-1 md:col-span-2 md:row-span-2";
     case "single":
     default:
       return "col-span-1 row-span-1";
@@ -164,7 +165,7 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 3xl:grid-cols-4 gap-4 2xl:gap-8 3xl:gap-6 4xl:gap-8 auto-rows-[200px] 2xl:auto-rows-[250px] 3xl:auto-rows-[300px] 4xl:auto-rows-[400px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[250px] 2xl:auto-rows-[280px] 3xl:auto-rows-[320px] 4xl:auto-rows-[380px]"
             style={{ gridAutoFlow: "row dense" }}
           >
             {currentImages.map((image) => (
@@ -182,29 +183,19 @@ const Gallery: React.FC = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-110"
+                  className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0 group-hover:scale-100"
                   loading="lazy"
-                  sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw, (min-width: 2560px) 25vw"
+                  sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw"
                 />
 
-                {/* Expand Icon - Shows on hover */}
-                <div className="absolute bottom-3 right-3 opacity-0 group-hover:opacity-100 transition-opacity duration-300 z-10">
-                  <div className="bg-black/50 backdrop-blur-sm rounded-full p-2 border border-white/20">
-                    <svg
-                      className="w-5 h-5 text-white"
-                      fill="none"
-                      stroke="currentColor"
-                      viewBox="0 0 24 24"
-                      xmlns="http://www.w3.org/2000/svg"
-                    >
-                      <path
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        strokeWidth={2}
-                        d="M4 8V4m0 0h4M4 4l5 5m11-1V4m0 0h-4m4 0l-5 5M4 16v4m0 0h4m-4 0l5-5m11 5l-5-5m5 5v-4m0 4h-4"
-                      />
-                    </svg>
-                  </div>
+                <div className="absolute bottom-2 right-2 opacity-0 group-hover:opacity-100 transition-opacity duration-300">
+                  <Image
+                    src="/expand_icon.svg"
+                    alt="Expand"
+                    width={28}
+                    height={28}
+                    className="drop-shadow-lg"
+                  />
                 </div>
               </motion.div>
             ))}
@@ -213,7 +204,7 @@ const Gallery: React.FC = () => {
       </div>
 
       {/* Custom Pagination Design - Increase sizes for 4xl */}
-      <div className="mx-auto w-full flex items-end lg:items-start lg:mt-auto my-6 sm:mt-14 3xl:mt-20 4xl:mt-24">
+      <div className="mx-auto w-full flex items-end lg:items-start lg:mt-auto my-6 sm:mt-18 3xl:mt-20 4xl:mt-24">
         <motion.div
           className="flex items-center"
           initial={{ opacity: 0, x: -50 }}

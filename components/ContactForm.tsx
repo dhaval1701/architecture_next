@@ -205,7 +205,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         className="space-y-6 sm:space-y-7 md:space-y-8 lg:space-y-9 xl:space-y-10 2xl:space-y-8 3xl:space-y-14 4xl:space-y-18 flex-1 flex flex-col"
       >
         {/* Name Field */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 2xl:mb-8 3xl:mb-14 4xl:mb-18">
+        <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
           <input
             type="text"
             id="name"
@@ -213,9 +213,12 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             placeholder="Name"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all ${
-              errors.name ? "ring-2 ring-red-500" : ""
-            }`}
+            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+              px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
+              text-gray-800 placeholder-gray-400 
+              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all
+              ${errors.name ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
           />
           {errors.name && (
@@ -226,7 +229,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         </div>
 
         {/* Phone Field */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 2xl:mb-8 3xl:mb-14 4xl:mb-18">
+        <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
           <input
             type="tel"
             id="phone"
@@ -234,9 +237,12 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             placeholder="Phone Number *"
             value={formData.phone}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all ${
-              errors.phone ? "ring-2 ring-red-500" : ""
-            }`}
+            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+              px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
+              text-gray-800 placeholder-gray-400 
+              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all
+              ${errors.phone ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
           />
           {errors.phone && (
@@ -247,7 +253,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         </div>
 
         {/* Email Field */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 2xl:mb-8 3xl:mb-14 4xl:mb-18">
+        <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
           <input
             type="email"
             id="email"
@@ -255,9 +261,12 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             placeholder="E-mail *"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all ${
-              errors.email ? "ring-2 ring-red-500" : ""
-            }`}
+            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+              px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
+              text-gray-800 placeholder-gray-400 
+              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all
+              ${errors.email ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
           />
           {errors.email && (
@@ -268,16 +277,23 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         </div>
 
         {/* Interest Field */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 2xl:mb-8 3xl:mb-14 4xl:mb-18">
+        <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
           <select
             id="interest"
             name="interest"
             value={formData.interest}
             onChange={handleChange}
-            className="w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all"
+            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+    px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10
+    focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all appearance-none
+    ${
+      formData.interest === ""
+        ? "text-gray-400 tracking-wider"
+        : "text-gray-800"
+    }`}
             style={{ backgroundColor: "#F3F3F3" }}
           >
-            <option value="" className="text-gray-500">
+            <option value="" disabled hidden>
               Interested In
             </option>
             <option value="residential">Residential Design</option>
@@ -288,7 +304,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         </div>
 
         {/* Message Field */}
-        <div className="mb-6 sm:mb-7 md:mb-8 lg:mb-9 xl:mb-10 2xl:mb-8 3xl:mb-14 4xl:mb-18 flex-1">
+        <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
           <textarea
             id="message"
             name="message"
@@ -296,9 +312,12 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className={`w-full h-full min-h-[100px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] xl:min-h-[180px] 2xl:min-h-[160px] 3xl:min-h-[260px] 4xl:min-h-[320px] p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 2xl:p-5 3xl:p-9 4xl:p-11 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all resize-none ${
-              errors.message ? "ring-2 ring-red-500" : ""
-            }`}
+            className={`w-full h-full min-h-[100px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] xl:min-h-[180px] 2xl:min-h-[160px] 3xl:min-h-[260px] 4xl:min-h-[320px] 
+              p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 2xl:p-5 3xl:p-9 4xl:p-11 
+              text-gray-800 placeholder-gray-400
+              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all resize-none
+              ${errors.message ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
           />
           {errors.message && (
@@ -309,13 +328,10 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
         </div>
 
         {/* Submit Button */}
-        <div className="mt-auto">
+        <div className="mt-10">
           <ButtonV1
             text={isSubmitting ? "Sending..." : "Send Email"}
             theme="dark"
-            onClick={() => {
-              // window.location.href = "/contact";
-            }}
           />
         </div>
       </form>
@@ -340,7 +356,7 @@ const ContactImage: React.FC = () => {
 export const ContactMap: React.FC = () => {
   return (
     <div
-      className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[500px] 3xl:h-[700px] 4xl:h-[960px] w-full overflow-hidden"
+      className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[600px] xl:h-[700px] 2xl:h-[430px] 3xl:h-[700px] 4xl:h-[960px] w-full overflow-hidden"
       style={{ filter: "grayscale(1)" }}
     >
       <iframe
@@ -562,13 +578,13 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
 
   return (
     <div
-      className={`flex ${layoutClasses.container} gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 3xl:gap-20 4xl:gap-24 h-full`}
+      className={`flex items-stretch ${layoutClasses.container} 
+    gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 3xl:gap-20 4xl:gap-24 h-full`}
     >
       {/* Left Side */}
-      <div className={`${layoutClasses.leftWidth} h-full flex flex-col`}>
-        <div className="flex-1 h-full">{renderLeftSide()}</div>
+      <div className={`${layoutClasses.leftWidth} flex flex-col`}>
+        <div className="flex-1">{renderLeftSide()}</div>
 
-        {/* Status Message for form layouts */}
         {(layout === "form-image" || layout === "form-map") && (
           <>
             {submitStatus === "success" && (
@@ -587,12 +603,9 @@ const ContactForm: React.FC<ContactFormProps> = ({ layout = "form-image" }) => {
       </div>
 
       {/* Right Side */}
-      <div
-        className={`${layoutClasses.rightWidth} mt-6 sm:mt-8 lg:mt-0 h-full flex flex-col`}
-      >
-        <div className="flex-1 h-full">{renderRightSide()}</div>
+      <div className={`${layoutClasses.rightWidth} flex flex-col`}>
+        <div className="flex-1">{renderRightSide()}</div>
 
-        {/* Status Message for reversed layouts */}
         {(layout === "image-form" || layout === "map-form") && (
           <>
             {submitStatus === "success" && (

@@ -108,7 +108,7 @@ const HeroSection = () => {
             {/* Project Title + Details */}
             <div className="lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-20 4xl:mb-24">
               {/* Project Title - Full Text */}
-              <div className="text-gray-300 text-left text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl 4xl:text-[138px] font-extralight mb-0 leading-tight">
+              <div className="text-gray-300 text-left text-lg xs:text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-7xl 3xl:text-8xl 4xl:text-[138px] font-extralight mb-0 leading-tight">
                 The
               </div>
               <div className="text-gray-900 text-left font-bold leading-[0.85] text-xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl 3xl:text-8xl 4xl:text-[138px]">
@@ -185,7 +185,7 @@ const HeroSection = () => {
 
         {/* Right Content - Full Width/Height Image (Desktop only) */}
         {!isMobile && (
-          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-3/5 3xl:w-2/3 4xl:w-3/5 h-[80px] md:h-[350px] lg:h-[600px] xl:h-[500px] 2xl:h-[800px] 3xl:h-[700px] 4xl:h-[1720px]">
+          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-3/5 aspect-square">
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src={currentProject.image}
@@ -194,10 +194,6 @@ const HeroSection = () => {
                 className="object-cover transition-all duration-500"
                 priority
                 sizes="(max-width: 1024px) 100vw, 60vw"
-                style={{
-                  width: "100%",
-                  height: "100%",
-                }}
               />
 
               {/* Light Overlay for better contrast */}

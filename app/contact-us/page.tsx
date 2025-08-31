@@ -25,12 +25,9 @@ const ContactUs = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
             style={{
-              backgroundImage: `url('/assets/contact_us_1.svg')`,
+              backgroundImage: `url('/assets/contact_us_4.svg')`,
             }}
           ></div>
-
-          {/* Gradient Blur Overlay */}
-          <div className="absolute inset-0 bg-gradient-to-b from-black/40 via-black/20 to-transparent backdrop-blur-[2px]"></div>
 
           {/* Content Overlay */}
           <div className="relative z-10 h-full p-6 lg:p-8 xl:p-12 flex items-start">
@@ -80,14 +77,14 @@ const ContactUs = () => {
         <div className="relative h-96 lg:h-[500px] xl:h-[580px] 2xl:h-[640px] overflow-hidden">
           {/* Background Image */}
           <div
-            className="absolute inset-0 bg-cover bg-center bg-no-repeat opacity-10"
+            className="absolute inset-0 bg-cover bg-center bg-no-repeat "
             style={{
-              backgroundImage: `url('/assets/home_background_2.svg')`,
+              backgroundImage: `url('/assets/contact_us_5.svg')`,
             }}
           ></div>
 
           {/* Overlay */}
-          <div className="absolute inset-0 bg-gray-100/45"></div>
+          {/* <div className="absolute inset-0 bg-gray-100/45"></div> */}
 
           {/* Form Content */}
           <div className="relative z-10 h-full flex flex-col justify-center p-6 lg:p-8 xl:p-12">
@@ -155,7 +152,7 @@ const ContactUs = () => {
       </div>
 
       {/* Map Section */}
-      <div className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-10 3xl:mb-24 4xl:mb-32">
+      <div className="">
         <ContactMap />
       </div>
     </div>

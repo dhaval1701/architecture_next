@@ -7,35 +7,9 @@ import HeroSection from "@/components/HeroSection";
 import ContactForm from "@/components/ContactForm";
 import { MoveRight } from "lucide-react";
 import ButtonV1 from "@/components/ButtonV1";
+import { projectsData } from "@/data/projects";
 
 export const Home = () => {
-  const projects = [
-    {
-      id: 1,
-      title: "THE PATEL MANSION",
-      image: "/assets/patel_mansion.svg",
-      link: "/projects/patel-mansion",
-    },
-    {
-      id: 2,
-      title: "Sarpanch House",
-      image: "/assets/sarpanch_house_300.svg",
-      link: "/projects/sarpanch-house",
-    },
-    {
-      id: 3,
-      title: "SK Farm",
-      image: "/assets/sk_farm.svg",
-      link: "/projects/project-three",
-    },
-    {
-      id: 4,
-      title: "Saran Group",
-      image: "/assets/saran_group.svg",
-      link: "/projects/project-four",
-    },
-  ];
-
   const missionItems = [
     {
       number: "1",
@@ -59,75 +33,66 @@ export const Home = () => {
     },
   ];
 
+  type Project = (typeof projectsData)[number]; // infer each project's type
+
   return (
     <div className="bg-white relative">
       <HeroSection />
 
-      <section className="bg-[#F6F6F6] relative overflow-hidden">
-        {/* Background Pattern */}
-        <div className="absolute inset-0 opacity-90">
-          <Image
-            src="/assets/home_background_1.svg"
-            alt="Background pattern"
-            fill
-            className="object-contain"
-          />
-        </div>
-
-        {/* Main Content Container */}
-        <div className="relative z-10">
-          <div className="max-w-[1600px] mx-auto px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-16 3xl:px-26 4xl:px-32 py-6 lg:py-12">
-            <div className="flex flex-col lg:flex-row items-center lg:items-center gap-8 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24">
-              {/* Image Section - Left (60%) */}
-              <div className="w-full lg:w-3/5 flex justify-center lg:justify-start">
-                <div className="relative w-full max-w-[300px] sm:max-w-[400px] md:max-w-[500px] lg:max-w-[700px] xl:max-w-[800px] 2xl:max-w-[900px] 3xl:max-w-[1000px] 4xl:max-w-[1100px]">
-                  <Image
-                    src="/assets/owner_group.svg"
-                    alt="Architects"
-                    width={800}
-                    height={600}
-                    className="w-full h-auto object-contain"
-                    priority
-                  />
-                </div>
+      <div
+        className="relative z-10 bg-cover bg-center mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48"
+        style={{ backgroundImage: "url('/assets/home_background_1.svg')" }} // 👈 your background here
+      >
+        <div className="px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-16 3xl:px-26 4xl:px-32">
+          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 xl:gap-16 2xl:gap-10 3xl:gap-24">
+            {/* Image Section - Left (55%) */}
+            <div className="w-full lg:w-[57%] flex justify-center lg:justify-start">
+              <div className="relative aspect-square lg:max-h-[600px] 3xl:max-h-[770px] w-full">
+                <Image
+                  src="/assets/owner_group.svg"
+                  alt="Architects"
+                  fill
+                  className="object-contain"
+                  priority
+                />
               </div>
+            </div>
 
-              {/* Content Section - Right (40%) */}
-              <div className="w-full lg:w-2/5 flex flex-col justify-center text-center lg:text-left">
-                {/* Title */}
-                <h1 className="text-[#909090] font-extralight leading-tight mb-4 sm:mb-6 lg:mb-8 xl:mb-10 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[92px] 3xl:text-[80px] 4xl:text-[100px]">
-                  Architects
-                </h1>
+            {/* Content Section - Right (45%) */}
+            <div className="w-full lg:w-[43%] flex flex-col justify-start text-left p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12">
+              {/* Title */}
+              <h1 className="text-[#909090] font-extralight leading-tight mb-4 sm:mb-6 lg:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[74px] 3xl:text-[80px] 4xl:text-[100px]">
+                Architects
+              </h1>
 
-                {/* Description */}
-                <p className="text-[#333333] font-extralight leading-relaxed text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-[24px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
-                  Two architects walked into a studio… and never looked back.
-                  That&apos;s how{" "}
-                  <span className="font-bold">23rd Design Studio</span> began as
-                  a canvas for ideas too big to stay in sketchbooks. Here, lines
-                  and curves speak louder than words, coffee fuels the midnight
-                  brainstorms, and curiosity leads us down paths where design
-                  meets emotion. We don&apos;t just create spaces; we craft
-                  experiences that inspire, connect, and endure.
-                </p>
-              </div>
+              {/* Description */}
+              <p className="text-[#333333] font-extralight leading-[28px] text-sm sm:text-base md:text-lg lg:text-xl xl:text-xl 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
+                Two architects walked into a studio… and never looked back.
+                That&apos;s how{" "}
+                <span className="font-bold">23rd Design Studio</span> began as a
+                canvas for ideas too big to stay in sketchbooks. Here, lines and
+                curves speak louder than words, coffee fuels the midnight
+                brainstorms, and curiosity leads us down paths where design
+                meets emotion. We don&apos;t just create spaces; we craft
+                experiences that inspire, connect, and endure.
+              </p>
             </div>
           </div>
         </div>
-      </section>
+      </div>
 
-      <div className="breakout">
+      <div className="breakout mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Mission Statement Section */}
-        <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-32 3xl:py-40 4xl:py-48 overflow-hidden">
+        <section className="overflow-hidden">
           {/* Section Heading */}
-          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24 3xl:mb-32 4xl:mb-40 text-center lg:text-left px-3 sm:px-6 md:px-8 lg:px-24 xl:px-20 2xl:px-28 3xl:px-32 4xl:px-40">
+          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-center lg:text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
             Mission Statement
           </div>
 
           {/* Marquee */}
           <div className="overflow-hidden whitespace-nowrap w-full">
             <motion.div
-              className="flex opacity-40"
+              className="flex "
               animate={{ x: ["0%", "-100%"] }}
               transition={{ duration: 60, ease: "linear", repeat: Infinity }}
             >
@@ -151,7 +116,7 @@ export const Home = () => {
                   </div>
                   {/* Text */}
                   <div
-                    className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
+                    className="text-[#333333] text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
                 leading-5 sm:leading-6 md:leading-7 lg:leading-8 xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
                 flex-1 whitespace-normal break-words"
                   >
@@ -188,7 +153,7 @@ export const Home = () => {
       </div>
 
       {/* CTA Section */}
-      <section className="breakout relative my-8 sm:my-12 md:my-16 lg:my-20 xl:my-24 2xl:my-32 3xl:my-40 4xl:my-48">
+      <section className="breakout relative mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Base gradient */}
         <div
           className="absolute inset-0"
@@ -202,7 +167,7 @@ export const Home = () => {
         <div className="absolute inset-0">
           <div className="absolute left-[60%] sm:left-[70%] md:left-[80%] right-0 inset-y-0 opacity-70">
             <Image
-              src="/logos/logo_background.svg"
+              src="/assets/logo_345.svg"
               alt="Background pattern"
               fill
               className="object-cover"
@@ -210,8 +175,8 @@ export const Home = () => {
           </div>
         </div>
 
-        <div className="mx-auto px-4 sm:px-8 md:px-16 lg:px-24 xl:px-32 2xl:px-28 3xl:px-64 4xl:px-80 relative z-10 h-full">
-          <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-20 3xl:py-32 4xl:py-40">
+        <div className="mx-auto px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 relative z-10 h-full">
+          <div className="flex flex-col lg:flex-row items-center justify-between text-center lg:text-left py-6 sm:py-8 md:py-12 lg:py-16 xl:py-20 2xl:py-18 3xl:py-32 4xl:py-40">
             <div className="text-white text-lg sm:text-xl md:text-2xl lg:text-3xl xl:text-4xl 2xl:text-[32px] 3xl:text-6xl 4xl:text-7xl mb-4 lg:mb-0">
               Ready to transform your space?
             </div>
@@ -219,6 +184,7 @@ export const Home = () => {
             <ButtonV1
               text="Let's Connect"
               theme="light"
+              className="mr-5"
               onClick={() => {
                 // window.location.href = "/contact";
               }}
@@ -227,56 +193,94 @@ export const Home = () => {
         </div>
       </section>
 
-      {/* Projects Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-2 xl:py-24 2xl:py-12 3xl:py-40 4xl:py-48 ">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24 3xl:mb-32 4xl:mb-40 text-center lg:text-left">
+      <section className="mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+        {/* Section Title */}
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-center lg:text-left">
           Our Projects
         </div>
 
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-4 sm:gap-6 md:gap-8 lg:gap-10 xl:gap-12 2xl:gap-16 3xl:gap-20 4xl:gap-24 mb-8 sm:mb-12 md:mb-16 lg:mb-20 xl:mb-24 2xl:mb-32 3xl:mb-40 4xl:mb-48">
-          {projects.map((project) => (
-            <div
-              key={project.id}
-              className="relative h-48 sm:h-56 md:h-64 lg:h-72 xl:h-80 2xl:h-66 3xl:h-[28rem] 4xl:h-[34rem] overflow-hidden group"
-            >
-              <Image
-                src={project.image}
-                alt={project.title}
-                fill
-                className="object-cover group-hover:scale-105 transition-transform duration-500"
-              />
-              <div className="absolute inset-0 bg-black/60 bg-opacity-50 opacity-0 group-hover:opacity-100 transition-opacity flex items-end p-4 sm:p-6 md:p-8 lg:p-10 xl:p-12 2xl:p-12 3xl:p-20 4xl:p-24">
-                <div className="mb-2 sm:mb-4 md:mb-6 lg:mb-2 max-w-[70%]">
-                  <div className="text-white uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-8xl 4xl:text-9xl font-bold mb-1 sm:mb-2 md:mb-3 lg:mb-4 xl:mb-5 2xl:mb-2 3xl:mb-8 4xl:mb-10">
-                    {project.title}
-                  </div>
-                  <div className="flex items-center text-white text-xs sm:text-sm md:text-base lg:text-[12px] 3xl:text-[16px] uppercase tracking-widest">
-                    View More
-                    <MoveRight
-                      strokeWidth={0.85}
-                      className="pl-1 sm:pl-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
-                    />
-                  </div>
-                </div>
+        {/* Loop projects in pairs */}
+
+        <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
+          {projectsData
+            .slice(0, 4) // ✅ Only first 4 projects
+            .reduce<Project[][]>((rows, project, index) => {
+              if (index % 2 === 0) {
+                rows.push([project]); // start a new row
+              } else {
+                rows[rows.length - 1].push(project); // push into last row
+              }
+              return rows;
+            }, [])
+            .map((pair, rowIndex) => (
+              <div
+                key={rowIndex}
+                className="flex flex-col lg:flex-row gap-4 md:gap-6 lg:gap-8"
+              >
+                {pair.map((project, i) => {
+                  const isEvenRow = rowIndex % 2 === 0;
+                  const isFirst = i === 0;
+
+                  const basisClass = isEvenRow
+                    ? isFirst
+                      ? "lg:basis-[52%]"
+                      : "lg:basis-[48%]"
+                    : isFirst
+                    ? "lg:basis-[48%]"
+                    : "lg:basis-[52%]";
+
+                  return (
+                    <div
+                      key={project.id}
+                      className={`relative w-full ${basisClass} h-48 sm:h-56 md:h-64 3xl:h-[22rem] 4xl:h-[28rem] overflow-hidden group`}
+                    >
+                      <Image
+                        src={project.heroImage}
+                        alt={project.title}
+                        fill
+                        className="object-cover group-hover:scale-105 transition-transform duration-500"
+                      />
+
+                      {/* Overlay */}
+                      <div className="absolute inset-0 bg-black/60 flex items-center justify-start">
+                        <div
+                          className="
+                    opacity-0 translate-y-10 
+                    group-hover:opacity-100 group-hover:translate-y-0 
+                    transition-all duration-500 ease-out 
+                    text-left max-w-[70%] pl-6 sm:pl-8 md:pl-12 lg:pl-16
+                  "
+                        >
+                          <div className="text-white uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-8xl 4xl:text-9xl font-bold mb-4">
+                            {project.title}
+                          </div>
+                          <Link href={`/projects/${project.slug}`}>
+                            <div className="flex items-center text-white text-xs sm:text-sm md:text-base lg:text-[12px] 3xl:text-[16px] uppercase tracking-widest">
+                              View More
+                              <MoveRight
+                                strokeWidth={0.85}
+                                className="pl-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
+                              />
+                            </div>
+                          </Link>
+                        </div>
+                      </div>
+                    </div>
+                  );
+                })}
               </div>
-            </div>
-          ))}
+            ))}
         </div>
 
+        {/* Button */}
         <div className="flex justify-center lg:justify-end mt-6 sm:mt-8 md:mt-12">
-          <ButtonV1
-            text="All Projects"
-            theme="dark"
-            onClick={() => {
-              // window.location.href = "/contact";
-            }}
-          />
+          <ButtonV1 text="All Projects" theme="dark" />
         </div>
       </section>
 
       {/* Contact Section */}
-      <section className="py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 2xl:py-32 3xl:py-40 4xl:py-48 ">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-24 3xl:mb-32 4xl:mb-40 text-center lg:text-left">
+      <section className="">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2  md:mb-3 3xl:mb-24 4xl:mb-32 text-center lg:text-left">
           Contact Us
         </div>
 

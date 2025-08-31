@@ -17,11 +17,11 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
   // Theme-based styles
   const themeStyles = {
     light: {
-      background: "bg-white hover:bg-gray-50",
+      background: "bg-white",
       text: "text-gray-800",
     },
     dark: {
-      background: "bg-[#333333] hover:bg-[#333333]/80",
+      background: "bg-[#333333]",
       text: "text-white",
     },
   };
@@ -44,7 +44,7 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
         className={`
         text-[6px] xs:text-[6px] sm:text-[6px] md:text-[8px] lg:text-[8px] 
         xl:text-[10px] 2xl:text-[12px] 3xl:text-3xl 4xl:text-4xl
-        uppercase tracking-widest font-medium
+        uppercase tracking-[4px] font-medium
         mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8
         ${currentTheme.text}
       `}

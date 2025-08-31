@@ -26,7 +26,7 @@ export default function RootLayout({
         <Header />
         <ConditionalBackground />
         {/* px-4 md:px-8 lg:px-16 xl:px-24 2xl:px-32 */}
-        <main className="min-h-screen px-3 sm:px-6 md:px-8 lg:px-24 xl:px-20 2xl:px-28 3xl:px-32 4xl:px-40 pt-16 lg:pt-34">
+        <main className="min-h-screen p-4 sm:p-8 md:p-12 lg:p-16 xl:p-20 2xl:p-36 3xl:p-42 4xl:p-48">
           {children}
         </main>
         <Footer />

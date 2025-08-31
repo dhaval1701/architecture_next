@@ -63,7 +63,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-24 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-3 sm:px-6 md:px-8 lg:px-24 xl:px-20 2xl:px-24 3xl:px-32 4xl:px-40 z-50 bg-white">
+    <header className="w-full h-12 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 z-50 bg-white">
       {/* Logo */}
       <div className="flex items-center flex-shrink-0">
         <Link href="/" className="flex items-center" onClick={closeMenu}>
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
             alt="The 23rd Studio Logo"
             height={72}
             width={110}
-            className="h-6 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 p-1 sm:p-1.5 md:p-2 lg:p-2.5 xl:p-3 2xl:p-6 3xl:p-5 4xl:p-4 transition-all duration-200"
+            className="h-6 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-5 4xl:py-4 transition-all duration-200"
             priority
           />
         </Link>

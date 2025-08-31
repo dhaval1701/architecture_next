@@ -16,7 +16,7 @@ const Footer = () => {
       className="text-white pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 2xl:pt-12 3xl:pt-24 4xl:pt-32 pb-2 sm:pb-3 md:pb-4 lg:pb-5 xl:pb-6 2xl:pb-4 3xl:pb-10 4xl:pb-12 px-3 sm:px-6 md:px-8 lg:px-16 xl:px-20 2xl:px-24 3xl:px-32 4xl:px-40"
       style={{ background: "#333333" }}
     >
-      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-12 3xl:gap-24 4xl:gap-32 mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-16 3xl:mb-32 4xl:mb-40">
+      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-12 3xl:gap-24 4xl:gap-32">
         {/* Logo Section */}
         <div className="col-span-1 sm:col-span-2 lg:col-span-1">
           <div className="flex items-center mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-6 3xl:mb-12 4xl:mb-16">
@@ -53,38 +53,51 @@ const Footer = () => {
 
         {/* Contact Info */}
         <div>
-          <div className=" text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-6 3xl:mb-12 4xl:mb-16">
+          <div className="text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl font-bold mb-4 sm:mb-5 md:mb-6 lg:mb-7 xl:mb-8 2xl:mb-6 3xl:mb-12 4xl:mb-16">
             Contacts
           </div>
+
+          {/* Address */}
           <div className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-4 3xl:mb-10 4xl:mb-12 flex items-start">
             <MapPin
               size={16}
-              className="mt-1 mr-2 sm:mr-3 md:mr-4 lg:mr-5 xl:mr-6 2xl:mr-4 3xl:mr-8 4xl:mr-10 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-6 2xl:h-5 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
+              className="mr-2 sm:mr-3 md:mr-4 lg:mr-5 xl:mr-6 2xl:mr-4 3xl:mr-8 4xl:mr-10 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-6 2xl:h-5 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
             />
-            <div className=" text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl">
+            <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl font-medium">
               417, THE 23ʳᵈ STUDIO, Shilp Arcad, nr. Hanspura circle road, S. P.
               Ring Road, Ahmedabad, 382330
             </div>
           </div>
+
+          {/* Phone Numbers */}
           <div className="mb-3 sm:mb-4 md:mb-5 lg:mb-6 xl:mb-7 2xl:mb-4 3xl:mb-10 4xl:mb-12 flex items-start">
             <Phone
               size={16}
-              className="mr-2 sm:mr-3 md:mr-4 lg:mr-5 xl:mr-6 2xl:mr-4 3xl:mr-8 4xl:mr-10 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-6 2xl:h-5 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12 mt-1"
+              className="mr-2 sm:mr-3 md:mr-4 lg:mr-5 xl:mr-6 2xl:mr-4 3xl:mr-8 4xl:mr-10 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-6 2xl:h-5 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
             />
-            <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl">
-              720 389 2651
+            <div className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl font-medium space-y-1">
+              <a href="tel:+917203892651" className="hover:underline">
+                720 389 2651
+              </a>
               <br />
-              905 454 2360
+              <a href="tel:+919054542360" className="hover:underline">
+                905 454 2360
+              </a>
             </div>
           </div>
+
+          {/* Email */}
           <div className="flex items-start">
             <Mail
               size={16}
-              className="mr-2 sm:mr-3 md:mr-4 lg:mr-5 xl:mr-6 2xl:mr-4 3xl:mr-8 4xl:mr-10 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-6 2xl:h-5 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12 mt-1"
+              className="mr-2 sm:mr-3 md:mr-4 lg:mr-5 xl:mr-6 2xl:mr-4 3xl:mr-8 4xl:mr-10 flex-shrink-0 w-3 h-3 sm:w-4 sm:h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 xl:w-7 xl:h-7 2xl:w-6 2xl:h-5 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
             />
-            <div className=" text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl break-all">
-              [info.23rdstudio@gmail.com](mailto:info.23rdstudio@gmail.com)
-            </div>
+            <a
+              href="mailto:info.23rdstudio@gmail.com"
+              className="text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl break-all font-medium hover:underline"
+            >
+              info.23rdstudio@gmail.com
+            </a>
           </div>
         </div>
 
@@ -131,7 +144,7 @@ const Footer = () => {
         </div>
       </div>
 
-      <div className="text-center font-sans text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl border-t border-gray-700 pt-4 sm:pt-5 md:pt-6 lg:pt-7 xl:pt-8 2xl:pt-6 3xl:pt-12 4xl:pt-16">
+      <div className="text-center text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-[14px] 3xl:text-3xl 4xl:text-4xl pt-4 sm:pt-5 md:pt-6 lg:pt-7 xl:pt-8 2xl:pt-6 3xl:pt-12 4xl:pt-16">
         © Copyright 2025 by <span className="font-bold">The 23rd Studio</span>.
         All Rights Reserved | Design & Developed by{" "}
         <span className="font-bold">Rutik Parmar</span>

@@ -31,13 +31,16 @@ const Projects: React.FC = () => {
       <div className="grid grid-cols-1 gap-8 mb-12">
         {currentProjects.map((project) => (
           <Link href={`/projects/${project.slug}`} key={project.id}>
-            <div className="group relative w-full h-64 sm:h-72 md:h-80 lg:h-96 xl:h-[420px] 2xl:h-[570px] 3xl:h-[620px] 4xl:h-[680px] overflow-hidden rounded-lg shadow-lg cursor-pointer transition-transform duration-300 hover:-translate-y-2">
+            <div className="group relative w-full aspect-video overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-2 bg-black">
               {/* Image Container */}
               <div className="relative w-full h-full">
-                <img
+                <Image
                   src={project.heroImage}
                   alt={project.title}
-                  className="w-full h-full object-cover transition-transform duration-300 group-hover:scale-105"
+                  fill
+                  className="object-contain transition-transform duration-300 group-hover:scale-105"
+                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1170px"
+                  priority={false}
                 />
 
                 {/* Bottom Left Title Overlay (Default State) */}
@@ -49,7 +52,6 @@ const Projects: React.FC = () => {
 
                 {/* Hover Overlay - Full Background */}
                 <div className="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  {/* Bottom Section Container with smooth bottom-to-top animation */}
                   <motion.div
                     className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-4 sm:p-6 md:p-8"
                     initial={{ y: 100, opacity: 0 }}
@@ -65,10 +67,7 @@ const Projects: React.FC = () => {
                     exit={{
                       y: 100,
                       opacity: 0,
-                      transition: {
-                        duration: 0.3,
-                        ease: "easeIn",
-                      },
+                      transition: { duration: 0.3, ease: "easeIn" },
                     }}
                   >
                     {/* Left Side - Project Details */}
@@ -87,17 +86,12 @@ const Projects: React.FC = () => {
                       exit={{
                         y: 50,
                         opacity: 0,
-                        transition: {
-                          duration: 0.2,
-                          ease: "easeIn",
-                        },
+                        transition: { duration: 0.2, ease: "easeIn" },
                       }}
                     >
                       <h3 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-bold mb-2 uppercase tracking-wide text-white">
                         {project.title}
                       </h3>
-
-                      {/* Project Meta Information */}
                       <div className="space-y-1 mb-3 text-xs sm:text-sm opacity-90">
                         <p className="text-gray-200">{project.location}</p>
                         <p className="text-gray-200">{project.builtUpArea}</p>
@@ -121,10 +115,7 @@ const Projects: React.FC = () => {
                       exit={{
                         y: 30,
                         opacity: 0,
-                        transition: {
-                          duration: 0.2,
-                          ease: "easeIn",
-                        },
+                        transition: { duration: 0.2, ease: "easeIn" },
                       }}
                     >
                       <button className="bg-transparent text-white px-3 sm:px-4 md:px-6 py-2 text-xs sm:text-sm uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2 hover:bg-white/10 rounded">
@@ -142,7 +133,7 @@ const Projects: React.FC = () => {
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="max-w-7xl mx-auto w-full flex items-end lg:items-start lg:mt-auto mb-6 sm:mb-14">
+        <div className="">
           <motion.div
             className="flex items-center"
             initial={{ opacity: 0, x: -50 }}
