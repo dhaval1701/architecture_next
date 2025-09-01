@@ -270,7 +270,7 @@ const Gallery: React.FC = () => {
   return (
     <div className="flex flex-col justify-between">
       <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
-        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-extralight mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Photo
         </p>
         <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
@@ -287,7 +287,7 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[350px] 2xl:auto-rows-[280px] 3xl:auto-rows-[320px] 4xl:auto-rows-[380px]"
+            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[250px] 2xl:auto-rows-[280px] 3xl:auto-rows-[350px] 4xl:auto-rows-[380px]"
             style={{ gridAutoFlow: "row dense" }}
           >
             {currentImages.map((image) => (
@@ -305,7 +305,7 @@ const Gallery: React.FC = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover transition-all duration-500 grayscale group-hover:grayscale-0"
+                  className="object-cover  group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0"
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw"
                 />
@@ -408,6 +408,7 @@ const Gallery: React.FC = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="absolute inset-0 bg-black/50 backdrop-blur-md"
+              onClick={closeModal}
             />
 
             {/* Close Button */}
@@ -438,7 +439,7 @@ const Gallery: React.FC = () => {
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ delay: 0.2, duration: 0.3 }} // wait for backdrop first
               className="relative flex items-center justify-center w-full h-full max-w-full max-h-full"
-              onClick={(e) => e.stopPropagation()}
+              // onClick={(e) => e.stopPropagation()}
             >
               <Image
                 src={selectedImage.src}

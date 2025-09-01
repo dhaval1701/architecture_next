@@ -23,7 +23,7 @@ const Projects: React.FC = () => {
   return (
     <div className=" flex flex-col justify-between">
       <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
-        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-extralight mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Our
         </p>
         <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
@@ -35,7 +35,7 @@ const Projects: React.FC = () => {
       <div className="grid grid-cols-1 gap-8 mb-12">
         {currentProjects.map((project) => (
           <Link href={`/projects/${project.slug}`} key={project.id}>
-            <div className="group relative w-full h:[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] overflow-hidden cursor-pointer transition-transform duration-300 hover:-translate-y-2 bg-black">
+            <div className="group relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] overflow-hidden cursor-pointer transition-transform duration-300">
               {/* Image Container */}
               <div className="relative w-full h-full">
                 <Image

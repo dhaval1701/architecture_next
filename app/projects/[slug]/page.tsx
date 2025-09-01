@@ -74,7 +74,7 @@ export default function ProductDetail({
       <div className="bg-transparent mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-10 3xl:mb-24 4xl:mb-32 ">
         <div className="mx-auto">
           <div className="mb-6 sm:mb-8 lg:mb-10 xl:mb-12 3xl:mb-16 4xl:mb-20">
-            <p className="text-[#BDBDBD]  text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-extralight mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+            <p className="text-[#BDBDBD]  text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
               Project
             </p>
             <p className="text-[#333333]  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">

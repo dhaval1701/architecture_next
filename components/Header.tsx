@@ -63,7 +63,7 @@ const Header: React.FC = () => {
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 z-50 bg-white">
+    <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 z-50 mt-2 bg-white">
       {/* Logo */}
       <div className="flex items-center flex-shrink-0">
         <Link href="/" className="flex items-center" onClick={closeMenu}>
@@ -72,7 +72,7 @@ const Header: React.FC = () => {
             alt="The 23rd Studio Logo"
             height={72}
             width={110}
-            className="h-10 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-5 4xl:py-4 transition-all duration-200"
+            className="h-14 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-5 4xl:py-4 transition-all duration-200"
             priority
           />
         </Link>
@@ -109,9 +109,7 @@ const Header: React.FC = () => {
         type="button"
       >
         <div className="relative w-4 h-4 sm:w-5 sm:h-5">
-          {isMenuOpen ? (
-            <X size={20} className="text-gray-800 w-full h-full" />
-          ) : (
+          {!isMenuOpen && (
             <Menu size={20} className="text-gray-800 w-full h-full" />
           )}
         </div>
@@ -126,13 +124,13 @@ const Header: React.FC = () => {
         `}
       >
         {/* Drawer Header */}
-        <div className="flex items-center justify-between p-3 sm:p-4 border-b border-gray-200 h-12 sm:h-14">
+        <div className="flex items-start justify-between p-3 sm:p-4 border-b border-gray-200">
           <Image
             src="/logos/full_logo.svg"
             alt="The 23rd Studio Logo"
             height={32}
             width={100}
-            className="h-4 sm:h-5 w-auto"
+            className="h-10 sm:h-16 w-auto"
           />
           <button
             onClick={closeMenu}

@@ -290,7 +290,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
       formData.interest === ""
         ? "text-gray-400 tracking-wider"
         : "text-gray-800"
-    }`}
+    } text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl `}
             style={{ backgroundColor: "#F3F3F3" }}
           >
             <option value="" disabled hidden>

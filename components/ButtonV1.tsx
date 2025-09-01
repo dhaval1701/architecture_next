@@ -35,7 +35,7 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
         px-3 sm:px-4 md:px-6 lg:px-8 xl:px-8 2xl:px-8 3xl:px-14 4xl:px-16
         py-1.5 sm:py-2 md:py-3 lg:py-4 xl:py-4 2xl:py-4 3xl:py-7 4xl:py-8
         ${currentTheme.background}
-        transition-all duration-300
+        transition-all duration-300 cursor-pointer
         ${className}
       `}
       {...rest}
@@ -44,7 +44,7 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
         className={`
         text-[6px] xs:text-[6px] sm:text-[6px] md:text-[8px] lg:text-[8px] 
         xl:text-[10px] 2xl:text-[12px] 3xl:text-3xl 4xl:text-4xl
-        uppercase tracking-[4px] font-medium
+        uppercase tracking-[2px] lg:tracking-[4px] font-medium
         mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8
         ${currentTheme.text}
       `}

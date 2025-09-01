@@ -40,11 +40,11 @@ export const Home = () => {
       <HeroSection />
 
       <div
-        className="relative z-10 bg-cover bg-center mb-4 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48"
-        style={{ backgroundImage: "url('/assets/home_background_1.svg')" }} // 👈 your background here
+        className="relative z-10 bg-cover bg-center mb-8 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48"
+        style={{ backgroundImage: "url('/assets/home_background_1.png')" }} // 👈 your background here
       >
-        <div className="px-6 sm:px-8 lg:px-10 xl:px-13 2xl:px-16 3xl:px-26 4xl:px-32">
-          <div className="flex flex-col lg:flex-row items-start gap-8 lg:gap-12 xl:gap-16 2xl:gap-10 3xl:gap-24">
+        <div className="px-2 sm:px-8 lg:px-10 xl:px-13 2xl:px-16 3xl:px-26 4xl:px-32">
+          <div className="flex flex-col lg:flex-row items-start gap-0 lg:gap-12 xl:gap-16 2xl:gap-10 3xl:gap-24">
             {/* Image Section - Left (55%) */}
             <div className="w-full lg:w-[57%] flex justify-center lg:justify-start">
               <div className="relative aspect-square lg:max-h-[600px] 3xl:max-h-[770px] w-full">
@@ -59,14 +59,14 @@ export const Home = () => {
             </div>
 
             {/* Content Section - Right (45%) */}
-            <div className="w-full lg:w-[43%] flex flex-col justify-start text-left p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12">
+            <div className="w-full lg:w-[43%] flex flex-col justify-start text-left p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:14 3xl:p-16 4xl:p-20">
               {/* Title */}
-              <h1 className="text-[#909090] font-extralight leading-tight mb-4 sm:mb-6 lg:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[74px] 3xl:text-[80px] 4xl:text-[100px]">
+              <h1 className="text-[#909090] font-light leading-tight mb-4 sm:mb-6 lg:mb-8 text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[74px] 3xl:text-[80px] 4xl:text-[100px]">
                 Architects
               </h1>
 
               {/* Description */}
-              <p className="text-[#333333] font-extralight leading-[28px] text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
+              <p className="text-[#333333] font-light leading-[28px] text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
                 Two architects walked into a studio… and never looked back.
                 That&apos;s how{" "}
                 <span className="font-bold">23rd Design Studio</span> began as a
@@ -81,11 +81,11 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="breakout mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <div className="breakout mb-8 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Mission Statement Section */}
         <section className="overflow-hidden">
           {/* Section Heading */}
-          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
+          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
             Mission Statement
           </div>
 
@@ -153,7 +153,7 @@ export const Home = () => {
       </div>
 
       {/* CTA Section */}
-      <section className="breakout relative mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <section className="breakout relative mb-8 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Base gradient */}
         <div
           className="absolute inset-0"
@@ -195,12 +195,11 @@ export const Home = () => {
 
       <section className="mb-6 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Section Title */}
-        <div className="text-[#BDBDBD] text-2xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-light mb-2 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left">
           Our Projects
         </div>
 
         {/* Loop projects in pairs */}
-
         <div className="flex flex-col gap-4 md:gap-6 lg:gap-8">
           {projectsData
             .slice(0, 4) // ✅ Only first 4 projects
@@ -280,7 +279,7 @@ export const Home = () => {
 
       {/* Contact Section */}
       <section className="">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-extralight mb-2  md:mb-3 3xl:mb-24 4xl:mb-32 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-light mb-2  md:mb-3 3xl:mb-24 4xl:mb-32 text-left">
           Contact Us
         </div>
 

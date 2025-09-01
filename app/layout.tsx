@@ -33,7 +33,7 @@ export default function RootLayout({
         <main
           className="
     min-h-screen
-    px-4  py-16
+    px-6  py-22
     sm:px-6  sm:py-24
     md:px-12 md:py-28
     lg:px-16 lg:py-28
