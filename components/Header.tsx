@@ -49,111 +49,99 @@ const Header: React.FC = () => {
     return () => window.removeEventListener("resize", handleResize);
   }, []);
 
-  // Prevent body scroll when menu is open
   useEffect(() => {
     if (isMenuOpen) {
       document.body.style.overflow = "hidden";
     } else {
       document.body.style.overflow = "unset";
     }
-
     return () => {
       document.body.style.overflow = "unset";
     };
   }, [isMenuOpen]);
 
   return (
-    <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 z-50 mt-2 bg-white">
-      {/* Logo */}
-      <div className="flex items-center flex-shrink-0">
-        <Link href="/" className="flex items-center" onClick={closeMenu}>
-          <Image
-            src="/logos/full_logo.svg"
-            alt="The 23rd Studio Logo"
-            height={72}
-            width={110}
-            className="h-14 w-auto sm:h-7 md:h-8 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-5 4xl:py-4 transition-all duration-200"
-            priority
-          />
-        </Link>
-      </div>
-
-      {/* Desktop Navigation */}
-      <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-12">
-        {menuItems.map((item: MenuItem) => (
-          <Link
-            key={item.name}
-            href={item.path}
-            className={`
-    relative text-gray-800 font-roboto text-xs sm:text-sm md:text-base lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest 
-    cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-10 4xl:px-12
-    whitespace-nowrap
-    ${
-      isActive(item.path)
-        ? "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-black text-black font-medium"
-        : "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-transparent hover:border-black hover:text-gray-700"
-    }
-  `}
-          >
-            {item.name}
+    <>
+      <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 z-50 mt-2 bg-white">
+        {/* Logo */}
+        <div className="flex items-center flex-shrink-0">
+          <Link href="/" className="flex items-center" onClick={closeMenu}>
+            <Image
+              src="/logos/full_logo.svg"
+              alt="The 23rd Studio Logo"
+              height={72}
+              width={110}
+              className="h-14 w-auto sm:h-7 md:h-16 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-5 4xl:py-4 transition-all duration-200"
+              priority
+            />
           </Link>
-        ))}
-      </nav>
-
-      {/* Mobile Menu Button */}
-      <button
-        className="md:hidden z-50 relative p-2 flex items-center justify-center w-8 h-8 sm:w-10 sm:h-10 rounded-md hover:bg-gray-100 transition-colors duration-200"
-        onClick={toggleMenu}
-        aria-label="Toggle menu"
-        aria-expanded={isMenuOpen}
-        type="button"
-      >
-        <div className="relative w-4 h-4 sm:w-5 sm:h-5">
-          {!isMenuOpen && (
-            <Menu size={20} className="text-gray-800 w-full h-full" />
-          )}
-        </div>
-      </button>
-
-      {/* Mobile Navigation Drawer */}
-      <div
-        className={`
-          fixed top-0 right-0 h-full w-full max-w-xs sm:max-w-sm bg-white shadow-2xl 
-          transform transition-transform duration-300 ease-in-out md:hidden z-40
-          ${isMenuOpen ? "translate-x-0" : "translate-x-full"}
-        `}
-      >
-        {/* Drawer Header */}
-        <div className="flex items-start justify-between p-3 sm:p-4 border-b border-gray-200">
-          <Image
-            src="/logos/full_logo.svg"
-            alt="The 23rd Studio Logo"
-            height={32}
-            width={100}
-            className="h-10 sm:h-16 w-auto"
-          />
-          <button
-            onClick={closeMenu}
-            className="p-1.5 sm:p-2 hover:bg-gray-100 rounded-md transition-colors duration-200"
-            aria-label="Close menu"
-          >
-            <X size={16} className="text-gray-600 sm:w-4 sm:h-4" />
-          </button>
         </div>
 
-        {/* Drawer Menu Items */}
-        <div className="flex flex-col pt-3 sm:pt-4 px-2">
+        {/* Desktop Navigation */}
+        <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-12">
           {menuItems.map((item: MenuItem) => (
             <Link
               key={item.name}
               href={item.path}
               className={`
-                mx-2 mb-1 px-3 sm:px-4 py-2.5 sm:py-3 text-gray-800 font-roboto text-sm sm:text-base 
-                uppercase tracking-widest cursor-pointer rounded-lg transition-all duration-200
-                hover:bg-gray-100 hover:text-black active:bg-gray-200
+                relative text-gray-800 font-roboto text-xs sm:text-[10px] md:text-[10px] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest 
+                cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-10 4xl:px-12
+                whitespace-nowrap
                 ${
                   isActive(item.path)
-                    ? "bg-gray-100 text-black font-medium border-l-4 border-l-black"
+                    ? "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-black text-black font-medium"
+                    : "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-transparent hover:border-black hover:text-gray-700"
+                }
+              `}
+            >
+              {item.name}
+            </Link>
+          ))}
+        </nav>
+
+        {/* Mobile Menu Button */}
+        <button
+          className="md:hidden z-50 relative p-2 flex items-center justify-center w-10 h-10 sm:w-10 sm:h-10 rounded-md hover:bg-gray-100 transition-colors duration-200"
+          onClick={toggleMenu}
+          aria-label="Toggle menu"
+          aria-expanded={isMenuOpen}
+          type="button"
+        >
+          <div className="relative w-8 h-8 sm:w-5 sm:h-5">
+            {isMenuOpen ? (
+              <X size={20} className="text-gray-800 w-full h-full" />
+            ) : (
+              <Menu size={20} className="text-gray-800 w-full h-full" />
+            )}
+          </div>
+        </button>
+      </header>
+
+      {/* Mobile Navigation Dropdown - Top to Bottom */}
+      <div
+        className={`
+          fixed top-16 sm:top-16 left-0 w-full bg-white shadow-lg border-b border-gray-200
+          transform transition-all duration-300 ease-in-out md:hidden z-40
+          ${
+            isMenuOpen
+              ? "translate-y-0 opacity-100"
+              : "-translate-y-full opacity-0"
+          }
+        `}
+      >
+        {/* Menu Items */}
+        <div className="flex flex-col py-4 px-6">
+          {menuItems.map((item: MenuItem) => (
+            <Link
+              key={item.name}
+              href={item.path}
+              className={`
+                px-4 py-3 text-gray-800 font-roboto text-sm sm:text-base 
+                uppercase tracking-widest cursor-pointer rounded-lg transition-all duration-200
+                hover:bg-gray-100 hover:text-black active:bg-gray-200 mb-2
+                ${
+                  isActive(item.path)
+                    ? "bg-gray-100 text-black font-medium"
                     : ""
                 }
               `}
@@ -163,15 +151,12 @@ const Header: React.FC = () => {
             </Link>
           ))}
         </div>
-
-        {/* Optional: Add some space at bottom for better UX */}
-        <div className="h-16 sm:h-20" />
       </div>
 
-      {/* Mobile Overlay */}
+      {/* Mobile Blurred Overlay */}
       {isMenuOpen && (
         <div
-          className="fixed inset-0 bg-black bg-opacity-50 z-30 md:hidden transition-opacity duration-300"
+          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 md:hidden transition-all duration-300"
           onClick={closeMenu}
           role="button"
           tabIndex={0}
@@ -183,7 +168,7 @@ const Header: React.FC = () => {
           aria-label="Close menu overlay"
         />
       )}
-    </header>
+    </>
   );
 };
 

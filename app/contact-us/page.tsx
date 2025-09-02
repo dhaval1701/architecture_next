@@ -5,11 +5,11 @@ import React from "react";
 const ContactUs = () => {
   return (
     <div className="space-y-12">
-      <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
-        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+      <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
+        <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Contact
         </p>
-        <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
           Us
         </p>
       </div>
@@ -27,10 +27,10 @@ const ContactUs = () => {
 
           {/* Content Overlay */}
           <div className="relative z-10 h-full p-5 lg:p-6 xl:p-12 flex items-start">
-            <div className="space-y-3 lg:space-y-4 xl:space-y-6 text-white max-w-xs sm:max-w-sm lg:max-w-md">
+            <div className="space-y-5 lg:space-y-5 xl:space-y-6 text-white max-w-xs sm:max-w-sm lg:max-w-md">
               {/* Studio Title */}
               <div>
-                <h2 className="text-base lg:text-lg xl:text-2xl font-medium mb-2">
+                <h2 className="text-base lg:text-lg xl:text-2xl font-medium mb-0 md:mb-2">
                   417, The 23<sup className="text-xs lg:text-sm">rd</sup> Studio
                 </h2>
                 <p className="text-xs lg:text-sm xl:text-base leading-relaxed opacity-90">
@@ -41,7 +41,7 @@ const ContactUs = () => {
               </div>
 
               {/* Contact Numbers */}
-              <div className="space-y-1">
+              <div className="space-y-1.5">
                 <a
                   href="tel:+917203892651"
                   className="block text-sm lg:text-base xl:text-xl font-medium hover:text-blue-200 transition-colors"
@@ -60,7 +60,7 @@ const ContactUs = () => {
               <div>
                 <a
                   href="mailto:info.23rdstudio@gmail.com"
-                  className="text-xs lg:text-sm xl:text-base hover:text-blue-200 transition-colors"
+                  className="text-sm lg:text-sm xl:text-base hover:text-blue-200 transition-colors"
                 >
                   info.23rdstudio@gmail.com
                 </a>
@@ -82,7 +82,7 @@ const ContactUs = () => {
           {/* Form Content */}
           <div className="relative z-10 h-full flex flex-col justify-center p-5 lg:p-6 xl:p-12">
             <div className="max-w-sm sm:max-w-md xl:max-w-lg mx-auto w-full">
-              <h1 className="text-xl sm:text-2xl lg:text-3xl xl:text-4xl 2xl:text-5xl font-light text-gray-800 mb-5 lg:mb-6 xl:mb-10 leading-tight">
+              <h1 className="text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[74px] 3xl:text-[80px] 4xl:text-[100px] font-light text-gray-800 mb-5 lg:mb-6 xl:mb-10 leading-tight">
                 Get in Touch
               </h1>
 
@@ -91,7 +91,7 @@ const ContactUs = () => {
                 <div>
                   <input
                     type="text"
-                    placeholder="Your Name"
+                    placeholder="Name*"
                     className="w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors rounded-none text-sm lg:text-base"
                   />
                 </div>
@@ -118,11 +118,26 @@ const ContactUs = () => {
 
                 {/* Interested In */}
                 <div>
-                  <input
-                    type="text"
-                    placeholder="Interested In"
-                    className="w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors rounded-none text-sm lg:text-base"
-                  />
+                  <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
+                    <select
+                      id="interest"
+                      name="interest"
+                      // value={formData.interest}
+                      // onChange={handleChange}
+                      className={`w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none resize-none transition-colors rounded-none text-sm lg:text-base appearance-none ${
+                        true ? "text-gray-400 tracking-wider" : "text-gray-800"
+                      }"`}
+                      style={{ backgroundColor: "#fff" }}
+                    >
+                      <option value="" disabled hidden>
+                        Interested In
+                      </option>
+                      <option value="residential">Residential Design</option>
+                      <option value="commercial">Commercial Design</option>
+                      <option value="renovation">Renovation</option>
+                      <option value="consultation">Consultation</option>
+                    </select>
+                  </div>
                 </div>
 
                 {/* Message */}

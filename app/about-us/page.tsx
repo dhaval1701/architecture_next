@@ -47,11 +47,11 @@ const AboutUs: React.FC = () => {
     <div className="">
       {/* Header Section */}
 
-      <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
-        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+      <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
+        <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           About
         </p>
-        <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
           Us
         </p>
       </div>
@@ -107,7 +107,7 @@ const AboutUs: React.FC = () => {
               more than building—it is about shaping experiences. With a focus
               on clean aesthetics, sustainable practices, and context-driven
               design, we ensure every project tells a unique story while
-              enhancing its surroundings. Our design portfolio spans{" "}
+              enhancing its surroundings.
             </p>
             <p>
               At 23rd Design Studio, collaboration and research guide our
@@ -117,7 +117,7 @@ const AboutUs: React.FC = () => {
               <strong>we strive to merge creativity with functionality.</strong>
               Our mission is to deliver designs that elevate lifestyles,
               celebrate minimalism, and contribute to the evolving architectural
-              landscape of Gujarat. .
+              landscape of Gujarat.
             </p>
           </div>
         </div>
@@ -126,20 +126,20 @@ const AboutUs: React.FC = () => {
       <div className="">
         {/* Section Heading */}
         <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-14 3xl:mb-22 4xl:mb-32">
-          <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 3xl:mb-8 leading-none">
+          <p className="text-[#BDBDBD] text-3xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 3xl:mb-8 leading-none">
             Founder&apos;s{" "}
-            <span className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-light leading-tight">
+            <span className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-light leading-tight">
               Vision
             </span>
           </p>
         </div>
 
         {/* Founders Grid */}
-        <div className="grid md:grid-cols-2 gap-2 sm:gap-4 lg:gap-6 xl:gap-12 3xl:gap-24 4xl:gap-32">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-6 lg:gap-6 xl:gap-12 3xl:gap-24 4xl:gap-32 mt-6 sm:mt-8 lg:mt-10 xl:mt-12 3xl:mt-16 4xl:mt-20">
           {foundersData.map((founder, index) => (
             <div
               key={founder.id}
-              className="flex flex-col lg:flex-row items-stretch gap-2 xl:gap-6 3xl:gap-8 4xl:gap-12 h-full"
+              className="flex flex-col lg:flex-row items-stretch gap-4 xl:gap-6 3xl:gap-8 4xl:gap-12 h-full"
             >
               {/* Founder Image (50%) */}
               <div className="lg:basis-1/2 flex-shrink-0">
@@ -168,8 +168,8 @@ const AboutUs: React.FC = () => {
                 </p>
 
                 {/* Name + Instagram */}
-                <div className="flex justify-between items-center gap-3 lg:gap-4 xl:gap-6 3xl:gap-8 4xl:gap-10 pt-2  xl:pt-4">
-                  <h4 className="text-lg sm:text-xl md:text-[14px] lg:text-[18px] xl:text-[20px]  2xl:text-[24px] 3xl:text-6xl 4xl:text-7xl font-medium text-[#7F3434]">
+                <div className="flex justify-start md:justify-between items-center gap-4 lg:gap-4 xl:gap-6 3xl:gap-8 4xl:gap-10 pt-2  xl:pt-4">
+                  <h4 className="text-[16px] sm:text-[16px] md:text-[14px] lg:text-[18px] xl:text-[20px]  2xl:text-[24px] 3xl:text-6xl 4xl:text-7xl font-medium text-[#7F3434]">
                     {founder.name}
                   </h4>
                   {founder.instagramUrl && (

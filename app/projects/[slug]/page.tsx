@@ -71,17 +71,13 @@ export default function ProductDetail({
   return (
     <div className="relative">
       {/* Header */}
-      <div className="bg-transparent mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-10 3xl:mb-24 4xl:mb-32 ">
-        <div className="mx-auto">
-          <div className="mb-6 sm:mb-8 lg:mb-10 xl:mb-12 3xl:mb-16 4xl:mb-20">
-            <p className="text-[#BDBDBD]  text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
-              Project
-            </p>
-            <p className="text-[#333333]  text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
-              {project.title}
-            </p>
-          </div>
-        </div>
+      <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
+        <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+          Project
+        </p>
+        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+          {project.title}
+        </p>
       </div>
 
       {/* Main Content */}
@@ -91,7 +87,7 @@ export default function ProductDetail({
           <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-32 py-4 lg:py-6 3xl:py-32 4xl:py-40 items-stretch">
             {/* Left Column */}
             <div className=" order-2 lg:order-1 lg:col-span-4 h-[250px] lg:h-[435px] flex items-center">
-              <div className="space-y-2 sm:space-y-3 lg:space-y-4 xl:space-y-3 3xl:space-y-6 4xl:space-y-8">
+              <div className="space-y-3 sm:space-y-3 lg:space-y-4 xl:space-y-3 3xl:space-y-6 4xl:space-y-8">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
                   <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
                     Location:
@@ -167,7 +163,7 @@ export default function ProductDetail({
             </div>
 
             {/* Right Column - Description */}
-            <div className="order-2 lg:order-2 h-[480px] flex items-start">
+            <div className="order-2 lg:order-2 flex items-start">
               <div className="text-black font-[300px] space-y-2 lg:space-y-4 leading-[24px] md:leading-loose tracking-normal text-sm sm:text-base md:text-[16px] xl:text-[18px] 3xl:text-4xl 4xl:text-5xl">
                 {project.description.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
@@ -179,25 +175,31 @@ export default function ProductDetail({
       </div>
 
       {/* Large Image Slider Section - Full Width */}
-      <div className="bg-white py-8 sm:py-12 md:py-16 lg:py-20 xl:py-24 3xl:py-32 4xl:py-40 relative">
+      <div className="bg-white relative">
         <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:space-y-12 3xl:space-y-16 4xl:space-y-20">
           {/* Main Large Image Display - Full Width */}
           <div className="relative w-full">
             <div className="relative aspect-[4/2] w-full">
               <AnimatePresence mode="wait">
-                <motion.img
+                <motion.div
                   key={currentImageIndex}
-                  src={currentImage.url}
-                  alt={currentImage.alt}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full relative"
                   initial={{ opacity: 0, scale: 1.1 }}
                   animate={{ opacity: 1, scale: 1 }}
                   exit={{ opacity: 0, scale: 0.9 }}
                   transition={{ duration: 0.5 }}
-                />
+                >
+                  <Image
+                    src={currentImage.url}
+                    alt={currentImage.alt}
+                    fill
+                    className="object-cover"
+                    priority
+                  />
+                </motion.div>
               </AnimatePresence>
 
-              {/* Navigation Arrows */}
+              {/* Navigation Arrows - Hidden on mobile */}
               {project.images.length > 1 && (
                 <>
                   <button
@@ -206,18 +208,18 @@ export default function ProductDetail({
                     aria-label="Previous image"
                   >
                     <ChevronLeft
-                      className="w-6 h-6 lg:w-8 lg:h-18"
+                      className="w-6 h-6 lg:w-8 lg:h-8"
                       strokeWidth={1}
                     />
                   </button>
 
                   <button
                     onClick={handleNextImage}
-                    className="hdidden sm:flex absolute right-0 translate-x-full top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 flex items-center justify-center transition-all duration-200 hover:scale-110 text-black hover:text-gray-600 z-10"
+                    className="hidden sm:flex absolute right-0 translate-x-full top-1/2 -translate-y-1/2 w-10 h-10 sm:w-12 sm:h-12 lg:w-14 lg:h-14 xl:w-16 xl:h-16 flex items-center justify-center transition-all duration-200 hover:scale-110 text-black hover:text-gray-600 z-10"
                     aria-label="Next image"
                   >
                     <ChevronRight
-                      className="w-6 h-6 lg:w-8 lg:h-18"
+                      className="w-6 h-6 lg:w-8 lg:h-8"
                       strokeWidth={1}
                     />
                   </button>
@@ -226,30 +228,32 @@ export default function ProductDetail({
 
               {/* Image Counter */}
               {project.images.length > 1 && (
-                <div className="absolute bottom-4 right-4 bg-black/40 text-white px-4 py-2 rounded-full text-sm sm:text-base lg:text-lg backdrop-blur-sm z-10">
+                <div className="hidden md:block absolute bottom-4 right-4 bg-black/40 text-white px-4 py-2 rounded-full text-sm sm:text-base lg:text-lg backdrop-blur-sm z-10">
                   {currentImageIndex + 1} / {project.images.length}
                 </div>
               )}
             </div>
           </div>
 
-          {/* Thumbnail Gallery */}
+          {/* Thumbnail Gallery - Smaller thumbnails */}
           {project.images.length > 1 && (
             <div className="">
-              <div className="flex gap-3 overflow-hidden justify-start">
+              <div className="flex gap-2 overflow-hidden justify-start">
                 {project.images.map((image, index) => (
                   <button
                     key={image.id}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`flex-shrink-0 w-20 sm:w-24 h-20 sm:h-24 lg:w-28 lg:h-28 xl:w-26 2xl:h-26 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+                    className={`flex-shrink-0 w-12 sm:w-16 h-12 sm:h-16 lg:w-20 lg:h-20 xl:w-22 xl:h-22 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
                       index === currentImageIndex
                         ? "border-gray-800 shadow-lg scale-105"
                         : "border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100"
                     }`}
                   >
-                    <img
+                    <Image
                       src={image.url}
                       alt={image.alt}
+                      width={80}
+                      height={80}
                       className="w-full h-full object-cover"
                     />
                   </button>

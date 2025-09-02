@@ -3,8 +3,8 @@ import { usePathname } from "next/navigation";
 
 export default function ConditionalBackground() {
   const pathname = usePathname();
-  const shouldShowBackground =
-    pathname === "/projects" || pathname.startsWith("/projects/");
+
+  const shouldShowBackground = pathname.startsWith("/projects/");
 
   if (!shouldShowBackground) return null;
 

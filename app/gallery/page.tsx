@@ -1,5 +1,5 @@
 "use client";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion, AnimatePresence, Variants } from "framer-motion";
 import Image from "next/image";
 import { Expand } from "lucide-react";
@@ -54,7 +54,6 @@ const defaultImages: ImageData[] = [
     alt: "Modern Interior 7",
     size: "wide",
   },
-
   {
     id: 8,
     src: "/gallery/image_8.webp",
@@ -97,7 +96,6 @@ const defaultImages: ImageData[] = [
     alt: "Modern Interior 14",
     size: "wide",
   },
-
   {
     id: 15,
     src: "/gallery/image_15.webp",
@@ -140,7 +138,6 @@ const defaultImages: ImageData[] = [
     alt: "Modern Interior 21",
     size: "wide",
   },
-
   {
     id: 22,
     src: "/gallery/image_22.webp",
@@ -187,18 +184,96 @@ const defaultImages: ImageData[] = [
 
 const imagesPerPage = 7;
 
-// Grid mapping for 5-column layout
-const getGridClasses = (size: ImageData["size"]): string => {
+// Helper function to arrange images for mobile layout ONLY
+const arrangeImagesForMobileLayout = (images: ImageData[]): ImageData[] => {
+  const singles = images.filter((img) => img.size === "single");
+  const wides = images.filter((img) => img.size === "wide");
+  const talls = images.filter((img) => img.size === "tall");
+
+  // Arrange in the specific pattern: single, tall, single, wide, single, single, wide
+  const arrangedImages: ImageData[] = [];
+
+  // Position 0: single
+  if (singles[0]) arrangedImages[0] = singles[0];
+  // Position 1: tall
+  if (talls[0]) arrangedImages[1] = talls[0];
+  // Position 2: single
+  if (singles[1]) arrangedImages[2] = singles[1];
+  // Position 3: wide
+  if (wides[0]) arrangedImages[3] = wides[0];
+  // Position 4: single
+  if (singles[2]) arrangedImages[4] = singles[2];
+  // Position 5: single
+  if (singles[3]) arrangedImages[5] = singles[3];
+  // Position 6: wide
+  if (wides[1]) arrangedImages[6] = wides[1];
+
+  // Filter out undefined values
+  return arrangedImages.filter(Boolean);
+};
+
+// Helper function to get mobile-specific classes based on position and actual size
+const getMobileLayoutClasses = (
+  index: number,
+  size: ImageData["size"]
+): string => {
+  const position = index % 7; // 7-image pattern: 0,1,2,3,4,5,6 then repeats
+
+  switch (position) {
+    case 0: // First position - should be single
+      return "col-span-1 row-span-1";
+    case 1: // Second position - should be tall (covers 2 rows)
+      return size === "tall"
+        ? "col-span-1 row-span-2"
+        : "col-span-1 row-span-1";
+    case 2: // Third position - should be single
+      return "col-span-1 row-span-1";
+    case 3: // Fourth position - should be wide (covers 2 columns)
+      return size === "wide"
+        ? "col-span-2 row-span-1"
+        : "col-span-1 row-span-1";
+    case 4: // Fifth position - should be single
+      return "col-span-1 row-span-1";
+    case 5: // Sixth position - should be single
+      return "col-span-1 row-span-1";
+    case 6: // Seventh position - should be wide (covers 2 columns)
+      return size === "wide"
+        ? "col-span-2 row-span-1"
+        : "col-span-1 row-span-1";
+    default:
+      return "col-span-1 row-span-1";
+  }
+};
+
+// Original grid mapping for desktop (your old layout)
+const getDesktopGridClasses = (size: ImageData["size"]): string => {
   switch (size) {
     case "wide": // spans 2 columns
-      return "col-span-1 row-span-1 md:col-span-2 md:row-span-1";
+      return "col-span-2 row-span-1";
     case "tall": // spans 2 rows
-      return "col-span-1 row-span-1 md:col-span-1 md:row-span-2";
+      return "col-span-1 row-span-2";
     case "large": // spans 2x2
-      return "col-span-1 row-span-1 md:col-span-2 md:row-span-2";
+      return "col-span-2 row-span-2";
     case "single":
     default:
       return "col-span-1 row-span-1";
+  }
+};
+
+// Updated Grid mapping - mobile custom layout + desktop original layout
+const getGridClasses = (
+  size: ImageData["size"],
+  index: number,
+  isMobileLayout: boolean
+): string => {
+  if (isMobileLayout) {
+    // Mobile: Use custom layout
+    const mobileClasses = getMobileLayoutClasses(index, size);
+    const desktopClasses = `md:${getDesktopGridClasses(size)}`;
+    return `${mobileClasses} ${desktopClasses}`;
+  } else {
+    // Desktop: Use original layout
+    return getDesktopGridClasses(size);
   }
 };
 
@@ -245,12 +320,38 @@ const backdropVariants: Variants = {
 const Gallery: React.FC = () => {
   const [currentPage, setCurrentPage] = useState<number>(1);
   const [selectedImage, setSelectedImage] = useState<ImageData | null>(null);
+  const [isMobile, setIsMobile] = useState<boolean>(false);
   const totalPages = Math.ceil(defaultImages.length / imagesPerPage);
+
+  // Check if screen is mobile size
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768); // md breakpoint
+    };
+
+    checkMobile();
+    window.addEventListener("resize", checkMobile);
+    return () => window.removeEventListener("resize", checkMobile);
+  }, []);
+
+  useEffect(() => {
+    if (selectedImage) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "unset";
+    }
+    return () => {
+      document.body.style.overflow = "unset";
+    };
+  }, [selectedImage]);
 
   const getCurrentPageImages = (): ImageData[] => {
     const startIndex = (currentPage - 1) * imagesPerPage;
     const endIndex = startIndex + imagesPerPage;
-    return defaultImages.slice(startIndex, endIndex);
+    const pageImages = defaultImages.slice(startIndex, endIndex);
+
+    // Only arrange for mobile layout if it's actually mobile
+    return isMobile ? arrangeImagesForMobileLayout(pageImages) : pageImages;
   };
 
   const currentImages = getCurrentPageImages();
@@ -269,16 +370,16 @@ const Gallery: React.FC = () => {
 
   return (
     <div className="flex flex-col justify-between">
-      <div className="mb-4 md:mb-6  xl:mb-10 3xl:mb-16 4xl:mb-24">
-        <p className="text-[#BDBDBD] text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+      <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
+        <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Photo
         </p>
-        <p className="text-[#333333] text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
           Gallery
         </p>
       </div>
 
-      {/* Gallery Grid - Updated with 2xl row heights */}
+      {/* Gallery Grid - Updated with responsive layouts */}
       <div className="mx-auto flex-1 mb-10 w-full 4xl:mb-16">
         <AnimatePresence mode="wait">
           <motion.div
@@ -287,17 +388,18 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[250px] 2xl:auto-rows-[280px] 3xl:auto-rows-[350px] 4xl:auto-rows-[380px]"
+            className="grid grid-cols-2 md:grid-cols-5 gap-4 2xl:gap-6 3xl:gap-8 auto-rows-[200px] md:auto-rows-[220px] lg:auto-rows-[250px] 2xl:auto-rows-[280px] 3xl:auto-rows-[350px] 4xl:auto-rows-[380px]"
             style={{ gridAutoFlow: "row dense" }}
           >
-            {currentImages.map((image) => (
+            {currentImages.map((image, index) => (
               <motion.div
                 key={`${currentPage}-${image.id}`}
                 variants={imageVariants}
                 className={`relative overflow-hidden group cursor-pointer bg-gray-200 ${getGridClasses(
-                  image.size
+                  image.size,
+                  index,
+                  isMobile
                 )}`}
-                // whileHover={{ scale: 1.03, zIndex: 10 }}
                 whileTap={{ scale: 0.98 }}
                 onClick={() => handleImageClick(image)}
               >
@@ -305,7 +407,7 @@ const Gallery: React.FC = () => {
                   src={image.src}
                   alt={image.alt}
                   fill
-                  className="object-cover  group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0"
+                  className="object-cover group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0"
                   loading="lazy"
                   sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw"
                 />
@@ -391,7 +493,7 @@ const Gallery: React.FC = () => {
         </motion.div>
       </div>
 
-      {/* Modal for Large Image - Increase modal size for 4xl */}
+      {/* Modal for Large Image */}
       <AnimatePresence>
         {selectedImage && (
           <motion.div
@@ -408,12 +510,14 @@ const Gallery: React.FC = () => {
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
               className="absolute inset-0 bg-black/50 backdrop-blur-md"
-              onClick={closeModal}
             />
 
             {/* Close Button */}
             <button
-              onClick={closeModal}
+              onClick={(e) => {
+                e.stopPropagation();
+                closeModal();
+              }}
               className="absolute top-4 right-4 z-20 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
               aria-label="Close modal"
             >
@@ -437,15 +541,16 @@ const Gallery: React.FC = () => {
               initial={{ opacity: 0, scale: 0.95 }}
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
-              transition={{ delay: 0.2, duration: 0.3 }} // wait for backdrop first
-              className="relative flex items-center justify-center w-full h-full max-w-full max-h-full"
-              // onClick={(e) => e.stopPropagation()}
+              transition={{ delay: 0.2, duration: 0.3 }}
+              className="relative max-w-[90vw] max-h-[90vh] w-auto h-auto"
+              onClick={(e) => e.stopPropagation()}
             >
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
-                fill
-                className="object-contain rounded-lg shadow-2xl"
+                width={1200}
+                height={800}
+                className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl"
                 priority
               />
             </motion.div>

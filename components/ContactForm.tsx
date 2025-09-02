@@ -81,7 +81,7 @@ const ContactFormOverlay: React.FC<ContactFieldsProps> = ({
                 type="text"
                 id="name"
                 name="name"
-                placeholder="Your Name"
+                placeholder="Name *"
                 value={formData.name}
                 onChange={handleChange}
                 className={`bg-white border border-gray-200 w-full h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12 2xl:h-14 3xl:h-16 4xl:h-20 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-7 3xl:px-8 4xl:px-10 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:border-gray-400 transition-all ${
@@ -101,7 +101,7 @@ const ContactFormOverlay: React.FC<ContactFieldsProps> = ({
                 type="tel"
                 id="phone"
                 name="phone"
-                placeholder="Phone Number*"
+                placeholder="Phone Number *"
                 value={formData.phone}
                 onChange={handleChange}
                 className={`bg-white border border-gray-200 w-full h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12 2xl:h-14 3xl:h-16 4xl:h-20 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-7 3xl:px-8 4xl:px-10 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:border-gray-400 transition-all ${
@@ -121,7 +121,7 @@ const ContactFormOverlay: React.FC<ContactFieldsProps> = ({
                 type="email"
                 id="email"
                 name="email"
-                placeholder="E-mail*"
+                placeholder="E-mail *"
                 value={formData.email}
                 onChange={handleChange}
                 className={`bg-white border border-gray-200 w-full h-8 sm:h-9 md:h-10 lg:h-11 xl:h-12 2xl:h-14 3xl:h-16 4xl:h-20 px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-7 3xl:px-8 4xl:px-10 text-gray-800 placeholder-gray-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl focus:outline-none focus:border-gray-400 transition-all ${
@@ -210,13 +210,13 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             type="text"
             id="name"
             name="name"
-            placeholder="Name"
+            placeholder="Name *"
             value={formData.name}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+            className={`w-full h-11 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
               px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
               text-gray-800 placeholder-gray-400 
-              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              text-[14px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
               focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all
               ${errors.name ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
@@ -237,10 +237,10 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             placeholder="Phone Number *"
             value={formData.phone}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+            className={`w-full h-11 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
               px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
               text-gray-800 placeholder-gray-400 
-              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              text-[14px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
               focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all
               ${errors.phone ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
@@ -261,10 +261,10 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             placeholder="E-mail *"
             value={formData.email}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+            className={`w-full h-11 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
               px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
               text-gray-800 placeholder-gray-400 
-              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              text-[14px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
               focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all
               ${errors.email ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
@@ -283,14 +283,14 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             name="interest"
             value={formData.interest}
             onChange={handleChange}
-            className={`w-full h-10 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
+            className={`w-full h-11 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
     px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10
     focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all appearance-none
     ${
       formData.interest === ""
         ? "text-gray-400 tracking-wider"
         : "text-gray-800"
-    } text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl `}
+    } text-[14px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl `}
             style={{ backgroundColor: "#F3F3F3" }}
           >
             <option value="" disabled hidden>
@@ -315,7 +315,7 @@ const ContactFields: React.FC<ContactFieldsProps> = ({
             className={`w-full h-full min-h-[100px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] xl:min-h-[180px] 2xl:min-h-[160px] 3xl:min-h-[260px] 4xl:min-h-[320px] 
               p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 2xl:p-5 3xl:p-9 4xl:p-11 
               text-gray-800 placeholder-gray-400
-              text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
+              text-[14px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
               focus:outline-none focus:ring-2 focus:ring-gray-400 transition-all resize-none
               ${errors.message ? "ring-2 ring-red-500" : ""}`}
             style={{ backgroundColor: "#F3F3F3" }}
