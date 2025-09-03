@@ -40,14 +40,14 @@ export const Home = () => {
       <HeroSection />
 
       <div
-        className="relative z-10 bg-cover bg-center mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48"
+        className="relative z-10 bg-cover bg-center mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48 5xl:mb-56"
         style={{ backgroundImage: "url('/assets/home_background_1.png')" }} // 👈 your background here
       >
-        <div className="px-2 sm:px-8 lg:px-10 xl:px-13 2xl:px-16 3xl:px-26 4xl:px-32">
-          <div className="flex flex-col lg:flex-row items-start gap-0 lg:gap-12 xl:gap-16 2xl:gap-10 3xl:gap-24">
+        <div className="px-2 sm:px-8 lg:px-10 xl:px-13 2xl:px-18 3xl:px-26 4xl:px-32 5xl:px-36">
+          <div className="flex flex-col lg:flex-row items-start gap-0 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-28 5xl:gap-32">
             {/* Image Section - Left (55%) */}
-            <div className="w-full lg:w-[57%] flex justify-center lg:justify-start ">
-              <div className="relative aspect-square lg:max-h-[600px] 3xl:max-h-[770px] w-full">
+            <div className="w-full lg:w-[58%] flex justify-center lg:justify-start ">
+              <div className="relative aspect-square lg:max-h-[600px] 3xl:max-h-[820px] 4xl:max-h-[940px] 5xl:max-h-[1480px] w-full">
                 <Image
                   src="/assets/owner_group.svg"
                   alt="Architects"
@@ -59,14 +59,14 @@ export const Home = () => {
             </div>
 
             {/* Content Section - Right (45%) */}
-            <div className="w-full lg:w-[43%] flex flex-col justify-start text-left p-4 sm:p-6 md:p-8 lg:p-6 xl:p-12 2xl:14 3xl:p-16 4xl:p-20">
+            <div className="w-full lg:w-[42%] flex flex-col justify-start text-left py-4 sm:py-6 md:py-8 lg:py-6 xl:py-12 2xl:py-22 3xl:py-30 4xl:py-34 5xl:py-44">
               {/* Title */}
-              <h1 className="text-[#909090] font-light leading-tight mb-4 sm:mb-6 lg:mb-8 text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[74px] 3xl:text-[80px] 4xl:text-[100px]">
+              <h1 className="text-[#909090] font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12 3xl:mb-14 4xl:mb-18 5xl:mb-32 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
                 Architects
               </h1>
 
               {/* Description */}
-              <p className="text-[#333333] font-light leading-[28px] text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl max-w-[55ch] mx-auto lg:mx-0">
+              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl 5xl:text-6xl max-w-[55ch] mx-auto lg:mx-0 leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[74px]">
                 Two architects walked into a studio… and never looked back.
                 That&apos;s how{" "}
                 <span className="font-bold">23rd Design Studio</span> began as a
@@ -85,7 +85,7 @@ export const Home = () => {
         {/* Mission Statement Section */}
         <section className="overflow-hidden">
           {/* Section Heading */}
-          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
+          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-22 4xl:mb-28 5xl:mb-36 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
             Mission Statement
           </div>
 
@@ -101,7 +101,7 @@ export const Home = () => {
                 <div
                   key={index}
                   className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48
-                   w-70 sm:w-96 md:w-[28rem] lg:w-[35rem] xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[50rem] 4xl:w-[55rem]"
+                   w-70 sm:w-96 md:w-[28rem] lg:w-[35rem] xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[50rem] 4xl:w-[65rem]"
                 >
                   {/* Number */}
                   <div
@@ -127,24 +127,26 @@ export const Home = () => {
               {/* Duplicate row for seamless loop */}
               {missionItems.map((item, index) => (
                 <div
-                  key={`copy-${index}`}
-                  className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 lg:pr-20 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48
-                   w-80 sm:w-96 md:w-[30rem] lg:w-[35rem] xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[50rem] 4xl:w-[55rem]"
+                  key={index}
+                  className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48
+                   w-70 sm:w-96 md:w-[28rem] lg:w-[35rem] xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[50rem] 4xl:w-[65rem]"
                 >
+                  {/* Number */}
                   <div
-                    className="text-gray-300 font-black mr-4 sm:mr-6 md:mr-8 lg:mr-10 xl:mr-12 2xl:mr-14 3xl:mr-16 4xl:mr-20"
+                    className="text-gray-300 font-black mr-4 sm:mr-6 md:mr-8 xl:mr-12 2xl:mr-14 3xl:mr-16 4xl:mr-20"
                     style={{
-                      fontSize: "clamp(6rem, 12vw, 20rem)",
+                      fontSize: "clamp(7rem, 13vw, 20rem)",
                       lineHeight: "0.75",
                       fontWeight: "500",
                     }}
                   >
                     {item.number}
                   </div>
+                  {/* Text */}
                   <div
-                    className="text-gray-800 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
-                        leading-5 sm:leading-6 md:leading-7 lg:leading-8 xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
-                        flex-1"
+                    className="text-[#333333] text-xs sm:text-sm md:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
+                        leading-5 sm:leading-6 md:leading-6 xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
+                        flex-1 whitespace-normal break-words"
                   >
                     {item.text}
                   </div>
@@ -198,7 +200,7 @@ export const Home = () => {
 
       <section className="mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
         {/* Section Title */}
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-22 4xl:mb-28 5xl:mb-36 text-left">
           Our Projects
         </div>
 
@@ -234,7 +236,7 @@ export const Home = () => {
                   return (
                     <div
                       key={project.id}
-                      className={`relative w-full ${basisClass} h-48 sm:h-56 md:h-44 xl:h-64 3xl:h-[22rem] 4xl:h-[28rem] overflow-hidden group focus-within:bg-black`}
+                      className={`relative w-full ${basisClass} h-48 sm:h-56 md:h-44 xl:h-64 3xl:h-[22rem] 4xl:h-[28rem] 4xl:h-[32rem] overflow-hidden group focus-within:bg-black`}
                     >
                       {/* Image */}
                       <Image
@@ -261,7 +263,7 @@ export const Home = () => {
                       text-left max-w-[70%] pl-6 sm:pl-8 md:pl-12 lg:pl-16
                     "
                         >
-                          <div className="text-white uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-8xl 4xl:text-9xl font-bold mb-4">
+                          <div className="text-white uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-7xl 4xl:text-8xl 5xl:text-9xl font-bold mb-4">
                             {project.title}
                           </div>
                           <Link href={`/projects/${project.slug}`} tabIndex={0}>
@@ -290,7 +292,7 @@ export const Home = () => {
 
       {/* Contact Section */}
       <section className="">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl lg:text-6xl xl:text-7xl 2xl:text-6xl 3xl:text-9xl 4xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 xl:mb-12 2xl:mb-16 3xl:mb-32 4xl:mb-40 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-22 4xl:mb-28 5xl:mb-36 text-left">
           Contact Us
         </div>
 

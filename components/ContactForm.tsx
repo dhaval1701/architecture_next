@@ -356,7 +356,7 @@ const ContactImage: React.FC = () => {
 export const ContactMap: React.FC = () => {
   return (
     <div
-      className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[450px] 2xl:h-[430px] 3xl:h-[700px] 4xl:h-[960px] w-full overflow-hidden"
+      className="relative h-[300px] sm:h-[400px] md:h-[500px] lg:h-[450px] 2xl:h-[430px] 3xl:h-[650px] 4xl:h-[800px] w-full overflow-hidden"
       style={{ filter: "grayscale(1)" }}
     >
       <iframe

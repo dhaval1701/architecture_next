@@ -16,6 +16,7 @@
 
   --breakpoint-3xl: 120rem; /* 1920px for large desktop/TV */
   --breakpoint-4xl: 160rem; /* 2560px for 4K/55-inch TV */
+  --breakpoint-5xl: 200rem; /* 3200px for 8K/65-inch TV */
 
   /* Custom Spacing */
   --spacing-18: 4.5rem;

@@ -62,7 +62,7 @@ const Header: React.FC = () => {
 
   return (
     <>
-      <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 z-50 mt-2 bg-white">
+      <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 5xl:h-56 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 5xl:px-56 z-50 mt-2 bg-white">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
           <Link href="/" className="flex items-center" onClick={closeMenu}>
@@ -71,28 +71,39 @@ const Header: React.FC = () => {
               alt="The 23rd Studio Logo"
               height={72}
               width={110}
-              className="h-14 w-auto sm:h-7 md:h-16 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-5 4xl:py-4 transition-all duration-200"
+              className="h-14 w-auto sm:h-7 md:h-16 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 5xl:h-56 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-6 4xl:py-6  transition-all duration-200"
               priority
             />
           </Link>
         </div>
 
         {/* Desktop Navigation */}
-        <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-12">
+        <nav className="hidden md:flex items-center gap-2 lg:gap-4 xl:gap-6 2xl:gap-8 3xl:gap-10 4xl:gap-12 5xl:gap-22">
           {menuItems.map((item: MenuItem) => (
             <Link
               key={item.name}
               href={item.path}
               className={`
-                relative text-gray-800 font-roboto text-xs sm:text-[10px] md:text-[10px] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-3xl 4xl:text-4xl uppercase tracking-widest 
-                cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-10 4xl:px-12
+                relative font-roboto text-xs sm:text-[10px] md:text-[10px] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-[18px] 4xl:text-[25px] 5xl:text-[34px] uppercase tracking-widest 
+                cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-6 4xl:px-6 5xl:px-10
                 whitespace-nowrap
                 ${
                   isActive(item.path)
-                    ? "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-black text-black font-medium"
-                    : "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-transparent hover:border-black hover:text-gray-700"
+                    ? "text-black font-semibold"
+                    : "text-gray-500 hover:text-gray-700"
                 }
               `}
+
+              // className={`
+              //   relative text-gray-800 font-roboto text-xs sm:text-[10px] md:text-[10px] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-[18px] 4xl:text-[25px] 5xl:text-[34px] uppercase tracking-widest
+              //   cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-6 4xl:px-6 5xl:px-10
+              //   whitespace-nowrap
+              //   ${
+              //     isActive(item.path)
+              //       ? "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-black text-black font-medium"
+              //       : "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-transparent hover:border-black hover:text-gray-700"
+              //   }
+              // `}
             >
               {item.name}
             </Link>

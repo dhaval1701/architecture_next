@@ -26,16 +26,16 @@ const Projects: React.FC = () => {
         <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Our
         </p>
-        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-bold leading-tight">
           Projects
         </p>
       </div>
 
       {/* Projects Grid */}
-      <div className="grid grid-cols-1 gap-8 mb-12">
+      <div className="grid grid-cols-1 gap-8 3xl:gap-12 4xl:gap-16 5xl:gap-20 mb-12">
         {currentProjects.map((project) => (
           <Link href={`/projects/${project.slug}`} key={project.id}>
-            <div className="group relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] overflow-hidden cursor-pointer transition-transform duration-300">
+            <div className="group relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] 3xl:h-[700px] 4xl:h-[800px] 5xl:h-[900px] overflow-hidden cursor-pointer transition-transform duration-300">
               {/* Image Container */}
               <div className="relative w-full h-full">
                 <Image
@@ -48,8 +48,8 @@ const Projects: React.FC = () => {
                 />
 
                 {/* Bottom Left Title Overlay (Default State) */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 sm:p-6 md:p-8 pb-4 sm:pb-6 transition-opacity duration-300 group-hover:opacity-0">
-                  <h3 className="text-white text-base sm:text-lg md:text-xl font-medium uppercase tracking-wide m-0">
+                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 sm:p-6 md:p-8 pb-4 sm:pb-6 3xl:p-10 4xl:p-14 5xl:p-16 transition-opacity duration-300 group-hover:opacity-0">
+                  <h3 className="text-white text-base sm:text-lg md:text-xl 3xl:text-2xl 4xl:text-3xl 5xl:text-4xl font-medium uppercase tracking-wide m-0">
                     {project.title}
                   </h3>
                 </div>
@@ -57,7 +57,7 @@ const Projects: React.FC = () => {
                 {/* Hover Overlay - Full Background */}
                 <div className="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
                   <motion.div
-                    className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-4 sm:p-6 md:p-8"
+                    className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-4 sm:p-6 md:p-8 3xl:p-10 4xl:p-14 5xl:p-16"
                     initial={{ y: 100, opacity: 0 }}
                     animate={{
                       y: 0,
@@ -93,10 +93,10 @@ const Projects: React.FC = () => {
                         transition: { duration: 0.2, ease: "easeIn" },
                       }}
                     >
-                      <h3 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl font-bold mb-2 uppercase tracking-wide text-white">
+                      <h3 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-bold mb-2 uppercase tracking-wide text-white">
                         {project.title}
                       </h3>
-                      <div className="space-y-1 mb-3 text-xs sm:text-sm opacity-90">
+                      <div className="space-y-1 mb-3 text-xs sm:text-sm 3xl:text-base 4xl:text-lg 5xl:text-xl opacity-90">
                         <p className="text-gray-200">{project.location}</p>
                         <p className="text-gray-200">{project.builtUpArea}</p>
                         <p className="text-gray-200">{project.year}</p>
@@ -122,9 +122,11 @@ const Projects: React.FC = () => {
                         transition: { duration: 0.2, ease: "easeIn" },
                       }}
                     >
-                      <button className="bg-transparent text-white px-3 sm:px-4 md:px-6 py-2 text-xs sm:text-sm uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2 hover:bg-white/10 rounded">
+                      <button className="bg-transparent text-white px-3 sm:px-4 md:px-6 py-2 text-xs sm:text-sm 3xl:text-base 4xl:text-lg 5xl:text-xl uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2 hover:bg-white/10 rounded">
                         View More
-                        <span className="text-sm sm:text-lg">→</span>
+                        <span className="text-sm sm:text-lg 3xl:text-xl 4xl:text-2xl 5xl:text-3xl">
+                          →
+                        </span>
                       </button>
                     </motion.div>
                   </motion.div>
@@ -144,14 +146,14 @@ const Projects: React.FC = () => {
             animate={{ opacity: 1, x: 0 }}
           >
             {/* Slide Counter */}
-            <div className="flex items-center mr-4 sm:mr-6">
-              <span className="text-gray-500 text-xl sm:text-2xl md:text-3xl font-light min-w-[20px] sm:min-w-[24px] text-right">
+            <div className="flex items-center mr-4 sm:mr-6 3xl:mr-8 4xl:mr-10 5xl:mr-12">
+              <span className="text-gray-500 text-xl sm:text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-light min-w-[20px] sm:min-w-[24px] 3xl:min-w-[28px] 4xl:min-w-[32px] 5xl:min-w-[36px] text-right">
                 {currentPage}
               </span>
-              <div className="text-gray-200 text-xl sm:text-2xl md:text-3xl mx-2 sm:mx-4">
+              <div className="text-gray-200 text-xl sm:text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl mx-2 sm:mx-4 3xl:mx-6 4xl:mx-8 5xl:mx-10">
                 /
               </div>
-              <span className="text-gray-400 text-xl sm:text-2xl md:text-3xl font-light min-w-[20px] sm:min-w-[24px]">
+              <span className="text-gray-400 text-xl sm:text-2xl md:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-light min-w-[20px] sm:min-w-[24px] 3xl:min-w-[28px] 4xl:min-w-[32px] 5xl:min-w-[36px]">
                 {totalPages}
               </span>
             </div>
@@ -161,7 +163,7 @@ const Projects: React.FC = () => {
               <motion.button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className={`w-10 h-10 sm:w-12 sm:h-12 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors mr-3 sm:mr-4 ${
+                className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-14 3xl:h-14 4xl:w-16 4xl:h-16 5xl:w-20 5xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors mr-3 sm:mr-4 3xl:mr-6 4xl:mr-8 5xl:mr-10 ${
                   currentPage === 1
                     ? "opacity-50 cursor-not-allowed bg-gray-100"
                     : "hover:bg-gray-50"
@@ -175,14 +177,14 @@ const Projects: React.FC = () => {
                   alt="Previous"
                   width={16}
                   height={16}
-                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5 3xl:w-6 3xl:h-6 4xl:w-8 4xl:h-8 5xl:w-10 5xl:h-10"
                 />
               </motion.button>
 
               <motion.button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className={`w-10 h-10 sm:w-12 sm:h-12 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors ${
+                className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-14 3xl:h-14 4xl:w-16 4xl:h-16 5xl:w-20 5xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors ${
                   currentPage === totalPages
                     ? "opacity-50 cursor-not-allowed bg-gray-100"
                     : "bg-gray-50 hover:bg-gray-100"
@@ -196,7 +198,7 @@ const Projects: React.FC = () => {
                   alt="Next"
                   width={16}
                   height={16}
-                  className="w-4 h-4 sm:w-5 sm:h-5"
+                  className="w-4 h-4 sm:w-5 sm:h-5 3xl:w-6 3xl:h-6 4xl:w-8 4xl:h-8 5xl:w-10 5xl:h-10"
                 />
               </motion.button>
             </div>

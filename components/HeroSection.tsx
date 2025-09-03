@@ -33,14 +33,14 @@ const HeroSection = () => {
   const currentProject = projectsData[currentSlide];
 
   return (
-    <section className="mb-8 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48 relative ">
+    <section className="mb-8 sm:mb-8 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48 5xl:mb-56 relative ">
       {/* Background Scrolling Text */}
-      <div className="breakout absolute -top-9 sm:-top-8 md:-top-14 lg:-top-22 xl:-top-20 2xl:-top-34 3xl:-top-36 4xl:-top-46 left-0 z-0 select-none pointer-events-none overflow-hidden h-[60px] sm:h-[80px] md:h-[100px] lg:h-[160px] xl:h-[200px] 2xl:h-[260px] 3xl:h-[320px] 4xl:h-[380px] flex items-center">
+      <div className="breakout absolute -top-9 sm:-top-8 md:-top-14 lg:-top-22 xl:-top-20 2xl:-top-34 3xl:-top-36 4xl:-top-46 5xl:-top-54 left-0 z-0 select-none pointer-events-none overflow-hidden h-[60px] sm:h-[80px] md:h-[100px] lg:h-[160px] xl:h-[200px] 2xl:h-[260px] 3xl:h-[320px] 4xl:h-[380px] 5xl:h-[440px] flex items-center">
         <ScrollingText />
       </div>
 
       {/* Main Layout */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-10 sm:mt-12 md:mt-12 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-44 4xl:mt-84">
+      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-10 sm:mt-12 md:mt-12 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-44 4xl:mt-84 5xl:mt-96">
         {/* Mobile Image First */}
         {isMobile && (
           <div className="w-full mb-4 sm:mb-6 md:mb-8">
@@ -73,15 +73,15 @@ const HeroSection = () => {
         )}
 
         {/* Left Text Content */}
-        <div className="w-full lg:w-2/5 xl:w-1/3 2xl:w-2/5 3xl:w-1/3 4xl:w-2/5 mb-4 sm:mb-6 md:mb-8 lg:mb-0 lg:pr-4 xl:pr-6 2xl:pr-8 3xl:pr-12 4xl:pr-16 flex flex-col justify-center lg:justify-end">
-          <div className="flex flex-row justify-between items-end lg:flex-col lg:justify-end lg:items-start h-full pb-0 lg:pb-8 xl:pb-12 2xl:pb-14 3xl:pb-20 4xl:pb-24">
+        <div className="w-full lg:w-2/5 xl:w-1/3 2xl:w-2/5 3xl:w-1/3 4xl:w-2/5 5xl:w-1/3 mb-4 sm:mb-6 md:mb-8 lg:mb-0 lg:pr-4 xl:pr-6 2xl:pr-8 3xl:pr-12 4xl:pr-16 5xl:pr-20 flex flex-col justify-center lg:justify-end">
+          <div className="flex flex-row justify-between items-end lg:flex-col lg:justify-end lg:items-start h-full pb-0 lg:pb-8 xl:pb-12 2xl:pb-14 3xl:pb-20 4xl:pb-24 5xl:pb-28">
             {/* Project Title + Details */}
             <div className="">
               {/* Title */}
-              <div className="text-[#BDBDBD] text-left text-3xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[138px] font-light mb-0 leading-tight">
+              <div className="text-[#BDBDBD] text-left text-3xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[112px] 5xl:text-[148px] font-light mb-0 leading-tight">
                 {currentProject.title.split(" ")[0]}
               </div>
-              <div className="text-[#000] text-left font-bold leading-[0.85] text-3xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[138px]">
+              <div className="text-[#000] text-left font-bold leading-[0.85] text-3xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[112px] 5xl:text-[148px]">
                 {currentProject.title
                   .split(" ")
                   .slice(1)
@@ -93,14 +93,14 @@ const HeroSection = () => {
               </div>
 
               {/* Details */}
-              <div className="space-y-0.5 sm:space-y-1 md:space-y-1.5 lg:space-y-2 xl:space-y-2 2xl:space-y-2 3xl:space-y-4 4xl:space-y-5 mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12 3xl:mb-16 4xl:mb-20 mt-1 sm:mt-2 md:mt-3 lg:mt-4 xl:mt-5 2xl:mt-6 3xl:mt-8 4xl:mt-10">
-                <div className="text-[#8d8d8d] text-left text-sm xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-7xl font-light">
+              <div className="space-y-0.5 sm:space-y-1 md:space-y-1.5 lg:space-y-2 xl:space-y-2 2xl:space-y-2 3xl:space-y-4 4xl:space-y-5 5xl:space-y-6 mb-3 sm:mb-4 md:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12 3xl:mb-16 4xl:mb-20 5xl:mb-24 mt-1 sm:mt-2 md:mt-3 lg:mt-4 xl:mt-5 2xl:mt-6 3xl:mt-8 4xl:mt-10 5xl:mt-12">
+                <div className="text-[#8d8d8d] text-left text-sm xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-7xl font-light">
                   {currentProject.location}
                 </div>
-                <div className="text-[#8d8d8d] text-left text-sm xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-7xl font-light">
+                <div className="text-[#8d8d8d] text-left text-sm xs:text-sm sm:text-base md:text-lg lg:text-xl xl:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-7xl font-light">
                   {currentProject.builtUpArea}
                 </div>
-                <div className="text-[#8d8d8d] text-left text-sm xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl font-light">
+                <div className="text-[#8d8d8d] text-left text-sm xs:text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-5xl 5xl:text-7xl font-light">
                   {currentProject.year}
                 </div>
               </div>
@@ -108,10 +108,10 @@ const HeroSection = () => {
 
             {/* Navigation + Counter */}
             <div className="flex flex-col items-end lg:items-start">
-              <div className="flex items-center mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7 3xl:mb-8 4xl:mb-10">
+              <div className="flex items-center mb-2 sm:mb-3 md:mb-4 lg:mb-5 xl:mb-6 2xl:mb-7 3xl:mb-8 4xl:mb-10 5xl:mb-12">
                 <button
                   onClick={prevSlide}
-                  className="w-8 h-8 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 3xl:w-20 3xl:h-20 4xl:w-24 4xl:h-24 border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8"
+                  className="w-8 h-8 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 3xl:w-20 3xl:h-20 4xl:w-24 4xl:h-24 5xl:w-28 5xl:h-28 border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-gray-50 transition-colors mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8 5xl:mr-10"
                   aria-label="Previous project"
                 >
                   <Image
@@ -119,12 +119,12 @@ const HeroSection = () => {
                     alt="Previous"
                     width={12}
                     height={12}
-                    className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10"
+                    className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10 5xl:w-12 5xl:h-12"
                   />
                 </button>
                 <button
                   onClick={nextSlide}
-                  className="w-8 h-8 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 3xl:w-20 3xl:h-20 4xl:w-24 4xl:h-24 bg-gray-50 border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
+                  className="w-8 h-8 xs:w-7 xs:h-7 sm:w-8 sm:h-8 md:w-10 md:h-10 lg:w-12 lg:h-12 xl:w-14 xl:h-14 2xl:w-16 2xl:h-16 3xl:w-20 3xl:h-20 4xl:w-24 4xl:h-24 5xl:w-28 5xl:h-28 bg-gray-50 border border-gray-300 flex items-center justify-center cursor-pointer hover:bg-gray-100 transition-colors"
                   aria-label="Next project"
                 >
                   <Image
@@ -132,20 +132,20 @@ const HeroSection = () => {
                     alt="Next"
                     width={12}
                     height={12}
-                    className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10"
+                    className="w-2 h-2 xs:w-2.5 xs:h-2.5 sm:w-3 sm:h-3 md:w-4 md:h-4 lg:w-5 lg:h-5 xl:w-6 xl:h-6 2xl:w-7 2xl:h-7 3xl:w-8 3xl:h-8 4xl:w-10 4xl:h-10 5xl:w-12 5xl:h-12"
                   />
                 </button>
               </div>
 
               <div className="flex items-center">
-                <span className="text-gray-500 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px] text-right">
+                <span className="text-gray-500 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px] text-right">
                   {String(currentSlide + 1).padStart(2, "0")}
                 </span>
 
-                <div className="text-gray-200 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl mx-1 sm:mx-2 md:mx-3 lg:mx-4 xl:mx-5 2xl:mx-6 3xl:mx-7 4xl:mx-8">
+                <div className="text-gray-200 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl mx-1 sm:mx-2 md:mx-3 lg:mx-4 xl:mx-5 2xl:mx-6 3xl:mx-7 4xl:mx-8 5xl:mx-10">
                   /
                 </div>
-                <span className="text-gray-400 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px]">
+                <span className="text-gray-400 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px]">
                   {String(projectsData.length).padStart(2, "0")}
                 </span>
               </div>
@@ -155,7 +155,7 @@ const HeroSection = () => {
 
         {/* Desktop Full Image */}
         {!isMobile && (
-          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-2/3 aspect-square">
+          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-2/3 5xl:w-2/3 aspect-square">
             <div className="relative w-full h-full overflow-hidden">
               <Image
                 src={currentProject.heroImage}

@@ -71,11 +71,12 @@ export default function ProductDetail({
   return (
     <div className="relative">
       {/* Header */}
+
       <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
         <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Project
         </p>
-        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-[64px] 3xl:text-8xl 4xl:text-[10rem] font-bold leading-tight">
+        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-bold leading-tight">
           {project.title}
         </p>
       </div>
@@ -84,51 +85,51 @@ export default function ProductDetail({
       <div className="mb-8 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-10 3xl:mb-24 4xl:mb-32 ">
         <div className="mx-auto">
           {/* First Row: Left Content (30%) + Right Image (70%) */}
-          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-32 py-4 lg:py-6 3xl:py-32 4xl:py-40 items-stretch">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-32  items-stretch">
             {/* Left Column */}
-            <div className=" order-2 lg:order-1 lg:col-span-4 h-[250px] lg:h-[435px] flex items-center">
+            <div className=" order-2 lg:order-1 lg:col-span-4 h-[250px] lg:h-auto flex items-start mt-2 sm:mt-4 md:mt-6 lg:mt-8 xl:mt-10 3xl:mt-16 4xl:mt-20">
               <div className="space-y-3 sm:space-y-3 lg:space-y-4 xl:space-y-3 3xl:space-y-6 4xl:space-y-8">
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     Location:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     {project.location}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     Plot Area:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     {project.plotArea}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     Built up area:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     {project.builtUpArea}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     Client:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     {project.client}
                   </p>
                 </div>
 
                 <div className="flex flex-col sm:flex-row sm:items-center gap-1 sm:gap-2 lg:gap-3 xl:gap-4 3xl:gap-6 4xl:gap-8">
-                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <h3 className="font-medium text-[#000] text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     Year:
                   </h3>
-                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-4xl 4xl:text-5xl">
+                  <p className="text-[#000] font-light text-sm sm:text-base md:text-lg  xl:text-2xl 2xl:text-xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl">
                     {project.year}
                   </p>
                 </div>
@@ -148,23 +149,30 @@ export default function ProductDetail({
           </div>
 
           {/* Second Row: Left Image (50%) + Right Content (50%) */}
-          <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-16 3xl:gap-24 4xl:gap-32 py-4 lg:py-6 3xl:py-32 4xl:py-40 items-stretch">
+          <div className="flex flex-col lg:flex-row items-stretch py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-28 4xl:py-36 5xl:py-44 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-32 5xl:gap-40">
             {/* Left Column - Image */}
-            <div className="order-1 lg:order-1 h-[480px]">
-              <div className="w-full h-full overflow-hidden">
+            <div className="w-full lg:w-1/2 aspect-square">
+              <div className="w-full h-full overflow-hidden rounded-2xl shadow-lg">
                 <Image
                   src={project.images[1]?.url || project.heroImage}
                   alt={project.images[1]?.alt || project.title}
-                  width={800}
-                  height={480}
-                  className="w-full h-full object-cover transition-transform duration-300"
+                  width={1200}
+                  height={1200} // keep square ratio
+                  className="w-full h-full object-cover transition-transform duration-300 hover:scale-105"
                 />
               </div>
             </div>
 
             {/* Right Column - Description */}
-            <div className="order-2 lg:order-2 flex items-start">
-              <div className="text-black font-[300px] space-y-2 lg:space-y-4 leading-[24px] md:leading-loose tracking-normal text-sm sm:text-base md:text-[16px] xl:text-[18px] 3xl:text-4xl 4xl:text-5xl">
+            <div className="w-full lg:w-1/2 flex items-start mt-0 md:mt-10">
+              <div
+                className="
+        text-black space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8
+        leading-relaxed tracking-normal
+        text-sm sm:text-base md:text-[16px] xl:text-[18px] 3xl:text-[28px] 4xl:text-[36px] 5xl:text-[52px]
+        font-light
+      "
+              >
                 {project.description.map((paragraph, index) => (
                   <p key={index}>{paragraph}</p>
                 ))}

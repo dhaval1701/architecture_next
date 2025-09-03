@@ -4,6 +4,7 @@ import "./globals.css";
 import Header from "@/components/Header";
 import Footer from "@/components/Footer";
 import ConditionalBackground from "@/components/Background";
+import FloatingButtons from "@/components/FloatingButtons";
 
 const roboto = Roboto({
   subsets: ["latin"],
@@ -39,12 +40,14 @@ export default function RootLayout({
     lg:px-16 lg:py-28
     xl:px-20 xl:py-32
     2xl:px-36 2xl:py-42
-    3xl:px-42 3xl:py-46
-    4xl:px-48 4xl:py-52
+    3xl:px-42 3xl:py-56
+    4xl:px-52 4xl:py-78
+    5xl:px-58 5xl:py-102
   "
         >
           {children}
         </main>
+        <FloatingButtons />
         <Footer />
       </body>
     </html>
