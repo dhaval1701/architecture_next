@@ -11,6 +11,16 @@ import {
 } from "lucide-react";
 import Image from "next/image";
 
+interface XIconProps extends React.SVGProps<SVGSVGElement> {
+  className?: string;
+}
+
+const XIcon: React.FC<XIconProps> = ({ className, ...props }) => (
+  <svg className={className} viewBox="0 0 48 48" fill="currentColor" {...props}>
+    <path d="M 5.9199219 6 L 20.582031 27.375 L 6.2304688 44 L 9.4101562 44 L 21.986328 29.421875 L 31.986328 44 L 44 44 L 28.681641 21.669922 L 42.199219 6 L 39.029297 6 L 27.275391 19.617188 L 17.933594 6 L 5.9199219 6 z M 9.7167969 8 L 16.880859 8 L 40.203125 42 L 33.039062 42 L 9.7167969 8 z"></path>
+  </svg>
+);
+
 const Footer = () => {
   return (
     <footer
@@ -61,10 +71,15 @@ const Footer = () => {
               </h3>
               <div className="flex items-start mb-3 sm:mb-4 xl:mb-6 3xl:mb-8 4xl:mb-10 5xl:mb-12">
                 <MapPin className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7 5xl:w-8 5xl:h-8" />
-                <p className="text-xs sm:text-sm md:text-base 3xl:text-lg 4xl:text-xl 5xl:text-2xl font-medium">
-                  417, THE 23ʳᵈ STUDIO, Shilp Arcad, nr. Hanspura circle road,
-                  S. P. Ring Road, Ahmedabad, 382330
-                </p>
+                <a
+                  href="https://www.google.com/maps/dir//Shilp+Arcade+Bilasia+on+Sardar+Patel+Ring+Rd,+Hanspura+Ahmedabad,+Gujarat+382330/@23.0821154,72.6878764,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x395e81343b78736b:0xbd35689132a08eb4!2m2!1d72.6878764!2d23.0821154?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-xs sm:text-sm md:text-base 3xl:text-lg 4xl:text-xl 5xl:text-2xl font-medium"
+                >
+                  417, The 23rd Studio Shilp Arcad , nr. Hanspura circle road ,
+                  S.P. ring road, Ahmedabad , 382330
+                </a>
               </div>
               <div className="flex items-start mb-3 sm:mb-4 xl:mb-6 3xl:mb-8 4xl:mb-10 5xl:mb-12">
                 <Phone className="w-4 h-4 sm:w-5 sm:h-5 mr-2 sm:mr-3 flex-shrink-0 3xl:w-6 3xl:h-6 4xl:w-7 4xl:h-7 5xl:w-8 5xl:h-8" />
@@ -96,10 +111,12 @@ const Footer = () => {
               Social Media
             </h3>
             <div className="flex gap-3 sm:gap-4 md:gap-5 lg:gap-6 3xl:gap-8 4xl:gap-10 5xl:gap-12 mb-6">
-              {[Facebook, Instagram, Linkedin, X].map((Icon, i) => (
+              {[Facebook, Instagram, Linkedin, XIcon].map((Icon, i) => (
                 <a
                   key={i}
-                  href="#"
+                  href="https://www.instagram.com/the23rd_studio/"
+                  target="_blank"
+                  rel="noopener noreferrer"
                   className="hover:text-gray-300 transition-colors"
                 >
                   <Icon className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 3xl:w-8 3xl:h-8 4xl:w-9 4xl:h-9 5xl:w-10 5xl:h-10" />
@@ -122,7 +139,15 @@ const Footer = () => {
         © Copyright 2025 by <span className="font-medium">The 23rd Studio</span>
         . All Rights Reserved |{" "}
         <span className="block sm:inline">
-          Design by <span className="font-medium">Rutik Parmar</span>
+          Design by{" "}
+          <a
+            href="https://www.instagram.com/r_parmar_7989/"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium"
+          >
+            Rutik Parmar
+          </a>
         </span>
       </div>
     </footer>

@@ -152,7 +152,7 @@ export default function ProductDetail({
           <div className="flex flex-col lg:flex-row items-stretch py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-28 4xl:py-36 5xl:py-44 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-32 5xl:gap-40">
             {/* Left Column - Image */}
             <div className="w-full lg:w-1/2 aspect-square">
-              <div className="w-full h-full overflow-hidden rounded-2xl shadow-lg">
+              <div className="w-full h-full overflow-hidden ">
                 <Image
                   src={project.images[1]?.url || project.heroImage}
                   alt={project.images[1]?.alt || project.title}
@@ -183,7 +183,7 @@ export default function ProductDetail({
       </div>
 
       {/* Large Image Slider Section - Full Width */}
-      <div className="bg-white relative">
+      <div className="relative">
         <div className="space-y-6 sm:space-y-8 lg:space-y-10 xl:space-y-12 3xl:space-y-16 4xl:space-y-20">
           {/* Main Large Image Display - Full Width */}
           <div className="relative w-full">
@@ -246,22 +246,33 @@ export default function ProductDetail({
           {/* Thumbnail Gallery - Smaller thumbnails */}
           {project.images.length > 1 && (
             <div className="">
-              <div className="flex gap-2 overflow-hidden justify-start">
+              <div className="flex gap-1 xs:gap-1 sm:gap-2 md:gap-3 lg:gap-4 xl:gap-5 2xl:gap-6 3xl:gap-7 4xl:gap-8 5xl:gap-10 overflow-x-auto overflow-y-hidden justify-start pb-2 scrollbar-hide">
                 {project.images.map((image, index) => (
                   <button
                     key={image.id}
                     onClick={() => setCurrentImageIndex(index)}
-                    className={`flex-shrink-0 w-12 sm:w-16 h-12 sm:h-16 lg:w-20 lg:h-20 xl:w-22 xl:h-22 rounded-lg overflow-hidden border-2 transition-all duration-300 ${
-                      index === currentImageIndex
-                        ? "border-gray-800 shadow-lg scale-105"
-                        : "border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100"
-                    }`}
+                    className={`flex-shrink-0 
+            w-8 h-8 
+            xs:w-10 xs:h-10 
+            sm:w-12 sm:h-12 
+            md:w-16 md:h-16 
+            lg:w-20 lg:h-20 
+            xl:w-24 xl:h-24 
+            2xl:w-28 2xl:h-28 
+            3xl:w-32 3xl:h-32 
+            4xl:w-36 4xl:h-36 
+            5xl:w-40 5xl:h-40 
+            rounded-lg overflow-hidden border-2 transition-all duration-300 ${
+              index === currentImageIndex
+                ? "border-gray-800 shadow-lg scale-105"
+                : "border-gray-200 hover:border-gray-400 opacity-70 hover:opacity-100"
+            }`}
                   >
                     <Image
                       src={image.url}
                       alt={image.alt}
-                      width={80}
-                      height={80}
+                      width={160}
+                      height={160}
                       className="w-full h-full object-cover"
                     />
                   </button>

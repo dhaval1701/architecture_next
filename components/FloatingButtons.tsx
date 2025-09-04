@@ -1,15 +1,20 @@
 "use client";
 
 import { useState, useEffect } from "react";
-import { MessageCircle, ArrowUp } from "lucide-react";
+import { ArrowUp, ChevronUp, MoveUp } from "lucide-react";
+import Image from "next/image";
 
 export default function FloatingButtons() {
   const [isVisible, setIsVisible] = useState(false);
 
-  // Show button when page is scrolled down
+  // Show button when page is scrolled down 40%
   useEffect(() => {
     const toggleVisibility = () => {
-      if (window.pageYOffset > 300) {
+      const scrollHeight =
+        document.documentElement.scrollHeight - window.innerHeight;
+      const scrolled = (window.pageYOffset / scrollHeight) * 100;
+
+      if (scrolled > 40) {
         setIsVisible(true);
       } else {
         setIsVisible(false);
@@ -30,30 +35,36 @@ export default function FloatingButtons() {
 
   // WhatsApp redirect
   const openWhatsApp = () => {
-    window.open("https://wa.me/7203892651", "_blank"); // Replace with your number
+    window.open("https://wa.me/7203892651", "_blank");
   };
 
   return (
-    <>
-      {/* WhatsApp Button - Bottom Left */}
-      <button
-        onClick={openWhatsApp}
-        className="fixed bottom-6 left-6 z-50 bg-green-500 hover:bg-green-600 text-white p-3 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center"
-        aria-label="Contact via WhatsApp"
-      >
-        <MessageCircle size={24} />
-      </button>
-
-      {/* Scroll to Top Button - Bottom Right */}
+    <div className="fixed bottom-4 sm:bottom-6 md:bottom-8 lg:bottom-10 xl:bottom-12 right-6 z-50 flex items-center gap-2 sm:gap-3 md:gap-4">
+      {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`fixed bottom-6 right-6 z-50 bg-gray-800 hover:bg-gray-900 text-white p-3 rounded-full shadow-lg transition-all duration-300 flex items-center justify-center ${
+        className={`bg-gray-100 hover:bg-gray-200 text-gray-800 p-2 sm:p-2.5 md:p-3 lg:p-3.5 xl:p-3.5 rounded-full transition-all duration-300 flex items-center justify-center ${
           isVisible ? "opacity-100" : "opacity-0 pointer-events-none"
         }`}
         aria-label="Scroll to top"
       >
-        <ArrowUp size={24} />
+        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
       </button>
-    </>
+
+      {/* WhatsApp Button */}
+      <button
+        onClick={openWhatsApp}
+        className=" transition-all duration-300 flex items-center justify-center"
+        aria-label="Contact via WhatsApp"
+      >
+        <Image
+          src="/assets/whatsapp.svg"
+          alt="WhatsApp"
+          width={20}
+          height={20}
+          className="w-7 h-7 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-13 xl:h-13"
+        />
+      </button>
+    </div>
   );
 }

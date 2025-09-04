@@ -8,6 +8,7 @@ import ContactForm from "@/components/ContactForm";
 import { MoveRight } from "lucide-react";
 import ButtonV1 from "@/components/ButtonV1";
 import { projectsData } from "@/data/projects";
+import MissionMarquee from "@/components/MoveStatements";
 
 export const Home = () => {
   const missionItems = [
@@ -40,7 +41,7 @@ export const Home = () => {
       <HeroSection />
 
       <div
-        className="relative z-10 bg-cover bg-center mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48 5xl:mb-56"
+        className="relative z-10 bg-cover bg-center mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50"
         style={{ backgroundImage: "url('/assets/home_background_1.png')" }} // 👈 your background here
       >
         <div className="px-2 sm:px-8 lg:px-10 xl:px-13 2xl:px-18 3xl:px-26 4xl:px-32 5xl:px-36">
@@ -61,12 +62,12 @@ export const Home = () => {
             {/* Content Section - Right (45%) */}
             <div className="w-full lg:w-[42%] flex flex-col justify-start text-left py-4 sm:py-6 md:py-8 lg:py-6 xl:py-12 2xl:py-22 3xl:py-30 4xl:py-34 5xl:py-44">
               {/* Title */}
-              <h1 className="text-[#909090] font-light mb-4 sm:mb-6 lg:mb-8 xl:mb-10 2xl:mb-12 3xl:mb-14 4xl:mb-18 5xl:mb-32 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
+              <h1 className="text-[#BDBDBD] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
                 Architects
               </h1>
 
               {/* Description */}
-              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-3xl 4xl:text-4xl 5xl:text-6xl max-w-[55ch] mx-auto lg:mx-0 leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[74px]">
+              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[48px] max-w-[55ch] mx-auto lg:mx-0 leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[74px]">
                 Two architects walked into a studio… and never looked back.
                 That&apos;s how{" "}
                 <span className="font-bold">23rd Design Studio</span> began as a
@@ -81,84 +82,12 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="breakout mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
-        {/* Mission Statement Section */}
-        <section className="overflow-hidden">
-          {/* Section Heading */}
-          <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-22 4xl:mb-28 5xl:mb-36 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
-            Mission Statement
-          </div>
-
-          {/* Marquee */}
-          <div className="whitespace-nowrap w-full">
-            <motion.div
-              className="flex"
-              animate={{ x: ["0%", "-100%"] }}
-              transition={{ duration: 60, ease: "linear", repeat: Infinity }}
-            >
-              {/* Original row */}
-              {missionItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48
-                   w-70 sm:w-96 md:w-[28rem] lg:w-[35rem] xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[50rem] 4xl:w-[65rem]"
-                >
-                  {/* Number */}
-                  <div
-                    className="text-gray-300 font-black mr-4 sm:mr-6 md:mr-8 xl:mr-12 2xl:mr-14 3xl:mr-16 4xl:mr-20"
-                    style={{
-                      fontSize: "clamp(7rem, 13vw, 20rem)",
-                      lineHeight: "0.75",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {item.number}
-                  </div>
-                  {/* Text */}
-                  <div
-                    className="text-[#333333] text-xs sm:text-sm md:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
-                        leading-5 sm:leading-6 md:leading-6 xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
-                        flex-1 whitespace-normal break-words"
-                  >
-                    {item.text}
-                  </div>
-                </div>
-              ))}
-              {/* Duplicate row for seamless loop */}
-              {missionItems.map((item, index) => (
-                <div
-                  key={index}
-                  className="flex-shrink-0 flex items-start pr-8 sm:pr-12 md:pr-16 xl:pr-28 2xl:pr-32 3xl:pr-40 4xl:pr-48
-                   w-70 sm:w-96 md:w-[28rem] lg:w-[35rem] xl:w-[40rem] 2xl:w-[45rem] 3xl:w-[50rem] 4xl:w-[65rem]"
-                >
-                  {/* Number */}
-                  <div
-                    className="text-gray-300 font-black mr-4 sm:mr-6 md:mr-8 xl:mr-12 2xl:mr-14 3xl:mr-16 4xl:mr-20"
-                    style={{
-                      fontSize: "clamp(7rem, 13vw, 20rem)",
-                      lineHeight: "0.75",
-                      fontWeight: "500",
-                    }}
-                  >
-                    {item.number}
-                  </div>
-                  {/* Text */}
-                  <div
-                    className="text-[#333333] text-xs sm:text-sm md:text-base xl:text-xl 2xl:text-2xl 3xl:text-3xl 4xl:text-4xl 
-                        leading-5 sm:leading-6 md:leading-6 xl:leading-9 2xl:leading-10 3xl:leading-12 4xl:leading-14 
-                        flex-1 whitespace-normal break-words"
-                  >
-                    {item.text}
-                  </div>
-                </div>
-              ))}
-            </motion.div>
-          </div>
-        </section>
+      <div className="breakout mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50">
+        <MissionMarquee missionItems={missionItems} />
       </div>
 
       {/* CTA Section */}
-      <section className="breakout relative mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <section className="breakout relative mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50">
         {/* Base gradient */}
         <div
           className="absolute inset-0"
@@ -198,9 +127,9 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-32 3xl:mb-42 4xl:mb-48">
+      <section className="mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50">
         {/* Section Title */}
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-22 4xl:mb-28 5xl:mb-36 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left">
           Our Projects
         </div>
 
@@ -292,7 +221,7 @@ export const Home = () => {
 
       {/* Contact Section */}
       <section className="">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-8 xl:mb-12 2xl:mb-16 3xl:mb-22 4xl:mb-28 5xl:mb-36 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left">
           Contact Us
         </div>
 

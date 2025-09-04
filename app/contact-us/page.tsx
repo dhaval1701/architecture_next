@@ -29,7 +29,11 @@ const ContactUs = () => {
           <div className="relative z-10 h-full p-5 lg:p-6 xl:p-12 flex items-start">
             <div className="space-y-5 lg:space-y-5 xl:space-y-6 text-white max-w-xs sm:max-w-sm lg:max-w-md">
               {/* Studio Title */}
-              <div>
+              <a
+                href="https://www.google.com/maps/dir//Shilp+Arcade+Bilasia+on+Sardar+Patel+Ring+Rd,+Hanspura+Ahmedabad,+Gujarat+382330/@23.0821154,72.6878764,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x395e81343b78736b:0xbd35689132a08eb4!2m2!1d72.6878764!2d23.0821154?entry=ttu&g_ep=EgoyMDI1MDgzMC4wIKXMDSoASAFQAw%3D%3D"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <h2 className="text-base lg:text-lg xl:text-2xl font-medium mb-0 md:mb-2">
                   417, The 23<sup className="text-xs lg:text-sm">rd</sup> Studio
                 </h2>
@@ -38,7 +42,7 @@ const ContactUs = () => {
                   <br />
                   Ahmedabad , 382330
                 </p>
-              </div>
+              </a>
 
               {/* Contact Numbers */}
               <div className="space-y-1.5">
