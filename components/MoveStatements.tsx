@@ -37,7 +37,7 @@ const MissionMarquee: React.FC<MissionMarqueeProps> = ({ missionItems }) => {
   return (
     <section className="overflow-hidden">
       {/* Section Heading */}
-      <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
+      <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 2xl:mb-[60px] 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left px-4 sm:px-8 md:px-12 lg:px-15 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48">
         Mission Statement
       </div>
 

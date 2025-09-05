@@ -85,7 +85,7 @@ const Header: React.FC = () => {
               href={item.path}
               className={`
                 relative font-roboto text-xs sm:text-[10px] md:text-[10px] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-[18px] 4xl:text-[25px] 5xl:text-[34px] uppercase tracking-widest 
-                cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-6 4xl:px-6 5xl:px-10
+                cursor-pointer transition-all duration-300 py-0 lg:py-10 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-6 4xl:px-6 5xl:px-10
                 whitespace-nowrap
                 ${
                   isActive(item.path)

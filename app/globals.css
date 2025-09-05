@@ -75,3 +75,91 @@ body {
   font-family: "SF Compact Display", -apple-system, BlinkMacSystemFont,
     system-ui, sans-serif;
 }
+
+/* Curtain opening animation - reveals from top to bottom */
+@keyframes curtainReveal {
+  0% {
+    opacity: 0;
+    transform: translateY(-50px);
+    clip-path: inset(100% 0 0 0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: translateY(-20px);
+    clip-path: inset(50% 0 0 0);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+    clip-path: inset(0% 0 0 0);
+  }
+}
+
+.animate-curtainReveal {
+  animation: curtainReveal 1.5s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+/* Alternative: More dramatic curtain effect */
+@keyframes dramaticCurtain {
+  0% {
+    opacity: 0;
+    transform: translateY(-100px) scale(0.8);
+    clip-path: polygon(0 0, 100% 0, 100% 0, 0 0);
+  }
+  60% {
+    opacity: 0.8;
+    transform: translateY(-20px) scale(0.95);
+    clip-path: polygon(0 0, 100% 0, 100% 70%, 0 70%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+    clip-path: polygon(0 0, 100% 0, 100% 100%, 0 100%);
+  }
+}
+
+.animate-dramaticCurtain {
+  animation: dramaticCurtain 2s cubic-bezier(0.25, 0.46, 0.45, 0.94) forwards;
+  animation-fill-mode: both;
+}
+
+/* Smooth fade from top */
+@keyframes fadeFromTop {
+  0% {
+    opacity: 0;
+    transform: translateY(-60px);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.animate-fadeFromTop {
+  animation: fadeFromTop 1.2s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+/* Zoom from 0 to 100% with fade */
+@keyframes zoomFade {
+  0% {
+    opacity: 0;
+    transform: scale(0);
+  }
+  50% {
+    opacity: 0.5;
+    transform: scale(0.7);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+.animate-zoomFade {
+  animation: zoomFade 1.2s ease-out forwards;
+  animation-fill-mode: both;
+}
+
+/* Alternative: Smoother zoom with bounce */

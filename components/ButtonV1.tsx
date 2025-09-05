@@ -32,8 +32,8 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
     <button
       className={`
         group flex items-center backdrop-blur-sm
-        px-3 sm:px-4 md:px-6 lg:px-8 xl:px-8 2xl:px-8 3xl:px-14 4xl:px-16 5xl:px-18
-        py-2.5 sm:py-2 md:py-3 lg:py-4 xl:py-4 2xl:py-3.5 3xl:py-7 4xl:py-8 5xl:py-8
+        px-3 sm:px-4 md:px-6 lg:px-8 xl:px-8 2xl:px-8 3xl:px-10 4xl:px-12 5xl:px-16
+        py-2.5 sm:py-2 md:py-3 lg:py-4 xl:py-4 2xl:py-3.5 3xl:py-6 4xl:py-6 5xl:py-6
         ${currentTheme.background}
         transition-all duration-300 cursor-pointer
         ${className}
@@ -43,7 +43,7 @@ const ButtonV1: React.FC<ButtonV1Props> = ({
       <span
         className={`
         text-[6px] xs:text-[6px] sm:text-[6px] md:text-[8px] lg:text-[8px] 
-        xl:text-[10px] 2xl:text-[12px] 3xl:text-[16px] 4xl:text-[18px] 5xl:text-[20px]
+        xl:text-[10px] 2xl:text-[12px] 3xl:text-[16px] 4xl:text-[18px] 5xl:text-[28px]
         uppercase tracking-[2px] lg:tracking-[4px] font-medium
         mr-1.5 sm:mr-2 md:mr-3 lg:mr-4 xl:mr-5 2xl:mr-6 3xl:mr-7 4xl:mr-8
         ${currentTheme.text}

@@ -45,7 +45,7 @@ const HeroSection = () => {
 
     const interval = setInterval(() => {
       setCurrentSlide((prev) => (prev + 1) % projectsData.length);
-    }, 6000); // Change slide every 4 seconds
+    }, 9000); // Change slide every 9 seconds
 
     return () => clearInterval(interval);
   }, [isAutoPlay]);
@@ -126,7 +126,7 @@ const HeroSection = () => {
       </div>
 
       {/* Main Layout */}
-      <div className="relative z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-10 sm:mt-12 md:mt-12 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-24 4xl:mt-32 5xl:mt-34">
+      <div className="relative w-full z-10 flex flex-col lg:flex-row justify-between items-start lg:items-stretch mt-10 sm:mt-12 md:mt-12 lg:mt-14 xl:mt-32 2xl:mt-24 3xl:mt-24 4xl:mt-32 5xl:mt-34">
         {/* Mobile Image First */}
         {isMobile && (
           <div className="w-full mb-4 sm:mb-6 md:mb-8">
@@ -163,7 +163,7 @@ const HeroSection = () => {
         )}
 
         {/* Left Text Content */}
-        <div className="w-full lg:w-2/5 xl:w-1/3 2xl:w-2/5 3xl:w-1/3 4xl:w-2/5 5xl:w-1/3 mb-4 sm:mb-6 md:mb-8 lg:mb-0 lg:pr-4 xl:pr-6 2xl:pr-8 3xl:pr-12 4xl:pr-16 5xl:pr-20 flex flex-col justify-center lg:justify-end">
+        <div className="w-full lg:w-2/5 mb-4 sm:mb-6 md:mb-8 lg:mb-0 lg:pr-4 xl:pr-6 2xl:pr-8 3xl:pr-12 4xl:pr-16 5xl:pr-20 flex flex-col justify-center lg:justify-end">
           <div className="flex flex-row justify-between items-end lg:flex-col lg:justify-end lg:items-start h-full pb-0 lg:pb-8 xl:pb-12 2xl:pb-14 3xl:pb-20 4xl:pb-24 5xl:pb-28">
             {/* Project Title + Details with Animation */}
             <AnimatePresence mode="wait">
@@ -175,10 +175,10 @@ const HeroSection = () => {
                 exit="exit"
               >
                 {/* Title */}
-                <div className="text-[#BDBDBD] text-left text-3xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[112px] 5xl:text-[148px] font-light mb-0 leading-tight">
+                <div className="text-[#BDBDBD] text-left text-3xl xs:text-2xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-6xl 3xl:text-7xl 4xl:text-[102px] 5xl:text-[128px] font-light mb-0 leading-tight">
                   {currentProject.title.split(" ")[0]}
                 </div>
-                <div className="text-[#000] text-left font-bold leading-[0.85] text-3xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-8xl 4xl:text-[112px] 5xl:text-[148px]">
+                <div className="text-[#000] text-left font-bold leading-[0.85] text-3xl xs:text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-7xl 4xl:text-[102px] 5xl:text-[128px]">
                   {currentProject.title
                     .split(" ")
                     .slice(1)
@@ -242,13 +242,13 @@ const HeroSection = () => {
                 animate={{ opacity: 1, y: 0 }}
                 transition={{ duration: 0.3, delay: 0.4 }}
               >
-                <span className="text-gray-500 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px] text-right">
+                <span className="text-gray-500 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px] text-right">
                   {String(currentSlide + 1).padStart(2, "0")}
                 </span>
-                <div className="text-gray-200 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl mx-1 sm:mx-2 md:mx-3 lg:mx-4 xl:mx-5 2xl:mx-6 3xl:mx-7 4xl:mx-8 5xl:mx-10">
+                <div className="text-gray-200 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl mx-1 sm:mx-2 md:mx-3 lg:mx-4 xl:mx-5 2xl:mx-6 3xl:mx-7 4xl:mx-8 5xl:mx-10">
                   /
                 </div>
-                <span className="text-gray-400 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px]">
+                <span className="text-gray-400 text-[16px] xs:text-base sm:text-lg md:text-xl lg:text-2xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-light min-w-[12px] xs:min-w-[14px] sm:min-w-[16px] md:min-w-[20px] lg:min-w-[24px]">
                   {String(projectsData.length).padStart(2, "0")}
                 </span>
               </motion.div>
@@ -258,7 +258,7 @@ const HeroSection = () => {
 
         {/* Desktop Full Image with Fade Animation */}
         {!isMobile && (
-          <div className="w-full lg:w-3/5 xl:w-2/3 2xl:w-2/3 5xl:w-2/3 aspect-square">
+          <div className="w-full lg:w-3/5  aspect-square">
             <div className="relative w-full h-full overflow-hidden">
               <AnimatePresence mode="wait">
                 <motion.div

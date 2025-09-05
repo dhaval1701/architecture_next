@@ -86,7 +86,7 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* Paragraphs */}
-          <div className="space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] 3xl:text-[28px] 4xl:text-[34px] 5xl:text-[54px] text-black font-light leading-[20px] md:leading-[26px] 3xl:leading-[36px] 4xl:leading-[44px] 5xl:leading-[56px]">
+          <div className="space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[50px] text-black font-light leading-[20px] md:leading-[26px] 3xl:leading-[36px] 4xl:leading-[44px] 5xl:leading-[56px]">
             <p>
               At 23rd Design Studio, we are a contemporary architectural design
               practice founded by two principal architects with a shared vision

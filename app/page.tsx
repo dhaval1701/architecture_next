@@ -41,7 +41,7 @@ export const Home = () => {
       <HeroSection />
 
       <div
-        className="relative z-10 bg-cover bg-center mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50"
+        className="relative z-10 bg-cover bg-center mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-30 3xl:mb-40 4xl:mb-44 5xl:mb-50"
         style={{ backgroundImage: "url('/assets/home_background_1.png')" }} // 👈 your background here
       >
         <div className="px-2 sm:px-8 lg:px-10 xl:px-13 2xl:px-18 3xl:px-26 4xl:px-32 5xl:px-36">
@@ -62,12 +62,12 @@ export const Home = () => {
             {/* Content Section - Right (45%) */}
             <div className="w-full lg:w-[42%] flex flex-col justify-start text-left py-4 sm:py-6 md:py-8 lg:py-6 xl:py-12 2xl:py-22 3xl:py-30 4xl:py-34 5xl:py-44">
               {/* Title */}
-              <h1 className="text-[#BDBDBD] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
+              <h1 className="text-[#BDBDBD] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 2xl:mb-[60px] 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
                 Architects
               </h1>
 
               {/* Description */}
-              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[48px] max-w-[55ch] mx-auto lg:mx-0 leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[74px]">
+              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[50px] max-w-[55ch] mx-auto lg:mx-0 leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[74px]">
                 Two architects walked into a studio… and never looked back.
                 That&apos;s how{" "}
                 <span className="font-bold">23rd Design Studio</span> began as a
@@ -82,12 +82,12 @@ export const Home = () => {
         </div>
       </div>
 
-      <div className="breakout mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50">
+      <div className="breakout mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-30 3xl:mb-40 4xl:mb-44 5xl:mb-50">
         <MissionMarquee missionItems={missionItems} />
       </div>
 
       {/* CTA Section */}
-      <section className="breakout relative mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50">
+      <section className="breakout relative mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-30 3xl:mb-40 4xl:mb-44 5xl:mb-50">
         {/* Base gradient */}
         <div
           className="absolute inset-0"
@@ -127,9 +127,9 @@ export const Home = () => {
         </div>
       </section>
 
-      <section className="mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-23 3xl:mb-32 4xl:mb-42 5xl:mb-50">
+      <section className="mb-10 sm:mb-10 md:mb-12 lg:mb-16 xl:mb-20 2xl:mb-30 3xl:mb-40 4xl:mb-44 5xl:mb-50">
         {/* Section Title */}
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 2xl:mb-[60px] 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left">
           Our Projects
         </div>
 
@@ -176,11 +176,13 @@ export const Home = () => {
                       />
 
                       {/* Overlay */}
-                      <div
+                      <Link
+                        href={`/projects/${project.slug}`}
+                        tabIndex={0}
                         className="
                     absolute inset-0 bg-transparent 
                     group-hover:bg-black/60 group-focus-within:bg-black/60
-                    transition-colors flex items-center justify-start
+                    transition-colors flex items-center justify-start cursor-pointer
                   "
                       >
                         <div
@@ -195,7 +197,7 @@ export const Home = () => {
                           <div className="text-white uppercase text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-7xl 4xl:text-8xl 5xl:text-9xl font-bold mb-4">
                             {project.title}
                           </div>
-                          <Link href={`/projects/${project.slug}`} tabIndex={0}>
+                          <div>
                             <div className="flex items-center text-white text-xs sm:text-sm md:text-base lg:text-[12px] 3xl:text-[16px] uppercase tracking-widest">
                               View More
                               <MoveRight
@@ -203,9 +205,9 @@ export const Home = () => {
                                 className="pl-2 w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7 xl:w-8 xl:h-8 2xl:w-9 2xl:h-9 3xl:w-10 3xl:h-10 4xl:w-12 4xl:h-12"
                               />
                             </div>
-                          </Link>
+                          </div>
                         </div>
-                      </div>
+                      </Link>
                     </div>
                   );
                 })}
@@ -221,7 +223,7 @@ export const Home = () => {
 
       {/* Contact Section */}
       <section className="">
-        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left">
+        <div className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 2xl:mb-[60px] 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-left">
           Contact Us
         </div>
 

@@ -147,10 +147,11 @@ const ContactFormOverlay: React.FC<ContactFieldsProps> = ({
                 <option value="" className="text-gray-500">
                   Interested In
                 </option>
-                <option value="residential">Residential Design</option>
-                <option value="commercial">Commercial Design</option>
+                <option value="residential">Residential</option>
+                <option value="commercial">Commercial</option>
                 <option value="renovation">Renovation</option>
                 <option value="consultation">Consultation</option>
+                <option value="Other">Other</option>
               </select>
             </div>
 

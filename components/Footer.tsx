@@ -10,6 +10,7 @@ import {
   X,
 } from "lucide-react";
 import Image from "next/image";
+import Link from "next/link";
 
 interface XIconProps extends React.SVGProps<SVGSVGElement> {
   className?: string;
@@ -33,7 +34,7 @@ const Footer = () => {
         {/* Main Content Grid - Custom column sizes */}
         <div className="md:grid md:grid-cols-[1fr_0.6fr_1fr_1fr] md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14 4xl:gap-16 5xl:gap-20 w-full">
           {/* Logo Section - Hidden on mobile, first column on md+ */}
-          <div className="hidden md:block">
+          <Link href="/" className="hidden md:block">
             <Image
               src="/logos/full_logo_white.svg"
               alt="Logo"
@@ -41,7 +42,7 @@ const Footer = () => {
               height={200}
               className="h-12 sm:h-16 md:h-20 lg:h-24 xl:h-28 3xl:h-32 4xl:h-36 5xl:h-40 w-auto"
             />
-          </div>
+          </Link>
 
           {/* Mobile: Information + Contacts side by side, MD+: separate columns */}
           <div className="flex gap-6 mb-6 md:contents">
@@ -50,7 +51,7 @@ const Footer = () => {
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 3xl:mb-8 4xl:mb-10 5xl:mb-12">
                 Information
               </h3>
-              <ul className="space-y-2.5 sm:space-y-2 lg:space-y-3 xl:space-y-5 3xl:space-y-6 4xl:space-y-8 5xl:space-y-10">
+              <ul className="space-y-2.5 sm:space-y-2 lg:space-y-3 xl:space-y-3 3xl:space-y-6 4xl:space-y-8 5xl:space-y-10">
                 {["Home", "Gallery", "Projects", "About us", "Contacts"].map(
                   (item) => (
                     <li
@@ -136,15 +137,16 @@ const Footer = () => {
 
       {/* Bottom Bar */}
       <div className="text-[#C8C8C8] text-center text-[10px] sm:text-xs md:text-sm lg:text-base xl:text-lg 3xl:text-xl 4xl:text-2xl 5xl:text-3xl pt-4 sm:pt-6 lg:pt-10 3xl:pt-12 4xl:pt-16 5xl:pt-20 font-normal">
-        © Copyright 2025 by <span className="font-medium">The 23rd Studio</span>
-        . All Rights Reserved |{" "}
+        © Copyright 2025 by{" "}
+        <span className="text-white font-medium">The 23rd Studio</span>. All
+        Rights Reserved |{" "}
         <span className="block sm:inline">
           Design by{" "}
           <a
             href="https://www.instagram.com/r_parmar_7989/"
             target="_blank"
             rel="noopener noreferrer"
-            className="font-medium"
+            className="font-medium cursor-pointer hover:text-white"
           >
             Rutik Parmar
           </a>
