@@ -344,7 +344,7 @@ const ContactImage: React.FC = () => {
   return (
     <div className="relative h-full w-full">
       <Image
-        src="/assets/contact_us_3.svg"
+        src="/contact_us/hero_2.webp"
         alt="Contact us"
         fill
         className="object-cover"

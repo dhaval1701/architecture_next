@@ -21,7 +21,7 @@ const ContactUs = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat grayscale"
             style={{
-              backgroundImage: `url('/assets/contact_us_4.svg')`,
+              backgroundImage: `url('/contact_us/hero_1.webp')`,
             }}
           ></div>
 
@@ -82,14 +82,14 @@ const ContactUs = () => {
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
             style={{
-              backgroundImage: `url('/assets/contact_us_5.svg')`,
+              backgroundImage: `url('/contact_us/hero_2.webp')`,
             }}
           ></div>
 
           {/* Form Content */}
           <div className="relative z-10 h-full flex flex-col justify-center p-5 lg:p-6 xl:p-12">
             <div className="max-w-sm sm:max-w-md xl:max-w-lg mx-auto w-full">
-              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light text-gray-800 mb-5 lg:mb-6 xl:mb-10 leading-tight">
+              <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light text-[#BDBDBD] mb-4 sm:mb-6 md:mb-8 lg:mb-5 2xl:mb-[30px] 3xl:mb-10 4xl:mb-11 5xl:mb-13 leading-tight">
                 Get in Touch
               </h1>
 

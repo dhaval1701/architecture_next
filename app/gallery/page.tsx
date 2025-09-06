@@ -409,6 +409,9 @@ const Gallery: React.FC = () => {
                   fill
                   className="object-cover group-hover:scale-105 transition-all duration-500 grayscale group-hover:grayscale-0"
                   loading="lazy"
+                  // placeholder="blur"
+                  // blurDataURL={image.src}
+                  quality={100}
                   sizes="(max-width: 640px) 100vw, (max-width: 1536px) 50vw, (min-width: 1537px) 25vw"
                 />
 
@@ -500,8 +503,10 @@ const Gallery: React.FC = () => {
             initial="hidden"
             animate="visible"
             exit="exit"
-            className="fixed inset-0 z-50 flex items-center justify-center p-4"
-            onClick={closeModal}
+            className="fixed inset-0 z-[9999] flex flex-col p-4 overflow-y-auto"
+            onClick={() => {
+              closeModal();
+            }}
           >
             {/* Blurred Background */}
             <motion.div
@@ -509,7 +514,7 @@ const Gallery: React.FC = () => {
               animate={{ opacity: 1 }}
               exit={{ opacity: 0 }}
               transition={{ duration: 0.3 }}
-              className="absolute inset-0 bg-black/50 backdrop-blur-md"
+              className="absolute inset-0 bg-black/50 backdrop-blur-md z-[9998]"
             />
 
             {/* Close Button */}
@@ -518,7 +523,7 @@ const Gallery: React.FC = () => {
                 e.stopPropagation();
                 closeModal();
               }}
-              className="absolute top-4 right-4 z-20 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
+              className="self-end z-[10001] mb-4 p-3 bg-white/10 hover:bg-white/20 text-white rounded-full transition-all duration-200 backdrop-blur-sm border border-white/20"
               aria-label="Close modal"
             >
               <svg
@@ -542,16 +547,18 @@ const Gallery: React.FC = () => {
               animate={{ opacity: 1, scale: 1 }}
               exit={{ opacity: 0, scale: 0.95 }}
               transition={{ delay: 0.2, duration: 0.3 }}
-              className="relative max-w-[90vw] max-h-[90vh] w-auto h-auto"
-              onClick={(e) => e.stopPropagation()}
+              className="relative flex-1 flex items-center justify-center min-h-0 z-[10000] cursor-pointer"
             >
               <Image
                 src={selectedImage.src}
                 alt={selectedImage.alt}
                 width={1200}
                 height={800}
+                onClick={(e) => e.stopPropagation()}
                 className="max-w-full max-h-full w-auto h-auto object-contain rounded-lg shadow-2xl"
-                priority
+                loading="lazy"
+                blurDataURL={selectedImage.src}
+                placeholder="blur"
               />
             </motion.div>
           </motion.div>

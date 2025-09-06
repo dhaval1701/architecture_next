@@ -22,7 +22,7 @@ const foundersData: FounderData[] = [
     quote: "Less, yet lasting.",
     description:
       "Architecture is like crafting a canvas of experiences. I love blending bold ideas with subtle details, creating spaces that surprise, delight, and redefine how people live, work, and connect with their surroundings.",
-    imageSrc: "/anurag_bhuva.svg",
+    imageSrc: "/about_us/anurag_bhuva.webp",
     instagramUrl: "https://www.instagram.com/anuraagbhuva/",
   },
   {
@@ -31,7 +31,7 @@ const foundersData: FounderData[] = [
     quote: "Architecture with clarity.",
     description:
       "I see design as an adventure where fun meets function. For me, architecture is not about rigid rules it's about shaping spaces with imagination, joy, and a spark of the unexpected.",
-    imageSrc: "/het_patel.svg",
+    imageSrc: "/about_us/het_patel.webp",
     instagramUrl: "https://www.instagram.com/het01_/",
   },
 ];
@@ -60,8 +60,11 @@ const AboutUs: React.FC = () => {
         <div className="order-1 lg:order-1 h-full">
           <div className="relative h-full aspect-square w-full overflow-hidden">
             <Image
-              src="/assets/about_us.svg"
+              src="/about_us/hero_image.webp"
               alt="23rd Design Studio Interior"
+              placeholder="blur"
+              blurDataURL="/about_us/hero_image.webp"
+              // quality={85}
               fill
               className="object-cover"
               priority
@@ -72,7 +75,7 @@ const AboutUs: React.FC = () => {
         {/* Right side - Content */}
         <div className="p-5 md:pd-0 order-2 lg:order-2 flex flex-col h-full justify-start 2xl:pr-34 3xl:pr-24 4xl:pr-32 5xl:pr-40">
           {/* Heading */}
-          <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 lg:gap-6 3xl:gap-8 4xl:gap-10 5xl:gap-12 mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26">
+          <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 lg:gap-6 3xl:gap-8 4xl:gap-10 5xl:gap-12 mb-4 sm:mb-6 md:mb-8 lg:mb-5 2xl:mb-[30px] 3xl:mb-10 4xl:mb-11 5xl:mb-13">
             <p className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light text-[#BDBDBD] tracking-wider">
               About
             </p>
@@ -86,7 +89,8 @@ const AboutUs: React.FC = () => {
           </div>
 
           {/* Paragraphs */}
-          <div className="space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[50px] text-black font-light leading-[20px] md:leading-[26px] 3xl:leading-[36px] 4xl:leading-[44px] 5xl:leading-[56px]">
+          {/* <div className="space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[50px] text-black font-light leading-[20px] md:leading-[26px] 3xl:leading-[36px] 4xl:leading-[44px] 5xl:leading-[56px]"> */}
+          <div className="font-light space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[44px] max-w-[60ch] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[84px]">
             <p>
               At 23rd Design Studio, we are a contemporary architectural design
               practice founded by two principal architects with a shared vision
@@ -124,8 +128,8 @@ const AboutUs: React.FC = () => {
 
       <div className="">
         {/* Section Heading */}
-        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-12 xl:mb-14 3xl:mb-22 4xl:mb-32 5xl:mb-40">
-          <p className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 3xl:mb-20 4xl:mb-22 5xl:mb-26 leading-none">
+        <div className="mb-4 sm:mb-6 md:mb-8 lg:mb-10 2xl:mb-[60px] 3xl:mb-20 4xl:mb-22 5xl:mb-26">
+          <p className="text-[#BDBDBD] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light leading-none">
             Founder&apos;s{" "}
             <span className="text-[#333333] text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light leading-tight">
               Vision
@@ -134,7 +138,7 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Founders Grid */}
-        <div className="grid md:grid-cols-2 gap-6 sm:gap-6 lg:gap-6 xl:gap-12 3xl:gap-24 4xl:gap-32 5xl:gap-40 mt-6 sm:mt-8 lg:mt-10 xl:mt-12 3xl:mt-16 4xl:mt-20 5xl:mt-24">
+        <div className="grid md:grid-cols-2 gap-6 sm:gap-6 lg:gap-6 xl:gap-12 3xl:gap-24 4xl:gap-32 5xl:gap-40">
           {foundersData.map((founder, index) => (
             <div
               key={founder.id}
@@ -147,6 +151,7 @@ const AboutUs: React.FC = () => {
                   <Image
                     src={founder.imageSrc}
                     alt={founder.name}
+                    loading="lazy"
                     width={800}
                     height={600}
                     className="w-full h-full object-cover"
@@ -155,14 +160,14 @@ const AboutUs: React.FC = () => {
               </div>
 
               {/* Founder Content (50%) */}
-              <div className="lg:basis-1/2 flex flex-col justify-start h-full space-y-2 xl:space-y-8 3xl:space-y-10 4xl:space-y-12 5xl:space-y-14">
+              <div className="lg:basis-1/2 flex flex-col justify-start h-full space-y-2 xl:space-y-3 3xl:space-y-3 4xl:space-y-6 5xl:space-y-10">
                 {/* Quote */}
                 <p className="text-base sm:text-lg md:text-[16px] xl:text-3xl 2xl:text-[20px] 3xl:text-[28px] 4xl:text-[36px] 5xl:text-[48px] font-medium text-gray-800 leading-[25px] 3xl:leading-[3rem] 4xl:leading-[3.5rem] 5xl:leading-[4rem]">
                   &quot;{founder.quote}&quot;
                 </p>
 
                 {/* Description */}
-                <p className="text-sm sm:text-base md:text-[14px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-4xl 5xl:text-5xl text-black font-light leading-relaxed md:leading-[26px] 3xl:leading-[32px] 4xl:leading-[42px] 5xl:leading-[54px]">
+                <p className="text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[44px] max-w-[55ch] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[84px] text-black font-light">
                   {founder.description}
                 </p>
 

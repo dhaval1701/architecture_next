@@ -44,11 +44,11 @@ export default function FloatingButtons() {
   };
 
   return (
-    <div className="fixed bottom-6 md:bottom-8 lg:bottom-10 xl:bottom-12 2xl:bottom-14 3xl:bottom-16 4xl:bottom-18 right-2 3xl:right-8 z-50 flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
+    <div className="fixed bottom-3 md:bottom-6  3xl:bottom-8 4xl:bottom-12 right-2 md:right-6 3xl:right-8 z-50 flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
       {/* WhatsApp Button */}
       <button
         onClick={openWhatsApp}
-        className={`transition-all duration-500 ease-in-out transform flex items-center justify-center group ${
+        className={`transition-all duration-500 ease-in-out transform flex items-center justify-center group cursor-pointer ${
           isVisible ? "translate-y-0" : "translate-y-12"
         }`}
         aria-label="Contact via WhatsApp"
@@ -65,7 +65,7 @@ export default function FloatingButtons() {
       {/* Instagram Button */}
       <button
         onClick={openInstagram}
-        className={`transition-all duration-500 ease-in-out transform flex items-center justify-center group ${
+        className={`transition-all duration-500 ease-in-out transform flex items-center justify-center group cursor-pointer ${
           isVisible ? "translate-y-0" : "translate-y-12"
         }`}
         aria-label="Follow on Instagram"
@@ -82,14 +82,14 @@ export default function FloatingButtons() {
       {/* Scroll to Top Button */}
       <button
         onClick={scrollToTop}
-        className={`bg-gray-100 hover:bg-gray-200 text-gray-800 p-2 sm:p-2.5 md:p-3 lg:p-3.5 xl:p-3.5 rounded-full transition-all duration-500 ease-in-out transform flex items-center justify-center ${
+        className={`bg-gray-100 hover:bg-gray-200 text-gray-800 p-2 sm:p-2.5 md:p-3 lg:p-2 xl:p-2 rounded-full cursor-pointer transition-all duration-500 ease-in-out transform flex items-center justify-center ${
           isVisible
             ? "opacity-100 translate-y-0 scale-100"
             : "opacity-0 translate-y-8 scale-95 pointer-events-none"
         }`}
         aria-label="Scroll to top"
       >
-        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-7 lg:h-7" />
+        <ChevronUp className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6 lg:w-8 lg:h-8" />
       </button>
     </div>
   );

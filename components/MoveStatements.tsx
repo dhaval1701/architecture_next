@@ -13,27 +13,6 @@ type MissionMarqueeProps = {
 };
 
 const MissionMarquee: React.FC<MissionMarqueeProps> = ({ missionItems }) => {
-  const controls = useAnimation();
-
-  useEffect(() => {
-    // Start marquee animation when mounted
-    controls.start({
-      x: ["0%", "-100%"],
-      transition: { duration: 60, ease: "linear", repeat: Infinity },
-    });
-  }, [controls]);
-
-  const startAnimation = () => {
-    controls.start({
-      x: ["0%", "-100%"],
-      transition: { duration: 60, ease: "linear", repeat: Infinity },
-    });
-  };
-
-  const stopAnimation = () => {
-    controls.stop();
-  };
-
   return (
     <section className="overflow-hidden">
       {/* Section Heading */}
@@ -45,9 +24,8 @@ const MissionMarquee: React.FC<MissionMarqueeProps> = ({ missionItems }) => {
       <div className="whitespace-nowrap w-full">
         <motion.div
           className="flex"
-          animate={controls} // ⬅️ Connect controls
-          onMouseEnter={stopAnimation}
-          onMouseLeave={startAnimation}
+          animate={{ x: ["0%", "-100%"] }}
+          transition={{ duration: 60, ease: "linear", repeat: Infinity }}
         >
           {/* Original row */}
           {missionItems.map((item, index) => (

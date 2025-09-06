@@ -168,8 +168,8 @@ export default function ProductDetail({
               <div
                 className="
         text-black space-y-3 sm:space-y-4 md:space-y-6 lg:space-y-8
-        leading-relaxed tracking-normal
-        text-sm sm:text-base md:text-[16px] xl:text-[18px] 3xl:text-[28px] 4xl:text-[36px] 5xl:text-[52px]
+        tracking-normal
+        text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[44px]  leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[84px]
         font-light
       "
               >

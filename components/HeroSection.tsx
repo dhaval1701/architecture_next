@@ -15,6 +15,7 @@ interface Project {
   builtUpArea: string;
   year: string;
   heroImage: string;
+  thumbnail: string;
 }
 
 const HeroSection = () => {
@@ -144,6 +145,9 @@ const HeroSection = () => {
                     src={currentProject.heroImage}
                     alt={currentProject.title}
                     fill
+                    placeholder="blur"
+                    blurDataURL={currentProject.thumbnail}
+                    quality={100}
                     className="object-cover"
                     priority
                     sizes="100vw"
@@ -272,6 +276,9 @@ const HeroSection = () => {
                   <Image
                     src={currentProject.heroImage}
                     alt={currentProject.title}
+                    placeholder="blur"
+                    blurDataURL={currentProject.thumbnail}
+                    quality={100}
                     fill
                     className="object-cover"
                     priority

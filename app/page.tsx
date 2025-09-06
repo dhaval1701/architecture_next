@@ -62,12 +62,12 @@ export const Home = () => {
             {/* Content Section - Right (45%) */}
             <div className="w-full lg:w-[42%] flex flex-col justify-start text-left py-4 sm:py-6 md:py-8 lg:py-6 xl:py-12 2xl:py-22 3xl:py-30 4xl:py-34 5xl:py-44">
               {/* Title */}
-              <h1 className="text-[#BDBDBD] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-10 2xl:mb-[60px] 3xl:mb-20 4xl:mb-22 5xl:mb-26 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
+              <h1 className="text-[#BDBDBD] font-light mb-4 sm:mb-6 md:mb-8 lg:mb-5 2xl:mb-[30px] 3xl:mb-10 4xl:mb-11 5xl:mb-13 text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] leading-[32px] sm:leading-[32px] md:leading-[36px] lg:leading-[40px] xl:leading-[48px] 2xl:leading-[56px] 3xl:leading-[60px] 4xl:leading-[72px] 5xl:leading-[80px]">
                 Architects
               </h1>
 
               {/* Description */}
-              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[50px] max-w-[55ch] mx-auto lg:mx-0 leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[74px]">
+              <p className="text-[#333333] font-light text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[44px] max-w-[55ch] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[84px]">
                 Two architects walked into a studio… and never looked back.
                 That&apos;s how{" "}
                 <span className="font-bold">23rd Design Studio</span> began as a
@@ -171,6 +171,9 @@ export const Home = () => {
                       <Image
                         src={project.heroImage}
                         alt={project.title}
+                        placeholder="blur"
+                        blurDataURL={project.thumbnail}
+                        loading="lazy"
                         fill
                         className="object-cover group-hover:scale-105 transition-transform duration-500"
                       />

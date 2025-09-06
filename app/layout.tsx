@@ -51,13 +51,13 @@ export default function RootLayout({
     // Start fading out splash after 3 seconds
     const fadeTimer = setTimeout(() => {
       setFadeOut(true);
-    }, 3000);
+    }, 2300);
 
     // Hide splash and show main content after fade completes
     const hideTimer = setTimeout(() => {
       setShowSplash(false);
       setShowMain(true);
-    }, 4000); // 3s + 1s fade duration
+    }, 2300); // 3s + 1s fade duration
 
     return () => {
       clearTimeout(fadeTimer);

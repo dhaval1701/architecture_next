@@ -1,6 +1,7 @@
 export interface ProjectImage {
   id: string;
   url: string;
+  thumbnail: string;
   alt: string;
   type: "hero" | "gallery" | "featured";
 }
@@ -12,6 +13,7 @@ export interface Project {
   description: string[];
   longDescription?: string;
   heroImage: string; // Main thumbnail for list view
+  thumbnail: string;
   images: ProjectImage[]; // All project images
   category: string;
   location: string;
@@ -34,17 +36,41 @@ export const projectsData: Project[] = [
       "Featuring a bold façade with vertical stone fins and sleek concrete forms, the design gives a strong architectural presence and civic character. The landscaped entrance enhances the home’s appeal, offering a sustainable and welcoming design.",
       "More than a private home, it stands as a landmark of leadership, transparency, and progressive village development in Gandhinagar.",
     ],
-    heroImage: "/projects/vertic_house/image_1.webp",
+    heroImage: "/projects/vertic_house/full/image_1.webp",
+    thumbnail: "/projects/vertic_house/thumbs/image_1.webp",
     images: [
       {
         id: "vertic-hero-1",
-        url: "/projects/vertic_house/image_2.webp",
+        url: "/projects/vertic_house/full/final_pic_1.webp",
+        thumbnail: "/projects/vertic_house/thumbs/final_pic_1.webp",
         alt: "The Vertic House exterior view",
         type: "hero",
       },
       {
         id: "vertic-gallery-1",
-        url: "/projects/vertic_house/image_3.webp",
+        url: "/projects/vertic_house/full/final_pic_2.webp",
+        thumbnail: "/projects/vertic_house/thumbs/final_pic_2.webp",
+        alt: "The Vertic House side angle",
+        type: "gallery",
+      },
+      {
+        id: "vertic-gallery-1",
+        url: "/projects/vertic_house/full/final_pic_3.webp",
+        thumbnail: "/projects/vertic_house/thumbs/final_pic_3.webp",
+        alt: "The Vertic House side angle",
+        type: "gallery",
+      },
+      {
+        id: "vertic-gallery-1",
+        url: "/projects/vertic_house/full/final_pic_4.webp",
+        thumbnail: "/projects/vertic_house/thumbs/final_pic_4.webp",
+        alt: "The Vertic House side angle",
+        type: "gallery",
+      },
+      {
+        id: "vertic-gallery-1",
+        url: "/projects/vertic_house/full/final_pic_5.webp",
+        thumbnail: "/projects/vertic_house/thumbs/final_pic_5.webp",
         alt: "The Vertic House side angle",
         type: "gallery",
       },
@@ -66,18 +92,42 @@ export const projectsData: Project[] = [
       "The grand symmetrical façade, tall columns, elegant balconies, and detailed cornices reflect sophistication and strength, while expansive glass openings connect the interiors to nature. A majestic lion fountain driveway forms the heart of the entrance, symbolizing pride and prestige. Lush landscaped gardens, palm-lined pathways, and ambient lighting enhance the serene yet regal atmosphere.",
       "More than just a residence, this farmhouse represents heritage, exclusivity, and lifestyle, setting a new benchmark for luxury farmhouse design in Gujarat.",
     ],
-    heroImage: "/projects/sr_farm/image_1.webp",
+    heroImage: "/projects/sr_farm/full/image_1.webp",
+    thumbnail: "/projects/sr_farm/thumbs/image_1.webp",
     images: [
       {
         id: "sr-hero-1",
-        url: "/projects/sr_farm/image_1.webp",
+        url: "/projects/sr_farm/full/final_pic_1.webp",
+        thumbnail: "/projects/sr_farm/thumbs/final_pic_1.webp",
         alt: "S.R. Farm main facade",
         type: "hero",
       },
       {
         id: "sr-gallery-1",
-        url: "/projects/sr_farm/image_2.webp",
+        url: "/projects/sr_farm/full/final_pic_2.webp",
+        thumbnail: "/projects/sr_farm/thumbs/final_pic_2.webp",
         alt: "S.R. Farm side view with landscaping",
+        type: "gallery",
+      },
+      {
+        id: "vertic-gallery-1",
+        url: "/projects/sr_farm/full/final_pic_3.webp",
+        thumbnail: "/projects/sr_farm/thumbs/final_pic_3.webp",
+        alt: "The Vertic House side angle",
+        type: "gallery",
+      },
+      {
+        id: "vertic-gallery-1",
+        url: "/projects/sr_farm/full/final_pic_4.webp",
+        thumbnail: "/projects/sr_farm/thumbs/final_pic_4.webp",
+        alt: "The Vertic House side angle",
+        type: "gallery",
+      },
+      {
+        id: "vertic-gallery-1",
+        url: "/projects/sr_farm/full/final_pic_5.webp",
+        thumbnail: "/projects/sr_farm/thumbs/final_pic_5.webp",
+        alt: "The Vertic House side angle",
         type: "gallery",
       },
     ],
@@ -98,17 +148,41 @@ export const projectsData: Project[] = [
       "A cantilevered roof with a sculptural column defines the bold façade, while large openings connect the interiors to greenery. Palm-lined landscaping and integrated terraces soften the strong geometry, balancing elegance with comfort.",
       "Designed for luxury and practicality, the house reflects success, lifestyle, and prestige, setting a benchmark for modern residential architecture in Gujarat.",
     ],
-    heroImage: "/projects/patel_mansion/image_1.webp",
+    heroImage: "/projects/patel_mansion/full/image_1.webp",
+    thumbnail: "/projects/patel_mansion/thumbs/image_1.webp",
     images: [
       {
         id: "patel-hero-1",
-        url: "/projects/patel_mansion/image_1.webp",
+        url: "/projects/patel_mansion/full/final_pic_1.webp",
+        thumbnail: "/projects/patel_mansion/thumbs/final_pic_1.webp",
         alt: "The Patel Mansion facade",
         type: "hero",
       },
       {
         id: "patel-gallery-1",
-        url: "/projects/patel_mansion/image_2.webp",
+        url: "/projects/patel_mansion/full/final_pic_2.webp",
+        thumbnail: "/projects/patel_mansion/thumbs/final_pic_2.webp",
+        alt: "The Patel Mansion side view",
+        type: "gallery",
+      },
+      {
+        id: "patel-gallery-1",
+        url: "/projects/patel_mansion/full/final_pic_3.webp",
+        thumbnail: "/projects/patel_mansion/thumbs/final_pic_3.webp",
+        alt: "The Patel Mansion side view",
+        type: "gallery",
+      },
+      {
+        id: "patel-gallery-1",
+        url: "/projects/patel_mansion/full/final_pic_4.webp",
+        thumbnail: "/projects/patel_mansion/thumbs/final_pic_4.webp",
+        alt: "The Patel Mansion side view",
+        type: "gallery",
+      },
+      {
+        id: "patel-gallery-1",
+        url: "/projects/patel_mansion/full/final_pic_5.webp",
+        thumbnail: "/projects/patel_mansion/thumbs/final_pic_5.webp",
         alt: "The Patel Mansion side view",
         type: "gallery",
       },
@@ -130,17 +204,27 @@ export const projectsData: Project[] = [
       "The highlight of this office is its iconic curve design wall, crafted to give the space a bold yet sophisticated character. Surrounded by lush greenery and premium landscaping, the office sets new standards in architectural design, sustainable interiors, and luxury commercial spaces.",
       "Our design studio focuses on contemporary architecture and high-end design solutions that inspire productivity while showcasing timeless aesthetics.",
     ],
-    heroImage: "/projects/saran_group/image_1.webp",
+    heroImage: "/projects/saran_group/full/image_1.webp",
+    thumbnail: "/projects/saran_group/thumbs/image_1.webp",
     images: [
       {
         id: "saran-hero-1",
-        url: "/projects/saran_group/image_1.webp",
+        url: "/projects/saran_group/full/final_pic_1.webp",
+        thumbnail: "/projects/saran_group/thumbs/final_pic_1.webp",
         alt: "Saran Group office exterior",
         type: "hero",
       },
       {
         id: "saran-gallery-1",
-        url: "/projects/saran_group/image_2.webp",
+        url: "/projects/saran_group/full/final_pic_2.webp",
+        thumbnail: "/projects/saran_group/thumbs/final_pic_2.webp",
+        alt: "Saran Group curved design wall",
+        type: "gallery",
+      },
+      {
+        id: "saran-gallery-1",
+        url: "/projects/saran_group/full/final_pic_3.webp",
+        thumbnail: "/projects/saran_group/thumbs/final_pic_3.webp",
         alt: "Saran Group curved design wall",
         type: "gallery",
       },
@@ -162,17 +246,41 @@ export const projectsData: Project[] = [
       "Featuring grand façade details, double-height columns, bespoke wooden doors, and expansive glass balconies, the villa creates an atmosphere of refined sophistication. Landscaped gardens, premium outdoor lounges, and a stunning entrance chandelier complete the high-end experience.",
       "Every corner of this residence is thoughtfully designed to deliver comfort, prestige, and exclusivity—making Gagangriha Villa a true benchmark in luxury home design in Gujarat..",
     ],
-    heroImage: "/projects/gagangriha_villa/image_1.webp",
+    heroImage: "/projects/gagangriha_villa/full/image_1.webp",
+    thumbnail: "/projects/gagangriha_villa/thumbs/image_1.webp",
     images: [
       {
         id: "gagangriha-hero-1",
-        url: "/projects/gagangriha_villa/image_1.webp",
+        url: "/projects/gagangriha_villa/full/final_pic_1.webp",
+        thumbnail: "/projects/gagangriha_villa/thumbs/final_pic_1.webp",
         alt: "The Gagangriha Villa main facade",
         type: "hero",
       },
       {
         id: "gagangriha-gallery-1",
-        url: "/projects/gagangriha_villa/image_2.webp",
+        url: "/projects/gagangriha_villa/full/final_pic_2.webp",
+        thumbnail: "/projects/gagangriha_villa/thumbs/final_pic_2.webp",
+        alt: "The Gagangriha Villa landscaped gardens",
+        type: "gallery",
+      },
+      {
+        id: "gagangriha-gallery-1",
+        url: "/projects/gagangriha_villa/full/final_pic_3.webp",
+        thumbnail: "/projects/gagangriha_villa/thumbs/final_pic_3.webp",
+        alt: "The Gagangriha Villa landscaped gardens",
+        type: "gallery",
+      },
+      {
+        id: "gagangriha-gallery-1",
+        url: "/projects/gagangriha_villa/full/final_pic_4.webp",
+        thumbnail: "/projects/gagangriha_villa/thumbs/final_pic_4.webp",
+        alt: "The Gagangriha Villa landscaped gardens",
+        type: "gallery",
+      },
+      {
+        id: "gagangriha-gallery-1",
+        url: "/projects/gagangriha_villa/full/final_pic_5.webp",
+        thumbnail: "/projects/gagangriha_villa/thumbs/final_pic_5.webp",
         alt: "The Gagangriha Villa landscaped gardens",
         type: "gallery",
       },

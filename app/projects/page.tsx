@@ -41,10 +41,13 @@ const Projects: React.FC = () => {
                 <Image
                   src={project.heroImage}
                   alt={project.title}
+                  placeholder="blur"
+                  blurDataURL={project.thumbnail}
+                  // loading="lazy"
                   fill
                   className="object-cover transition-transform duration-300 group-hover:scale-105"
                   sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1170px"
-                  priority={false}
+                  // priority={true}
                 />
 
                 {/* Bottom Left Title Overlay (Default State) */}
