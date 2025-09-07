@@ -1,9 +1,10 @@
 "use client";
 import { useState, useEffect } from "react";
-import { Menu, X } from "lucide-react";
+import { Menu, X, Instagram, Facebook } from "lucide-react"; // Added Instagram and Facebook
 import Image from "next/image";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { motion, AnimatePresence, Variants } from "framer-motion";
 
 interface MenuItem {
   name: string;
@@ -44,7 +45,6 @@ const Header: React.FC = () => {
         setIsMenuOpen(false);
       }
     };
-
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
@@ -60,9 +60,101 @@ const Header: React.FC = () => {
     };
   }, [isMenuOpen]);
 
+  // Animation variants
+  const menuBackgroundVariants: Variants = {
+    closed: {
+      y: "-100%",
+      opacity: 0,
+      transition: {
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+    open: {
+      y: "0%",
+      opacity: 1,
+      transition: {
+        duration: 0.8,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  };
+
+  const menuItemsContainerVariants = {
+    closed: {
+      transition: {
+        staggerChildren: 0.1,
+        staggerDirection: -1,
+        when: "afterChildren",
+      },
+    },
+    open: {
+      transition: {
+        staggerChildren: 0.15,
+        staggerDirection: -1, // open from bottom → top
+        delayChildren: 0.3,
+        when: "beforeChildren",
+      },
+    },
+  };
+
+  const menuItemVariants: Variants = {
+    closed: {
+      y: 100,
+      opacity: 0,
+      transition: {
+        duration: 0.5,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.7,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+  };
+
+  const socialIconVariants: Variants = {
+    closed: {
+      y: 50,
+      opacity: 0,
+      transition: {
+        duration: 0.4,
+        ease: [0.76, 0, 0.24, 1],
+      },
+    },
+    open: {
+      y: 0,
+      opacity: 1,
+      transition: {
+        duration: 0.6,
+        ease: [0.76, 0, 0.24, 1],
+        delay: 0.8, // Delay after menu items
+      },
+    },
+  };
+
+  const menuButtonVariants = {
+    closed: {
+      rotate: 0,
+      transition: {
+        duration: 0.3,
+      },
+    },
+    open: {
+      rotate: 180,
+      transition: {
+        duration: 0.3,
+      },
+    },
+  };
+
   return (
     <>
-      <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 5xl:h-56 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-42 4xl:px-48 5xl:px-56 z-50 mt-2 bg-white">
+      <header className="w-full h-14 sm:h-14 md:h-16 lg:h-18 xl:h-20 2xl:h-26 3xl:h-28 4xl:h-50 5xl:h-56 absolute left-0 top-0 flex items-center justify-between px-6 sm:px-8 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-48 4xl:px-60 5xl:px-80 z-50 mt-2 bg-white">
         {/* Logo */}
         <div className="flex items-center flex-shrink-0">
           <Link href="/" className="flex items-center" onClick={closeMenu}>
@@ -71,7 +163,7 @@ const Header: React.FC = () => {
               alt="The 23rd Studio Logo"
               height={72}
               width={110}
-              className="h-14 w-auto sm:h-7 md:h-16 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 5xl:h-56 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-6 4xl:py-6  transition-all duration-200"
+              className="h-14 w-auto sm:h-7 md:h-16 lg:h-20 xl:h-26 2xl:h-32 3xl:h-38 4xl:h-48 5xl:h-56 py-1 sm:py-1.5 md:py-2 lg:py-2.5 xl:py-3 2xl:py-6 3xl:py-6 4xl:py-6 transition-all duration-200"
               priority
             />
           </Link>
@@ -93,17 +185,6 @@ const Header: React.FC = () => {
                     : "text-gray-500 hover:text-gray-700"
                 }
               `}
-
-              // className={`
-              //   relative text-gray-800 font-roboto text-xs sm:text-[10px] md:text-[10px] lg:text-[12px] xl:text-[13px] 2xl:text-[13px] 3xl:text-[18px] 4xl:text-[25px] 5xl:text-[34px] uppercase tracking-widest
-              //   cursor-pointer transition-all duration-300 py-0 px-2 sm:px-3 md:px-4 lg:px-4 xl:px-6 2xl:px-4 3xl:px-6 4xl:px-6 5xl:px-10
-              //   whitespace-nowrap
-              //   ${
-              //     isActive(item.path)
-              //       ? "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-black text-black font-medium"
-              //       : "border-t-2 3xl:border-t-4 border-b-2 3xl:border-b-4 border-transparent hover:border-black hover:text-gray-700"
-              //   }
-              // `}
             >
               {item.name}
             </Link>
@@ -111,74 +192,108 @@ const Header: React.FC = () => {
         </nav>
 
         {/* Mobile Menu Button */}
-        <button
-          className="md:hidden z-50 relative p-2 flex items-center justify-center w-10 h-10 sm:w-10 sm:h-10 rounded-md hover:bg-gray-100 transition-colors duration-200"
+        <motion.button
+          className="md:hidden relative p-2 flex items-center justify-center w-10 h-10 sm:w-10 sm:h-10 rounded-md hover:bg-gray-100 transition-colors duration-200"
           onClick={toggleMenu}
           aria-label="Toggle menu"
           aria-expanded={isMenuOpen}
           type="button"
+          variants={menuButtonVariants}
+          animate={isMenuOpen ? "open" : "closed"}
+          style={{ zIndex: 9999 }} // Ensure button is always on top
         >
           <div className="relative w-8 h-8 sm:w-5 sm:h-5">
             {isMenuOpen ? (
-              <X size={20} className="text-gray-800 w-full h-full" />
+              <X size={20} className="text-black w-full h-full" />
             ) : (
               <Menu size={20} className="text-gray-800 w-full h-full" />
             )}
           </div>
-        </button>
+        </motion.button>
       </header>
 
-      {/* Mobile Navigation Dropdown - Top to Bottom */}
-      <div
-        className={`
-          fixed top-16 sm:top-16 left-0 w-full bg-white shadow-lg border-b border-gray-200
-          transform transition-all duration-300 ease-in-out md:hidden z-40
-          ${
-            isMenuOpen
-              ? "translate-y-0 opacity-100"
-              : "-translate-y-full opacity-0"
-          }
-        `}
-      >
-        {/* Menu Items */}
-        <div className="flex flex-col py-4 px-6">
-          {menuItems.map((item: MenuItem) => (
-            <Link
-              key={item.name}
-              href={item.path}
-              className={`
-                px-4 py-3 text-gray-800 font-roboto text-sm sm:text-base 
-                uppercase tracking-widest cursor-pointer rounded-lg transition-all duration-200
-                hover:bg-gray-100 hover:text-black active:bg-gray-200 mb-2
-                ${
-                  isActive(item.path)
-                    ? "bg-gray-100 text-black font-medium"
-                    : ""
-                }
-              `}
-              onClick={closeMenu}
-            >
-              {item.name}
-            </Link>
-          ))}
-        </div>
-      </div>
+      {/* Full Screen Mobile Navigation */}
+      <AnimatePresence>
+        {isMenuOpen && (
+          <motion.div
+            className="fixed top-20 bottom-0 left-0 right-0  h-[90vh] z-[9998] md:hidden"
+            variants={menuBackgroundVariants}
+            initial="closed"
+            animate="open"
+            exit="closed"
+            style={{
+              backgroundImage: "url('/assets/header_menu.png')",
+              // backgroundSize: "cover",
+              // backgroundPosition: "center",
+            }}
+          >
+            {/* Menu Content */}
+            <div className="relative z-10 flex flex-col items-center justify-center h-full px-6">
+              {/* Menu Items */}
+              <motion.nav
+                className="flex flex-col items-center space-y-8 mb-16"
+                variants={menuItemsContainerVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+              >
+                {menuItems.map((item: MenuItem, index) => (
+                  <motion.div
+                    key={item.name}
+                    variants={menuItemVariants}
+                    className="overflow-hidden"
+                  >
+                    <Link
+                      href={item.path}
+                      className={`
+                        block text-black text-2xl sm:text-4xl md:text-5xl
+                        uppercase tracking-widest cursor-pointer transition-all duration-300
+                        hover:text-gray-600 active:scale-95
+                        ${
+                          isActive(item.path)
+                            ? "text-black font-semibold"
+                            : "text-gray-500 hover:text-gray-700"
+                        }
+                      `}
+                      onClick={closeMenu}
+                    >
+                      {item.name}
+                    </Link>
+                  </motion.div>
+                ))}
+              </motion.nav>
 
-      {/* Mobile Blurred Overlay */}
-      {isMenuOpen && (
-        <div
-          className="fixed inset-0 bg-black/30 backdrop-blur-sm z-30 md:hidden transition-all duration-300"
-          onClick={closeMenu}
-          role="button"
-          tabIndex={0}
-          onKeyDown={(e) => {
-            if (e.key === "Enter" || e.key === " ") {
-              closeMenu();
-            }
-          }}
-          aria-label="Close menu overlay"
-        />
-      )}
+              {/* Social Media Icons */}
+              <motion.div
+                className="flex items-center space-x-8"
+                variants={socialIconVariants}
+                initial="closed"
+                animate="open"
+                exit="closed"
+              >
+                <a
+                  href="https://www.instagram.com/the23rd_studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-gray-600 transition-colors duration-300 active:scale-95"
+                  onClick={closeMenu}
+                >
+                  <Instagram size={32} />
+                </a>
+                <a
+                  href="https://www.instagram.com/the23rd_studio"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-black hover:text-gray-600 transition-colors duration-300 active:scale-95"
+                  onClick={closeMenu}
+                >
+                  <Facebook size={32} />
+                </a>
+              </motion.div>
+            </div>
+          </motion.div>
+        )}
+      </AnimatePresence>
     </>
   );
 };

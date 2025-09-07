@@ -1,8 +1,157 @@
+"use client";
 import ButtonV1 from "@/components/ButtonV1";
-import ContactForm, { ContactMap } from "@/components/ContactForm";
-import React from "react";
+import ContactForm, {
+  ContactFields,
+  ContactMap,
+} from "@/components/ContactForm";
+import { useState, FormEvent, ChangeEvent } from "react";
+import emailjs from "@emailjs/browser";
+
+// Types
+interface FormData {
+  name: string;
+  phone: string;
+  email: string;
+  interest: string;
+  message: string;
+}
+
+interface FormErrors {
+  name?: string;
+  phone?: string;
+  email?: string;
+  message?: string;
+}
+
+interface ContactFieldsProps {
+  formData: FormData;
+  errors: FormErrors;
+  handleChange: (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ) => void;
+  isSubmitting: boolean;
+  onSubmit: (e: FormEvent<HTMLFormElement>) => Promise<void>;
+}
+
+interface EmailJSConfig {
+  SERVICE_ID: string;
+  TEMPLATE_ID: string;
+  PUBLIC_KEY: string;
+}
+
+type SubmitStatus = "success" | "error" | null;
 
 const ContactUs = () => {
+  const [formData, setFormData] = useState<FormData>({
+    name: "",
+    phone: "",
+    email: "",
+    interest: "",
+    message: "",
+  });
+  const [errors, setErrors] = useState<FormErrors>({});
+  const [isSubmitting, setIsSubmitting] = useState<boolean>(false);
+  const [submitStatus, setSubmitStatus] = useState<SubmitStatus>(null);
+
+  // EmailJS configuration
+  const EMAILJS_CONFIG: EmailJSConfig = {
+    SERVICE_ID: "YOUR_SERVICE_ID",
+    TEMPLATE_ID: "YOUR_TEMPLATE_ID",
+    PUBLIC_KEY: "YOUR_PUBLIC_KEY",
+  };
+
+  const handleChange = (
+    e: ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>
+  ): void => {
+    const { name, value } = e.target;
+    setFormData((prev) => ({
+      ...prev,
+      [name]: value,
+    }));
+
+    if (errors[name as keyof FormErrors]) {
+      setErrors((prev) => ({
+        ...prev,
+        [name]: "",
+      }));
+    }
+  };
+
+  const validateForm = (): boolean => {
+    const newErrors: FormErrors = {};
+
+    if (!formData.name.trim()) {
+      newErrors.name = "Name is required";
+    }
+
+    if (!formData.phone.trim()) {
+      newErrors.phone = "Phone number is required";
+    } else if (
+      !/^[\+]?[1-9][\d]{0,15}$/.test(formData.phone.replace(/\s/g, ""))
+    ) {
+      newErrors.phone = "Please enter a valid phone number";
+    }
+
+    if (!formData.email.trim()) {
+      newErrors.email = "Email is required";
+    } else if (!/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(formData.email)) {
+      newErrors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.message.trim()) {
+      newErrors.message = "Message is required";
+    } else if (formData.message.trim().length < 10) {
+      newErrors.message = "Message must be at least 10 characters long";
+    }
+
+    setErrors(newErrors);
+    return Object.keys(newErrors).length === 0;
+  };
+
+  const handleSubmit = async (e: FormEvent<HTMLFormElement>): Promise<void> => {
+    e.preventDefault();
+
+    if (!validateForm()) {
+      return;
+    }
+
+    setIsSubmitting(true);
+    setSubmitStatus(null);
+
+    try {
+      const response = await emailjs.send(
+        EMAILJS_CONFIG.SERVICE_ID,
+        EMAILJS_CONFIG.TEMPLATE_ID,
+        {
+          from_name: formData.name,
+          from_email: formData.email,
+          phone: formData.phone,
+          interest: formData.interest,
+          message: formData.message,
+        },
+        EMAILJS_CONFIG.PUBLIC_KEY
+      );
+
+      if (response.status === 200) {
+        setSubmitStatus("success");
+        setFormData({
+          name: "",
+          phone: "",
+          email: "",
+          interest: "",
+          message: "",
+        });
+      } else {
+        setSubmitStatus("error");
+      }
+    } catch (error) {
+      console.error("Email sending failed:", error);
+      setSubmitStatus("error");
+    } finally {
+      setIsSubmitting(false);
+    }
+  };
+
   return (
     <div className="space-y-12">
       <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
@@ -48,16 +197,16 @@ const ContactUs = () => {
               </div>
 
               {/* Contact Numbers */}
-              <div className="space-y-1">
+              <div className="space-y-2 md:space-x-3">
                 <a
                   href="tel:+917203892651"
-                  className="block text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl xl:text-xl font-medium hover:text-blue-200 transition-colors"
+                  className="block text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl xl:text-xl font-medium hover:text-blue-200 transition-colors"
                 >
                   +91 720 389 2651
                 </a>
                 <a
                   href="tel:+919054542360"
-                  className="block text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl xl:text-xl font-medium hover:text-blue-200 transition-colors"
+                  className="block text-sm sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl xl:text-xl font-medium hover:text-blue-200 transition-colors"
                 >
                   +91 905 454 2360
                 </a>
@@ -77,7 +226,7 @@ const ContactUs = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="relative min-h-96 lg:min-h-[450px] xl:min-h-[580px] 2xl:min-h-[640px] overflow-hidden">
+        <div className="relative min-h-96 lg:min-h-[450px] xl:min-h-[580px] 2xl:min-h-[640px] 3xl:min-h-[700px] 4xl:min-h-[800px] 5xl:min-h-[1200px] overflow-hidden">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"
@@ -88,80 +237,19 @@ const ContactUs = () => {
 
           {/* Form Content */}
           <div className="relative z-10 h-full flex flex-col justify-center p-5 lg:p-6 xl:p-12">
-            <div className="max-w-sm sm:max-w-md xl:max-w-lg mx-auto w-full">
+            <div className="max-w-sm sm:max-w-md xl:max-w-lg  2xl:max-w-xl 3xl:max-w-2xl 4xl:max-w-3xl 5xl:max-w-7xl mx-auto w-full">
               <h1 className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[144px] font-light text-[#BDBDBD] mb-4 sm:mb-6 md:mb-8 lg:mb-5 2xl:mb-[30px] 3xl:mb-10 4xl:mb-11 5xl:mb-13 leading-tight">
                 Get in Touch
               </h1>
 
-              <form className="space-y-3 lg:space-y-4 xl:space-y-3">
-                {/* Your Name */}
-                <div>
-                  <input
-                    type="text"
-                    placeholder="Name*"
-                    className="w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors rounded-none text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl"
-                  />
-                </div>
-
-                {/* Phone Number */}
-                <div>
-                  <input
-                    type="tel"
-                    placeholder="Phone Number*"
-                    className="w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors rounded-none text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl"
-                    required
-                  />
-                </div>
-
-                {/* Email */}
-                <div>
-                  <input
-                    type="email"
-                    placeholder="E-mail*"
-                    className="w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none transition-colors rounded-none text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl"
-                    required
-                  />
-                </div>
-
-                {/* Interested In */}
-                <div>
-                  <div className="mb-2 lg:mb-3 3xl:mb-6 4xl:mb-8">
-                    <select
-                      id="interest"
-                      name="interest"
-                      // value={formData.interest}
-                      // onChange={handleChange}
-                      className={`w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none resize-none transition-colors rounded-none text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl appearance-none ${
-                        true ? "text-gray-400 tracking-wider" : "text-gray-800"
-                      }"`}
-                      style={{ backgroundColor: "#fff" }}
-                    >
-                      <option value="" disabled hidden>
-                        Interested In
-                      </option>
-                      <option value="residential">Residential</option>
-                      <option value="commercial">Commercial</option>
-                      <option value="renovation">Renovation</option>
-                      <option value="consultation">Consultation</option>
-                      <option value="Other">Other</option>
-                    </select>
-                  </div>
-                </div>
-
-                {/* Message */}
-                <div>
-                  <textarea
-                    rows={3}
-                    placeholder="Message"
-                    className="w-full px-3 lg:px-4 py-2 lg:py-2.5 border border-gray-300 bg-white/90 text-gray-700 placeholder-gray-500 focus:border-gray-500 focus:outline-none resize-none transition-colors rounded-none text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl  3xl:text-3xl 4xl:text-4xl"
-                  ></textarea>
-                </div>
-
-                {/* Submit */}
-                <div className="pt-2 lg:pt-4">
-                  <ButtonV1 theme="dark" text="CONTACT US" />
-                </div>
-              </form>
+              <ContactFields
+                formData={formData}
+                errors={errors}
+                handleChange={handleChange}
+                isSubmitting={isSubmitting}
+                onSubmit={handleSubmit}
+                backgroundColor="white"
+              />
             </div>
           </div>
         </div>

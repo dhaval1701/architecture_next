@@ -55,7 +55,7 @@ const AboutUs: React.FC = () => {
         </p>
       </div>
 
-      <div className="grid breakout lg:grid-cols-2 gap-6 lg:gap-2 3xl:gap-4 4xl:gap-6 5xl:gap-8 items-stretch mb-12 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 3xl:mb-36 4xl:mb-44 5xl:mb-52">
+      <div className="grid breakout lg:grid-cols-2 gap-2 lg:gap-2 3xl:gap-4 4xl:gap-6 5xl:gap-8 items-stretch mb-0 sm:mb-16 md:mb-20 lg:mb-24 xl:mb-28 3xl:mb-36 4xl:mb-44 5xl:mb-52">
         {/* Left side - Image */}
         <div className="order-1 lg:order-1 h-full">
           <div className="relative h-full aspect-square w-full overflow-hidden">
@@ -73,11 +73,11 @@ const AboutUs: React.FC = () => {
         </div>
 
         {/* Right side - Content */}
-        <div className="p-5 md:pd-0 order-2 lg:order-2 flex flex-col h-full justify-start 2xl:pr-34 3xl:pr-24 4xl:pr-32 5xl:pr-40">
+        <div className="p-5 md:pd-0 order-2 lg:order-2 flex flex-col h-full justify-start pr-6 md:pr-12 lg:pr-16 xl:pr-20 2xl:pr-36  3xl:pr-42 4xl:pr-52 5xl:pr-58">
           {/* Heading */}
           <div className="flex flex-wrap items-baseline gap-3 sm:gap-4 lg:gap-6 3xl:gap-8 4xl:gap-10 5xl:gap-12 mb-4 sm:mb-6 md:mb-8 lg:mb-5 2xl:mb-[30px] 3xl:mb-10 4xl:mb-11 5xl:mb-13">
             <p className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light text-[#BDBDBD] tracking-wider">
-              About
+              The
             </p>
             <p className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light text-black tracking-tight">
               23
@@ -90,7 +90,7 @@ const AboutUs: React.FC = () => {
 
           {/* Paragraphs */}
           {/* <div className="space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[50px] text-black font-light leading-[20px] md:leading-[26px] 3xl:leading-[36px] 4xl:leading-[44px] 5xl:leading-[56px]"> */}
-          <div className="font-light space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[44px] max-w-[60ch] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[84px]">
+          <div className="font-light space-y-2 lg:space-y-4 xl:space-y-4 3xl:space-y-8 4xl:space-y-12 5xl:space-y-14 text-sm sm:text-base md:text-lg lg:text-[16px] xl:text-[16px] 2xl:text-[18px] 3xl:text-[24px] 4xl:text-[32px] 5xl:text-[44px] leading-[20px] sm:leading-[22px] md:leading-[24px] lg:leading-[20px] xl:leading-[20px] 2xl:leading-[28px] 3xl:leading-[38px] 4xl:leading-[44px] 5xl:leading-[84px]">
             <p>
               At 23rd Design Studio, we are a contemporary architectural design
               practice founded by two principal architects with a shared vision

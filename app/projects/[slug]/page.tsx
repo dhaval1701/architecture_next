@@ -149,7 +149,7 @@ export default function ProductDetail({
           </div>
 
           {/* Second Row: Left Image (50%) + Right Content (50%) */}
-          <div className="flex flex-col lg:flex-row items-stretch py-6 sm:py-8 md:py-10 lg:py-12 xl:py-16 2xl:py-20 3xl:py-28 4xl:py-36 5xl:py-44 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-32 5xl:gap-40">
+          <div className="flex flex-col lg:flex-row items-stretch pt-10 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 2xl:pt-20 3xl:pt-28 4xl:pt-36 5xl:pt-44 gap-6 sm:gap-8 md:gap-10 lg:gap-12 xl:gap-16 2xl:gap-20 3xl:gap-24 4xl:gap-32 5xl:gap-40">
             {/* Left Column - Image */}
             <div className="w-full lg:w-1/2 aspect-square">
               <div className="w-full h-full overflow-hidden ">

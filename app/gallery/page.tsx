@@ -478,7 +478,7 @@ const Gallery: React.FC = () => {
               className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-16 3xl:h-16 4xl:w-20 4xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors ${
                 currentPage === totalPages
                   ? "opacity-50 cursor-not-allowed bg-gray-100"
-                  : "bg-gray-50 hover:bg-gray-100"
+                  : " hover:bg-gray-50"
               }`}
               whileHover={currentPage !== totalPages ? { scale: 1.05 } : {}}
               whileTap={currentPage !== totalPages ? { scale: 0.95 } : {}}

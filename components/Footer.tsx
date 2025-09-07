@@ -25,7 +25,7 @@ const XIcon: React.FC<XIconProps> = ({ className, ...props }) => (
 const Footer = () => {
   return (
     <footer
-      className="text-white px-6 sm:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-44 4xl:px-52 5xl:px-60
+      className="text-white px-5 sm:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-44 4xl:px-52 5xl:px-60
        pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 3xl:pt-20 4xl:pt-24 5xl:pt-28
        pb-4 sm:pb-6 md:pb-8 lg:pb-4 3xl:pb-6 4xl:pb-8 5xl:pb-10"
       style={{ background: "#292929" }}
@@ -34,7 +34,7 @@ const Footer = () => {
         {/* Main Content Grid - Custom column sizes */}
         <div className="md:grid md:grid-cols-[1fr_0.6fr_1fr_1fr] md:gap-6 lg:gap-8 xl:gap-10 2xl:gap-12 3xl:gap-14 4xl:gap-16 5xl:gap-20 w-full">
           {/* Logo Section - Hidden on mobile, first column on md+ */}
-          <div className="hidden md:block">
+          <div className="mb-6 md:mb-0 md:block">
             <Link href="/">
               <Image
                 src="/logos/full_logo_white.svg"
@@ -47,20 +47,22 @@ const Footer = () => {
           </div>
 
           {/* Mobile: Information + Contacts side by side, MD+: separate columns */}
-          <div className="flex gap-6 mb-6 md:contents">
+          <div className="flex gap-0 mb-6 md:contents">
             {/* Information - Smaller second column on md+ */}
             <div className="flex-1">
               <h3 className="text-base sm:text-lg md:text-xl lg:text-2xl 3xl:text-3xl 4xl:text-4xl 5xl:text-5xl font-bold mb-3 sm:mb-4 lg:mb-6 3xl:mb-8 4xl:mb-10 5xl:mb-12">
-                Information
+                Site Map
               </h3>
               <ul className="space-y-2.5 sm:space-y-2 lg:space-y-3 xl:space-y-3 3xl:space-y-6 4xl:space-y-8 5xl:space-y-10">
-                {["Home", "Gallery", "Projects", "About us", "Contacts"].map(
+                {["Home", "Gallery", "Projects", "About Us", "Contact Us"].map(
                   (item) => (
                     <li
                       key={item}
                       className="text-xs sm:text-sm md:text-base lg:text-lg 3xl:text-xl 4xl:text-2xl 5xl:text-3xl hover:text-gray-300 cursor-pointer transition-colors font-medium"
                     >
-                      {item}
+                      <Link href={`/${item.toLowerCase().replace(" ", "-")}`}>
+                        {item}
+                      </Link>
                     </li>
                   )
                 )}

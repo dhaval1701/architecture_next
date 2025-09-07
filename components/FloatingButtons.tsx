@@ -44,7 +44,7 @@ export default function FloatingButtons() {
   };
 
   return (
-    <div className="fixed bottom-3 md:bottom-6  3xl:bottom-8 4xl:bottom-12 right-2 md:right-6 3xl:right-8 z-50 flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
+    <div className="fixed bottom-5 md:bottom-6  3xl:bottom-8 4xl:bottom-12 right-3 md:right-3 3xl:right-8 z-50 flex flex-col items-center gap-2 sm:gap-3 md:gap-4">
       {/* WhatsApp Button */}
       <button
         onClick={openWhatsApp}

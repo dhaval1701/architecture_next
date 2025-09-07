@@ -1,13 +1,39 @@
 "use client";
+
 import Image from "next/image";
 import Link from "next/link";
-import React, { useState } from "react";
+import React, { useEffect, useState } from "react";
 import { motion } from "framer-motion";
 import { projectsData, Project } from "../../data/projects";
 
 const Projects: React.FC = () => {
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState<number>(1);
   const projectsPerPage = 4;
+  const [isTouch, setIsTouch] = useState<boolean>(false);
+  const [activeProject, setActiveProject] = useState<Project["id"] | null>(
+    null
+  );
+
+  useEffect(() => {
+    // Detect touch device
+    setIsTouch("ontouchstart" in window || navigator.maxTouchPoints > 0);
+  }, []);
+
+  const handleProjectClick = (
+    e: React.MouseEvent<HTMLAnchorElement, MouseEvent>,
+    projectId: Project["id"]
+  ) => {
+    if (!isTouch) return; // Desktop → let Link work normally
+
+    if (activeProject !== projectId) {
+      // First tap → show overlay only
+      e.preventDefault();
+      setActiveProject(projectId);
+    } else {
+      // Second tap → reset + allow navigation
+      setActiveProject(null);
+    }
+  };
 
   const totalPages = Math.ceil(projectsData.length / projectsPerPage);
   const startIndex = (currentPage - 1) * projectsPerPage;
@@ -17,132 +43,150 @@ const Projects: React.FC = () => {
   );
 
   const handlePageChange = (page: number) => {
+    if (page < 1 || page > totalPages) return;
     setCurrentPage(page);
+    setActiveProject(null); // reset overlay when changing page
   };
 
   return (
-    <div className=" flex flex-col justify-between">
+    <div className="flex flex-col justify-between">
+      {/* Title */}
       <div className="mt-2 md:mt-0 mb-4 md:mb-6 xl:mb-10 3xl:mb-16 4xl:mb-24">
-        <p className="text-[#BDBDBD] text-3xl sm:text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
+        <p className="text-[#BDBDBD] text-3xl md:text-3xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-light mb-1 sm:mb-2 lg:mb-3 xl:mb-4 3xl:mb-6 4xl:mb-8 leading-[16px]">
           Our
         </p>
-        <p className="text-[#333333] text-3xl sm:text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-bold leading-tight">
+        <p className="text-[#333333] text-3xl md:text-4xl lg:text-4xl xl:text-5xl 2xl:text-[64px] 3xl:text-7xl 4xl:text-9xl font-bold leading-tight">
           Projects
         </p>
       </div>
 
       {/* Projects Grid */}
       <div className="grid grid-cols-1 gap-8 3xl:gap-12 4xl:gap-16 5xl:gap-20 mb-12">
-        {currentProjects.map((project) => (
-          <Link href={`/projects/${project.slug}`} key={project.id}>
-            <div className="group relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] 3xl:h-[700px] 4xl:h-[800px] 5xl:h-[900px] overflow-hidden cursor-pointer transition-transform duration-300">
-              {/* Image Container */}
-              <div className="relative w-full h-full">
-                <Image
-                  src={project.heroImage}
-                  alt={project.title}
-                  placeholder="blur"
-                  blurDataURL={project.thumbnail}
-                  // loading="lazy"
-                  fill
-                  className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1170px"
-                  // priority={true}
-                />
+        {currentProjects.map((project) => {
+          const isActive = activeProject === project.id;
 
-                {/* Bottom Left Title Overlay (Default State) */}
-                <div className="absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 sm:p-6 md:p-8 pb-4 sm:pb-6 3xl:p-10 4xl:p-14 5xl:p-16 transition-opacity duration-300 group-hover:opacity-0">
-                  <h3 className="text-white text-base sm:text-lg md:text-xl 3xl:text-2xl 4xl:text-3xl 5xl:text-4xl font-medium uppercase tracking-wide m-0">
-                    {project.title}
-                  </h3>
-                </div>
+          return (
+            <Link
+              href={`/projects/${project.slug}`}
+              key={project.id}
+              onClick={(e) => handleProjectClick(e, project.id)}
+            >
+              <div className="group relative w-full h-[300px] sm:h-[350px] md:h-[400px] lg:h-[650px] xl:h-[700px] 2xl:h-[570px] 3xl:h-[700px] 4xl:h-[800px] 5xl:h-[900px] overflow-hidden cursor-pointer transition-transform duration-300">
+                {/* Image Container */}
+                <div className="relative w-full h-full">
+                  <Image
+                    src={project.heroImage}
+                    alt={project.title}
+                    placeholder="blur"
+                    blurDataURL={project.thumbnail}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1200px) 80vw, 1170px"
+                  />
 
-                {/* Hover Overlay - Full Background */}
-                <div className="absolute inset-0 bg-black/80 opacity-0 transition-opacity duration-300 group-hover:opacity-100">
-                  <motion.div
-                    className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-4 sm:p-6 md:p-8 3xl:p-10 4xl:p-14 5xl:p-16"
-                    initial={{ y: 100, opacity: 0 }}
-                    animate={{
-                      y: 0,
-                      opacity: 1,
-                      transition: {
-                        duration: 0.4,
-                        ease: "easeOut",
-                        delay: 0.1,
-                      },
-                    }}
-                    exit={{
-                      y: 100,
-                      opacity: 0,
-                      transition: { duration: 0.3, ease: "easeIn" },
-                    }}
+                  {/* Bottom Left Title Overlay (Default State) */}
+                  <div
+                    className={`absolute bottom-0 left-0 right-0 bg-gradient-to-t from-black/70 via-black/30 to-transparent p-4 sm:p-6 md:p-8 pb-4 sm:pb-6 3xl:p-10 4xl:p-14 5xl:p-16 transition-opacity duration-300
+                    ${isActive ? "opacity-0" : "group-hover:opacity-0"}
+                  `}
                   >
-                    {/* Left Side - Project Details */}
-                    <motion.div
-                      className="text-white max-w-2xl"
-                      initial={{ y: 50, opacity: 0 }}
-                      animate={{
-                        y: 0,
-                        opacity: 1,
-                        transition: {
-                          duration: 0.5,
-                          ease: "easeOut",
-                          delay: 0.2,
-                        },
-                      }}
-                      exit={{
-                        y: 50,
-                        opacity: 0,
-                        transition: { duration: 0.2, ease: "easeIn" },
-                      }}
-                    >
-                      <h3 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-bold mb-2 uppercase tracking-wide text-white">
-                        {project.title}
-                      </h3>
-                      <div className="space-y-1 mb-3 text-xs sm:text-sm 3xl:text-base 4xl:text-lg 5xl:text-xl opacity-90">
-                        <p className="text-gray-200">{project.location}</p>
-                        <p className="text-gray-200">{project.builtUpArea}</p>
-                        <p className="text-gray-200">{project.year}</p>
-                      </div>
-                    </motion.div>
+                    <h3 className="text-white text-base sm:text-lg md:text-xl 3xl:text-2xl 4xl:text-3xl 5xl:text-4xl font-medium uppercase tracking-wide m-0">
+                      {project.title}
+                    </h3>
+                  </div>
 
-                    {/* Right Side - View More Button */}
+                  {/* Hover/Active Overlay - Full Background */}
+                  <div
+                    className={`
+                    absolute inset-0 bg-black/80 transition-opacity duration-300 
+                    ${
+                      isActive
+                        ? "opacity-100"
+                        : "opacity-0 group-hover:opacity-100"
+                    }
+                  `}
+                  >
                     <motion.div
-                      className="flex items-end"
-                      initial={{ y: 30, opacity: 0 }}
+                      className="absolute bottom-0 left-0 right-0 flex justify-between items-end p-4 sm:p-6 md:p-8 3xl:p-10 4xl:p-14 5xl:p-16"
+                      initial={{ y: 100, opacity: 0 }}
                       animate={{
                         y: 0,
                         opacity: 1,
                         transition: {
                           duration: 0.4,
                           ease: "easeOut",
-                          delay: 0.3,
+                          delay: 0.1,
                         },
                       }}
-                      exit={{
-                        y: 30,
-                        opacity: 0,
-                        transition: { duration: 0.2, ease: "easeIn" },
-                      }}
                     >
-                      <button className="bg-transparent text-white px-3 sm:px-4 md:px-6 py-2 text-xs sm:text-sm 3xl:text-base 4xl:text-lg 5xl:text-xl uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2 hover:bg-white/10 rounded">
-                        View More
-                        <span className="text-sm sm:text-lg 3xl:text-xl 4xl:text-2xl 5xl:text-3xl">
-                          →
-                        </span>
-                      </button>
+                      {/* Left Side - Project Details */}
+                      <motion.div
+                        className="text-white max-w-2xl"
+                        initial={{ y: 50, opacity: 0 }}
+                        animate={{
+                          y: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 0.5,
+                            ease: "easeOut",
+                            delay: 0.2,
+                          },
+                        }}
+                      >
+                        <h3 className="text-lg sm:text-xl md:text-2xl 2xl:text-3xl 3xl:text-4xl 4xl:text-5xl 5xl:text-6xl font-bold mb-2 uppercase tracking-wide text-white">
+                          {project.title}
+                        </h3>
+                        <div className="space-y-1 mb-3 text-xs sm:text-sm 3xl:text-base 4xl:text-lg 5xl:text-xl opacity-90">
+                          {project.location && (
+                            <p className="text-gray-200">{project.location}</p>
+                          )}
+                          {project.builtUpArea && (
+                            <p className="text-gray-200">
+                              {project.builtUpArea}
+                            </p>
+                          )}
+                          {project.year && (
+                            <p className="text-gray-200">{project.year}</p>
+                          )}
+                        </div>
+                      </motion.div>
+
+                      {/* Right Side - View More Button */}
+                      <motion.div
+                        className="flex items-end"
+                        initial={{ y: 30, opacity: 0 }}
+                        animate={{
+                          y: 0,
+                          opacity: 1,
+                          transition: {
+                            duration: 0.4,
+                            ease: "easeOut",
+                            delay: 0.3,
+                          },
+                        }}
+                      >
+                        <button
+                          type="button"
+                          className="bg-transparent text-white px-3 sm:px-4 md:px-6 py-2 text-xs sm:text-sm 3xl:text-base 4xl:text-lg 5xl:text-xl uppercase tracking-wide transition-all duration-300 whitespace-nowrap flex items-center gap-2 hover:bg-white/10 rounded"
+                        >
+                          View More
+                          <span className="text-sm sm:text-lg 3xl:text-xl 4xl:text-2xl 5xl:text-3xl">
+                            →
+                          </span>
+                        </button>
+                      </motion.div>
                     </motion.div>
-                  </motion.div>
+                  </div>
                 </div>
               </div>
-            </div>
-          </Link>
-        ))}
+            </Link>
+          );
+        })}
       </div>
 
       {/* Pagination */}
       {totalPages > 1 && (
-        <div className="">
+        <div>
           <motion.div
             className="flex items-center"
             initial={{ opacity: 0, x: -50 }}
@@ -166,9 +210,9 @@ const Projects: React.FC = () => {
               <motion.button
                 onClick={() => handlePageChange(currentPage - 1)}
                 disabled={currentPage === 1}
-                className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-14 3xl:h-14 4xl:w-16 4xl:h-16 5xl:w-20 5xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors mr-3 sm:mr-4 3xl:mr-6 4xl:mr-8 5xl:mr-10 ${
+                className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-14 3xl:h-14 4xl:w-16 4xl:h-16 5xl:w-20 5xl:h-20 border border-gray-300 flex items-center justify-center transition-colors mr-3 sm:mr-4 3xl:mr-6 4xl:mr-8 5xl:mr-10 ${
                   currentPage === 1
-                    ? "opacity-50 cursor-not-allowed bg-gray-100"
+                    ? "opacity-50 cursor-not-allowed"
                     : "hover:bg-gray-50"
                 }`}
                 whileHover={currentPage !== 1 ? { scale: 1.05 } : {}}
@@ -187,10 +231,10 @@ const Projects: React.FC = () => {
               <motion.button
                 onClick={() => handlePageChange(currentPage + 1)}
                 disabled={currentPage === totalPages}
-                className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-14 3xl:h-14 4xl:w-16 4xl:h-16 5xl:w-20 5xl:h-20 border border-gray-300 flex items-center justify-center cursor-pointer transition-colors ${
+                className={`w-10 h-10 sm:w-12 sm:h-12 3xl:w-14 3xl:h-14 4xl:w-16 4xl:h-16 5xl:w-20 5xl:h-20 border border-gray-300 flex items-center justify-center transition-colors ${
                   currentPage === totalPages
-                    ? "opacity-50 cursor-not-allowed bg-gray-100"
-                    : "bg-gray-50 hover:bg-gray-100"
+                    ? "opacity-50 cursor-not-allowed"
+                    : "hover:bg-gray-50"
                 }`}
                 whileHover={currentPage !== totalPages ? { scale: 1.05 } : {}}
                 whileTap={currentPage !== totalPages ? { scale: 0.95 } : {}}
