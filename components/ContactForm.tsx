@@ -201,7 +201,7 @@ export const ContactFields: React.FC<ContactFieldsProps> = ({
             value={formData.message}
             onChange={handleChange}
             rows={5}
-            className={`w-full h-full min-h-[100px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] xl:min-h-[180px] 2xl:min-h-[160px] 3xl:min-h-[260px] 4xl:min-h-[320px] 
+            className={`w-full min-h-[80px] sm:min-h-[120px] md:min-h-[140px] lg:min-h-[160px] xl:min-h-[180px] 2xl:min-h-[160px] 3xl:min-h-[260px] 4xl:min-h-[320px] 
               p-3 sm:p-4 md:p-5 lg:p-6 xl:p-7 2xl:p-5 3xl:p-9 4xl:p-11 
               text-gray-800 placeholder-gray-400
               text-[14px] sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl 
@@ -210,7 +210,7 @@ export const ContactFields: React.FC<ContactFieldsProps> = ({
             style={{ backgroundColor: bgColor }}
           />
           {errors.message && (
-            <div className="text-red-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl mt-2 pl-2 sm:pl-3 md:pl-4 lg:pl-5 xl:pl-6 2xl:pl-4">
+            <div className="text-red-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl mt-0 pl-2 sm:pl-3 md:pl-4 lg:pl-5 xl:pl-6 2xl:pl-4">
               {errors.message}
             </div>
           )}

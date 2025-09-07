@@ -8,9 +8,9 @@ import ContactForm from "@/components/ContactForm";
 import { MoveRight } from "lucide-react";
 import ButtonV1 from "@/components/ButtonV1";
 import { projectsData } from "@/data/projects";
-import MissionMarquee from "@/components/MoveStatements";
+
 import { useRouter } from "next/navigation";
-import InfiniteDraggableScrollingText from "@/components/DraggableScrollingText";
+
 import InfiniteDraggableScroll from "@/components/DraggableScrollingText";
 
 type Project = {
@@ -301,12 +301,11 @@ export const Home = () => {
         </div>
 
         {/* Button */}
-        <Link
-          href={"/projects"}
-          className="flex justify-start lg:justify-end mt-6 sm:mt-8 md:mt-12"
-        >
-          <ButtonV1 text="View All" theme="dark" />
-        </Link>
+        <div className="flex justify-start lg:justify-end mt-6 sm:mt-8 md:mt-12">
+          <Link href={"/projects"}>
+            <ButtonV1 text="View All" theme="dark" />
+          </Link>
+        </div>
       </section>
 
       {/* Contact Section */}

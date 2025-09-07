@@ -226,7 +226,7 @@ const ContactUs = () => {
         </div>
 
         {/* Right Side - Contact Form */}
-        <div className="relative min-h-96 lg:min-h-[450px] xl:min-h-[580px] 2xl:min-h-[640px] 3xl:min-h-[700px] 4xl:min-h-[800px] 5xl:min-h-[1200px] overflow-hidden">
+        <div className="relative min-h-70 lg:min-h-[450px] xl:min-h-[580px] 2xl:min-h-[640px] 3xl:min-h-[700px] 4xl:min-h-[800px] 5xl:min-h-[1200px] overflow-hidden">
           {/* Background Image */}
           <div
             className="absolute inset-0 bg-cover bg-center bg-no-repeat"

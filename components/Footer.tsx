@@ -55,12 +55,18 @@ const Footer = () => {
               </h3>
               <ul className="space-y-2.5 sm:space-y-2 lg:space-y-3 xl:space-y-3 3xl:space-y-6 4xl:space-y-8 5xl:space-y-10">
                 {["Home", "Gallery", "Projects", "About Us", "Contact Us"].map(
-                  (item) => (
+                  (item, index) => (
                     <li
                       key={item}
                       className="text-xs sm:text-sm md:text-base lg:text-lg 3xl:text-xl 4xl:text-2xl 5xl:text-3xl hover:text-gray-300 cursor-pointer transition-colors font-medium"
                     >
-                      <Link href={`/${item.toLowerCase().replace(" ", "-")}`}>
+                      <Link
+                        href={`${
+                          index === 0
+                            ? "/"
+                            : item.toLowerCase().replace(" ", "-")
+                        }`}
+                      >
                         {item}
                       </Link>
                     </li>
@@ -150,8 +156,8 @@ const Footer = () => {
         >
           The 23rd Studio
         </a>
-        . All Rights Reserved |{" "}
-        <span className="block sm:inline">
+        . All Rights Reserved <span className="hidden md:inline"> | </span>
+        <span className="block md:inline">
           Design by{" "}
           <a
             href="https://www.instagram.com/r_parmar_7989/"
