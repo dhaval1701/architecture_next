@@ -21,6 +21,7 @@ interface FormErrors {
   phone?: string;
   email?: string;
   message?: string;
+  interest?: string;
 }
 
 interface ContactFieldsProps {
@@ -98,11 +99,15 @@ const ContactUs = () => {
       newErrors.email = "Please enter a valid email address";
     }
 
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters long";
+    if (!formData.interest.trim()) {
+      newErrors.interest = "Interest is required";
     }
+
+    // if (!formData.message.trim()) {
+    //   newErrors.message = "Message is required";
+    // } else if (formData.message.trim().length < 10) {
+    //   newErrors.message = "Message must be at least 10 characters long";
+    // }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;
@@ -189,9 +194,9 @@ const ContactUs = () => {
                     Studio
                   </h2>
                   <p className="text-xs lg:text-sm xl:text-base leading-relaxed opacity-90">
-                    Shilp Arcad , nr. Hanspura circle road , S.p Ring Road,
+                    Shilp Arcade, nr. Hanspura circle road, S.p Ring Road,
                     <br />
-                    Ahmedabad , 382330
+                    Ahmedabad, 382330
                   </p>
                 </a>
               </div>

@@ -35,11 +35,11 @@ const missionItems = [
   },
   {
     number: "4",
-    text: "Deliver architecture that balances beauty, purpose, and sustainability creating spaces people truly belong in.",
+    text: "To push boundaries in design while honoring context, culture, and the people who experience our spaces.",
   },
   {
     number: "5",
-    text: "Deliver architecture that balances beauty, purpose, and sustainability creating spaces people truly belong in.",
+    text: "Craft every project with precision, passion and personality turning vision into tangible, lasting impact.",
   },
 ];
 

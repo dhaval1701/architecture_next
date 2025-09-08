@@ -81,9 +81,9 @@ const AboutUs: React.FC = () => {
             </p>
             <p className="text-3xl sm:text-4xl md:text-5xl xl:text-6xl 2xl:text-6xl 3xl:text-[86px] 4xl:text-[118px] 5xl:text-[10rem] font-light text-black tracking-tight">
               23
-              <sup className="align-super text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl text-black font-light">
+              <span className="align-top text-base sm:text-lg md:text-xl lg:text-2xl xl:text-3xl 2xl:text-4xl 3xl:text-5xl 4xl:text-6xl 5xl:text-7xl text-black font-light">
                 rd
-              </sup>{" "}
+              </span>{" "}
               Studio
             </p>
           </div>

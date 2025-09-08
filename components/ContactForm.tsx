@@ -17,6 +17,7 @@ interface FormErrors {
   phone?: string;
   email?: string;
   message?: string;
+  interest?: string;
 }
 
 interface ContactFieldsProps {
@@ -50,6 +51,7 @@ interface ContactFieldsProps {
     phone?: string;
     email?: string;
     message?: string;
+    interest?: string;
   };
   handleChange: (
     e: React.ChangeEvent<
@@ -124,7 +126,13 @@ export const ContactFields: React.FC<ContactFieldsProps> = ({
             name="phone"
             placeholder="Phone Number"
             value={formData.phone}
-            onChange={handleChange}
+            onChange={(e) => {
+              // Allow only digits and limit to 10 characters
+              const value = e.target.value.replace(/\D/g, "").slice(0, 10);
+              handleChange({
+                target: { name: "phone", value },
+              } as React.ChangeEvent<HTMLInputElement>);
+            }}
             className={`w-full h-11 sm:h-11 md:h-12 lg:h-13 xl:h-14 2xl:h-12 3xl:h-18 4xl:h-22 
               px-2 sm:px-3 md:px-4 lg:px-5 xl:px-6 2xl:px-4 3xl:px-8 4xl:px-10 
               text-gray-800 placeholder-gray-400 
@@ -190,6 +198,12 @@ export const ContactFields: React.FC<ContactFieldsProps> = ({
             <option value="consultation">Consultation</option>
             <option value="other">Other</option>
           </select>
+
+          {errors.interest && (
+            <div className="text-red-500 text-xs sm:text-sm md:text-base lg:text-lg xl:text-xl 2xl:text-lg 3xl:text-3xl 4xl:text-4xl mt-2 pl-2 sm:pl-3 md:pl-4 lg:pl-5 xl:pl-6 2xl:pl-4">
+              {errors.interest}
+            </div>
+          )}
         </div>
 
         {/* Message Field */}
@@ -310,11 +324,15 @@ const ContactForm: React.FC = () => {
       newErrors.email = "Please enter a valid email address";
     }
 
-    if (!formData.message.trim()) {
-      newErrors.message = "Message is required";
-    } else if (formData.message.trim().length < 10) {
-      newErrors.message = "Message must be at least 10 characters long";
+    if (!formData.interest.trim()) {
+      newErrors.interest = "Interest is required";
     }
+
+    // if (!formData.message.trim()) {
+    //   newErrors.message = "Message is required";
+    // } else if (formData.message.trim().length < 10) {
+    //   newErrors.message = "Message must be at least 10 characters long";
+    // }
 
     setErrors(newErrors);
     return Object.keys(newErrors).length === 0;

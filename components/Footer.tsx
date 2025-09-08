@@ -25,7 +25,7 @@ const XIcon: React.FC<XIconProps> = ({ className, ...props }) => (
 const Footer = () => {
   return (
     <footer
-      className="text-white px-5 sm:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-44 4xl:px-52 5xl:px-60
+      className="text-white px-3 sm:px-6 md:px-12 lg:px-16 xl:px-20 2xl:px-36 3xl:px-44 4xl:px-52 5xl:px-60
        pt-6 sm:pt-8 md:pt-10 lg:pt-12 xl:pt-16 3xl:pt-20 4xl:pt-24 5xl:pt-28
        pb-4 sm:pb-6 md:pb-8 lg:pb-4 3xl:pb-6 4xl:pb-8 5xl:pb-10"
       style={{ background: "#292929" }}
@@ -88,8 +88,8 @@ const Footer = () => {
                   rel="noopener noreferrer"
                   className="text-xs sm:text-sm md:text-base 3xl:text-lg 4xl:text-xl 5xl:text-2xl font-medium"
                 >
-                  417, The 23rd Studio Shilp Arcad , nr. Hanspura circle road ,
-                  S.P. ring road, Ahmedabad , 382330
+                  417, The 23rd Studio Shilp Arcade, nr. Hanspura circle road,
+                  S.P. ring road, Ahmedabad, 382330
                 </a>
               </div>
               <div className="flex items-start mb-3 sm:mb-4 xl:mb-6 3xl:mb-8 4xl:mb-10 5xl:mb-12">
