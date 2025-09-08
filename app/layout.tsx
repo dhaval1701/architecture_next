@@ -51,7 +51,7 @@ function SplashScreen({ fadeOut }: { fadeOut: boolean }) {
     >
       {/* Logo Container */}
       <div className="text-center w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl">
-        <div className="relative w-full h-32 sm:h-40 md:h-48 lg:h-56 xl:h-64 mx-auto overflow-hidden">
+        <div className="relative w-full h-28 md:h-32 lg:h-42 3xl:h-64 mx-auto overflow-hidden">
           <div
             className={`absolute inset-0 transition-transform duration-800 ease-out ${
               showLogo ? "translate-y-0" : "translate-y-full"
